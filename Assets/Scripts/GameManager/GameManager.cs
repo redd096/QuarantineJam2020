@@ -29,9 +29,22 @@ namespace Quaranteam
 
         public GameObject overlay;
 
+        /// <summary>
+        /// The instantiated spawners.
+        /// </summary>
         private List<GameObject> spawners = new List<GameObject>();
 
+        /// <summary>
+        /// The UI manager for the shopping list UI
+        /// </summary>
         private ShoppingListUI shoppingListUI;
+
+        [Header("Overlays")]
+        /// <summary>
+        /// The overlay displayed at the beginning of the game.
+        /// </summary>
+        [SerializeField]
+        private GameObject waitForEnterButtonOverlay;
 
         /// <summary>
         /// Delegate for methods that are called whenever the score is updated.
@@ -74,6 +87,7 @@ namespace Quaranteam
                 {
                     levelTimer.SetGameRules(appliedGameRules);
                     levelTimer.gameObject.SetActive(true);
+                    waitForEnterButtonOverlay.gameObject.SetActive(false);
                     yield break;
                 }
 
@@ -85,7 +99,6 @@ namespace Quaranteam
         {
             overlay.SetActive(false);
 
-            // this stuff should be called at the beginning of the preparation countdown
             foreach (SpawnRule itemInList in appliedGameRules.ItemsInShoppingList)
             {
                 GameObject spawner = Instantiate(itemSpawnerPrefab, itemSpawnerLocation.position, Quaternion.identity);

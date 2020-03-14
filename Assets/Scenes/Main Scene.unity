@@ -1289,6 +1289,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c99f7571d024044964c3fbda64d17e, type: 3}
+--- !u!1 &7028810675102226051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2188708076902489319, guid: 80c99f7571d024044964c3fbda64d17e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7028810675102226050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9199099103765909287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1416,6 +1422,11 @@ PrefabInstance:
       propertyPath: overlay
       value: 
       objectReference: {fileID: 688604569}
+    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
+        type: 3}
+      propertyPath: waitForEnterButtonOverlay
+      value: 
+      objectReference: {fileID: 7028810675102226051}
     - target: {fileID: 9199099103535242519, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: m_Name
