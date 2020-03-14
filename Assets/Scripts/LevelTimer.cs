@@ -10,6 +10,9 @@ namespace Quaranteam
         [Tooltip("Game rules")]
         [SerializeField] GameRules gameRules;
 
+        [Header("Player Prefab")]
+        [SerializeField] GameObject player;
+
         [Header("UI Elements")]
         [SerializeField] private TextMeshProUGUI countdownTimer = default;
         [SerializeField] private TextMeshProUGUI levelTimer = default;
@@ -25,6 +28,7 @@ namespace Quaranteam
 
         // cached references
         private Slider slider;
+        
 
         private float elapsedTime = 0f;
 
@@ -86,10 +90,10 @@ namespace Quaranteam
                 levelStarted = true;
                 preparationTimePanel.SetActive(false);
                 slider.gameObject.SetActive(true);
-                //FindObjectOfType<MinigameManager>().TriggeredTimerStart();
 
                 // A chi comunico che ho iniziato?
-
+                FindObjectOfType<GameManager>().OnGameStarted();
+                player.SetActive(true);
 
                 // Fai partire lo spawn degli oggetti
 

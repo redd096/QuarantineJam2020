@@ -24,16 +24,17 @@ namespace Quaranteam
         [SerializeField]
         private Transform itemSpawnerLocation;
 
+        [SerializeField]
         private LevelTimer levelTimer;
 
         public GameObject overlay;
 
-        private List<GameObject> spawners;
+        private List<GameObject> spawners = new List<GameObject>();
 
         private void Awake()
         {       
             
-            levelTimer = FindObjectOfType<LevelTimer>();   
+           // levelTimer = FindObjectOfType<LevelTimer>();   
         }
 
         private void Start()
