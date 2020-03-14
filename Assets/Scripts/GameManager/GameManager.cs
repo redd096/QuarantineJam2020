@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Quaranteam
@@ -76,23 +77,23 @@ namespace Quaranteam
         {
             Debug.Log("Press Enter to start the game");
             
-            StartCoroutine(WaitForEnterButton());
+            StartCoroutine(WaitForEnterButtonAndStartGame());
         }
 
-        private IEnumerator WaitForEnterButton()
+        private IEnumerator WaitForEnterButtonAndStartGame()
         {
-            while (true)
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    levelTimer.SetGameRules(appliedGameRules);
-                    levelTimer.gameObject.SetActive(true);
-                    waitForEnterButtonOverlay.gameObject.SetActive(false);
-                    yield break;
-                }
+            yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return));
 
-                yield return null;
-            }
+            levelTimer.SetGameRules(appliedGameRules);
+            levelTimer.gameObject.SetActive(true);
+            waitForEnterButtonOverlay.gameObject.SetActive(false);
+        }
+
+        private IEnumerator WaitForEnterButtonAndRestartGame()
+        {
+            yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return));
+
+            SceneManager.LoadScene("Main Scene", LoadSceneMode.Single);
         }
 
         public void OnGameStarted()
@@ -144,7 +145,7 @@ namespace Quaranteam
             }
 
             // restart game loop
-            StartCoroutine(WaitForEnterButton());
+            StartCoroutine(WaitForEnterButtonAndRestartGame());
         }
 
         protected internal void OnItemCollected(ShoppingItem item)
