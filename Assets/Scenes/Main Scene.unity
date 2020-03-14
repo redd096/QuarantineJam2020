@@ -127,7 +127,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2073751593}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &271784598
+--- !u!114 &271784599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a7f76456277cb4f910856754cbd7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requiredItems: []
 --- !u!114 &325013559 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7028810674812634805, guid: 80c99f7571d024044964c3fbda64d17e,
@@ -571,6 +572,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 534453201}
+    - target: {fileID: 7028810674843840627, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028810674843840627, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028810674843840627, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8069205429201176289, guid: 80c99f7571d024044964c3fbda64d17e,
         type: 3}
       propertyPath: m_Name

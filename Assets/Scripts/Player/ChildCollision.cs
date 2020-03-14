@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChildCollision : MonoBehaviour
+namespace Quaranteam
 {
-    Player player;
-
-    private void Start()
+    public class ChildCollision : MonoBehaviour
     {
-        player = GetComponentInParent<Player>();
+        Player player;
+
+        private void Start()
+        {
+            player = GetComponentInParent<Player>();
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            player.OnChildTriggerEnter(transform, other);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        player.OnChildTriggerEnter(transform, other);
-    }
 }

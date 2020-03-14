@@ -77,6 +77,7 @@ namespace Quaranteam
             {
                 // A chi comunico che ho finito?
                 triggeredLevelFinish = true;
+                FindObjectOfType<GameManager>().OnTimerEnd();
             }
 
         }
@@ -93,7 +94,9 @@ namespace Quaranteam
 
                 // A chi comunico che ho iniziato?
                 FindObjectOfType<GameManager>().OnGameStarted();
+                
                 player.SetActive(true);
+                player.GetComponentInChildren<Cart>().SetRequiredItems(gameRules);
 
                 // Fai partire lo spawn degli oggetti
 
