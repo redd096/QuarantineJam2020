@@ -138,6 +138,15 @@ namespace Quaranteam
         {
             CurrentScore += item.BaseReward;
         }
+
+        private void Update()
+        {
+            // Brutally exit the game.
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
     }
 }
 
