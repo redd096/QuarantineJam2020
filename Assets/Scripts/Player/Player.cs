@@ -6,6 +6,8 @@ namespace Quaranteam
 {
     public class Player : MonoBehaviour
     {
+        public Sprite[] spriteItems;
+
         public bool firstIteration;
 
         [Header("FirstIteration")]
@@ -18,16 +20,17 @@ namespace Quaranteam
         Rigidbody2D rb;
         Cart cart;
 
-        //for shopping cart
-        GameObject[] shoppingItems;
-        int pickedItems = -1;
+        //for sprites shopping cart
+        Transform spritesParent;
+        float lastSpriteY = -0.7f;
+        int spriteIndex = -1;
 
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             cart = GetComponentInChildren<Cart>();
 
-            GetShoppingItems();
+            spritesParent = transform.Find("Cart").Find("Items");
         }
 
         void Update()
@@ -39,21 +42,6 @@ namespace Quaranteam
         }
 
         #region private API
-
-        void GetShoppingItems()
-        {
-            //get items in shopping cart
-            Transform shoppingCart = transform.Find("Cart");
-            Transform items = shoppingCart.Find("Items");
-
-            shoppingItems = new GameObject[items.childCount];
-            for (int i = 0; i < shoppingItems.Length; i++)
-            {
-                //get sprite and set it false
-                shoppingItems[i] = items.GetChild(i).gameObject;
-                shoppingItems[i].SetActive(false);
-            }
-        }
 
         #region movement
 
@@ -102,18 +90,66 @@ namespace Quaranteam
 
         void PickObject(Collider2D other)
         {
-            //only if can pick other objects
-            if (pickedItems >= shoppingItems.Length - 1) return;
+            //add sprite in shopping cart
+            AddSprite();
 
-            //active sprite in shopping cart
-            pickedItems++;
-            shoppingItems[pickedItems].SetActive(true);
-
+            //call function in cart
             cart.ItemObtained(other.gameObject.GetComponent<CollectibleItem>().GetItemDetails());
-            //ShoppingCart.ItemObtained(other.gameObject);
 
             //destroy picked object
             Destroy(other.gameObject);
+        }
+
+        void AddSprite()
+        {
+            //get sprite index and position
+            spriteIndex++;
+            Vector2 spriteLocalPosition = GetLocalPosition();
+
+            //instantiate and add sprite
+            GameObject spriteInstantiated = new GameObject("Item " + spriteIndex);
+            spriteInstantiated.AddComponent<SpriteRenderer>().sprite = spriteItems[spriteIndex];
+
+            //set Transform
+            spriteInstantiated.transform.parent = spritesParent;
+            spriteInstantiated.transform.localPosition = spriteLocalPosition;
+            spriteInstantiated.transform.localScale = new Vector2(0.4f, 0.4f);
+
+            //reset index when reached last
+            if (spriteIndex >= spriteItems.Length - 1)
+                spriteIndex = -1;
+        }
+
+        Vector2 GetLocalPosition()
+        {
+            lastSpriteY += 0.3f;
+
+            if (spriteIndex == 0)
+            {
+                lastSpriteY -= 0.3f;
+                return new Vector2(1.7f, lastSpriteY);
+            }
+            else if (spriteIndex == 1)
+            {
+                return new Vector2(1.8f, lastSpriteY);
+            }
+            else if (spriteIndex == 2)
+            {
+                lastSpriteY -= 0.1f;
+                return new Vector2(2.2f, lastSpriteY);
+            }
+            else if (spriteIndex == 3)
+            {
+                return new Vector2(1.8f, lastSpriteY);
+            }
+            else if (spriteIndex == 4)
+            {
+                return new Vector2(2, lastSpriteY);
+            }
+            else
+            {
+                return new Vector2(2, lastSpriteY);
+            }
         }
 
         void OnLeftCart(Collider2D other)
@@ -145,22 +181,22 @@ namespace Quaranteam
             //pick object
             if (firstIteration)
             {
-                if (child.CompareTag("OnlyOneTrigger"))
-                    PickObject(other);
+                PickObject(other);
             }
             else
             {
-                if (child.CompareTag("Left"))
+                //check if left, right or center of the cart (child is the collider in the center of the cart)
+                if(other.transform.position.x < child.position.x - 0.3f)
                 {
                     OnLeftCart(other);
                 }
-                else if (child.CompareTag("Center"))
-                {
-                    OnCenterCart(other);
-                }
-                else if (child.CompareTag("Right"))
+                else if(other.transform.position.x > child.position.x + 0.3f)
                 {
                     OnRightCart(other);
+                }
+                else
+                {
+                    OnCenterCart(other);
                 }
             }
         }
