@@ -4,31 +4,52 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public bool useNormalMovement;
+    public bool firstIteration;
 
-    [Header("NormalMovement")]
+    [Header("FirstIteration")]
     public float speed;
 
-    [Header("AccelerationMovement")]
+    [Header("SecondIteration")]
     public float acceleration;
     bool pressedInput;
 
     Rigidbody2D rb;
 
+    //for shopping cart
+    GameObject[] shoppingItems;
+    int pickedItems = -1;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        GetShoppingItems();
     }
 
     void Update()
     {
-        if (useNormalMovement)
+        if (firstIteration)
             NormalMovement();
         else
             AccelerationMovement();
     }
 
     #region private API
+
+    void GetShoppingItems()
+    {
+        //get items in shopping cart
+        Transform shoppingCart = transform.Find("Cart");
+        Transform items = shoppingCart.Find("Items");
+
+        shoppingItems = new GameObject[items.childCount];
+        for (int i = 0; i < shoppingItems.Length; i++)
+        {
+            //get sprite and set it false
+            shoppingItems[i] = items.GetChild(i).gameObject;
+            shoppingItems[i].SetActive(false);
+        }
+    }
 
     #region movement
 
@@ -73,6 +94,23 @@ public class Player : MonoBehaviour
 
     #endregion
 
+    #region pick object
+
+    void PickObject(Collider2D other)
+    {
+        //only if can pick other objects
+        if (pickedItems >= shoppingItems.Length -1) return;
+
+        //active sprite in shopping cart
+        pickedItems++;
+        shoppingItems[pickedItems].SetActive(true);
+
+        //ShoppingCart.ItemObtained(other.gameObject);
+
+        //destroy picked object
+        Destroy(other.gameObject);
+    }
+
     void OnLeftCart(Collider2D other)
     {
 
@@ -90,21 +128,35 @@ public class Player : MonoBehaviour
 
     #endregion
 
+    #endregion
+
     #region public API
 
     public void OnChildTriggerEnter(Transform child, Collider2D other)
     {
-        if(child.CompareTag("Left"))
+        //only if collectible item
+        if (other.gameObject.layer != LayerMask.NameToLayer("CollectibleItem")) return;
+
+        //pick object
+        if (firstIteration)
         {
-            OnLeftCart(other);
+            if(child.CompareTag("OnlyOneTrigger"))
+                PickObject(other);
         }
-        else if (child.CompareTag("Center"))
+        else
         {
-            OnCenterCart(other);
-        }
-        else if (child.CompareTag("Right"))
-        {
-            OnRightCart(other);
+            if (child.CompareTag("Left"))
+            {
+                OnLeftCart(other);
+            }
+            else if (child.CompareTag("Center"))
+            {
+                OnCenterCart(other);
+            }
+            else if (child.CompareTag("Right"))
+            {
+                OnRightCart(other);
+            }
         }
     }
 
