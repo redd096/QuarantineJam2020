@@ -7,13 +7,17 @@ namespace Quaranteam
 {
     public class LevelTimer : MonoBehaviour
     {
-        [Tooltip("Level time in seconds")]
-        [SerializeField] float baseTime = 10f;
-        [SerializeField] float preparationTime = 30f;
+        [Tooltip("Game rules")]
+        [SerializeField] GameRules gameRules;
+
+        [Header("UI Elements")]
         [SerializeField] private TextMeshProUGUI countdownTimer = default;
         [SerializeField] private TextMeshProUGUI levelTimer = default;
         [SerializeField] private GameObject preparationTimePanel = default;
 
+        [Header("Debugging Purposes only")]
+        [SerializeField] float baseTime = 10f;
+        [SerializeField] float preparationTime = 30f;
 
         private bool triggeredLevelFinish;
         private bool levelStarted;
@@ -28,6 +32,12 @@ namespace Quaranteam
         {
             slider = GetComponentInChildren<Slider>();
             slider.gameObject.SetActive(false);
+
+            if(gameRules != null)
+            {
+                preparationTime = gameRules.PreparationTime;
+                baseTime = gameRules.GameTime;
+            }
             pTime = preparationTime;
         }
 
@@ -44,6 +54,11 @@ namespace Quaranteam
             {
                 UpdateLevelTimer();
             }
+        }
+
+        internal void SetGameRules(GameRules appliedGameRules)
+        {
+            gameRules = appliedGameRules; 
         }
 
         private void UpdateLevelTimer()
