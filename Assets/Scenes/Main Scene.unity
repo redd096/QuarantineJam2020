@@ -567,6 +567,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3757552489663730196, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: cart
+      value: 
+      objectReference: {fileID: 271784599}
+    - target: {fileID: 6067158897621420135, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 424.21997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028810674812634804, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.025146484
+      objectReference: {fileID: 0}
     - target: {fileID: 7028810674812634805, guid: 80c99f7571d024044964c3fbda64d17e,
         type: 3}
       propertyPath: player
