@@ -11,7 +11,7 @@ public class ChildCollision : MonoBehaviour
         player = GetComponentInParent<Player>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         player.OnChildTriggerEnter(transform, other);
     }
