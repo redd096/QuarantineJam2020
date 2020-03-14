@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c725c8b5e071480459f64cd69aabbdf8, type: 3}
+  m_Name: TestGameRules
+  m_EditorClassIdentifier: 
+  preparationTime: 5
+  gameTime: 90
+  itemsInShoppingList:
+  - item: {fileID: 11400000, guid: 6af339745763020409b38afbd9955d3a, type: 2}
+    minSpawnDelay: 10
+    maxSpawnDelay: 30
+  otherItems:
+  - {fileID: 11400000, guid: 7a5ac74efc6137a45955934ee63d83a7, type: 2}
+  - {fileID: 11400000, guid: ad8af0b05f925ac47a2b799d059f5e74, type: 2}
+  - {fileID: 11400000, guid: e51392588c1de504c8ee6bcc0b6a8a72, type: 2}
+  generalMinDelay: 0.1
+  generalMaxDelay: 1
