@@ -18,7 +18,6 @@ namespace Quaranteam
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("Collision");
             if (other.gameObject.GetComponent<CollectibleItem>() != null)
             {
                 Destroy(other.gameObject);
