@@ -14,16 +14,7 @@ namespace Quaranteam
         /// </summary>
         public GameRules appliedGameRules;
 
-        /// <summary>
-        /// Identifies the current game state: used as index in the game state function array.
-        /// </summary>
-        private int currentGameState = 0;
-
-        /// <summary>
-        /// The game time when the start button is pressed.
-        /// </summary>
-        private float gamePreparationStartTime = 0f;
-        private float gameStartTime = 0f;
+        LevelTimer levelTimer;
 
         /// <summary>
         /// The update function for each state.
@@ -38,44 +29,19 @@ namespace Quaranteam
             //updateFunctions.Add(GameUpdate);
 
             Debug.Log("Press Enter to start the game");
+
+            StartCoroutine(WaitForEnterButton());
         }
 
-        //public void Update()
-        //{
-        //    updateFunctions[currentGameState]();
-        //}
+        private IEnumerator WaitForEnterButton()
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                levelTimer.gameObject.SetActive(true);
+            }
 
-        //private void WaitForGameStart()
-        //{
-        //    // Wait for start button to be pressed.
-        //    if (Input.GetKeyDown(KeyCode.Return))
-        //    {
-        //        Debug.Log("Entered preparation time");
-        //        currentGameState += 1;
-        //        gamePreparationStartTime = Time.time;
-        //    }
-        //}
-
-        //private void ManagePreparationTime()
-        //{
-        //    if (Time.time - gamePreparationStartTime >= appliedGameRules.PreparationTime)
-        //    {
-        //        Debug.Log("Entered game time");
-        //        gameStartTime = Time.time;
-        //        currentGameState += 1;
-        //    }
-        //}
-
-        //private void GameUpdate()
-        //{
-        //    float gameTime = Time.time - gameStartTime;
-
-        //    if (gameTime >= appliedGameRules.GameTime)
-        //    {
-        //        Debug.Log("Game end");
-        //        currentGameState += 1;
-        //    }
-        //}
+            yield return null;
+        }
     }
 }
 
