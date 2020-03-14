@@ -13,10 +13,13 @@ namespace Quaranteam
         private BoxCollider2D boxCollider;
         private Rigidbody2D rb;
 
+        ShoppingItem itemDetail;
+
         protected internal float reward;
 
         public void LoadFromShoppingItem(ShoppingItem item)
         {
+            itemDetail = item;
             sprite = GetComponent<SpriteRenderer>();
             boxCollider = GetComponent<BoxCollider2D>();
             rb = GetComponent<Rigidbody2D>();
@@ -25,6 +28,11 @@ namespace Quaranteam
             rb.mass = item.Weight;
             reward = item.BaseReward;
             boxCollider.size = sprite.size;
+        }
+
+        public ShoppingItem GetItemDetails()
+        {
+            return itemDetail;
         }
     }
 }

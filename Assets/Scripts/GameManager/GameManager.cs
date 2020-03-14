@@ -89,7 +89,7 @@ namespace Quaranteam
         public void OnTimerEnd()
         {
             // @todo check shoppint chart
-            bool win = false;
+            bool win = FindObjectOfType<Cart>().IsChecklistComplete();
 
             levelTimer.gameObject.SetActive(false);
             overlay.SetActive(true);
