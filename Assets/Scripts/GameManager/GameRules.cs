@@ -53,6 +53,17 @@ namespace Quaranteam
 
         [Header("Maximum time between two spawns")]
         public float generalMaxDelay = 1.0f;
+
+        public List<ShoppingItem> GetShoppingList()
+        {
+            List<ShoppingItem> shoppingList = new List<ShoppingItem>();
+            foreach (SpawnRule spawnRule in itemsInShoppingList)
+            {
+                shoppingList.Add(spawnRule.item);
+            }
+
+            return shoppingList;
+        }
     }
 }
 

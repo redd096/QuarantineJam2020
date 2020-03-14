@@ -33,6 +33,25 @@ namespace Quaranteam
 
         private ShoppingListUI shoppingListUI;
 
+        /// <summary>
+        /// Delegate for methods that are called whenever the score is updated.
+        /// </summary>
+        /// <param name="newScore"></param>
+        public delegate void ScoreUpdateDelegate(int newScore);
+
+        public event ScoreUpdateDelegate onCurrentScoreUpdate;
+
+        private int currentScore = 0;
+        public int CurrentScore
+        {
+            get { return currentScore; }
+            set
+            {
+                currentScore = value;
+                onCurrentScoreUpdate?.Invoke(currentScore);
+            }
+        }
+
         private void Awake()
         {
 
@@ -43,7 +62,7 @@ namespace Quaranteam
         private void Start()
         {
             Debug.Log("Press Enter to start the game");
-
+            
             StartCoroutine(WaitForEnterButton());
         }
 
@@ -66,6 +85,7 @@ namespace Quaranteam
         {
             overlay.SetActive(false);
 
+            // this stuff should be called at the beginning of the preparation countdown
             foreach (SpawnRule itemInList in appliedGameRules.ItemsInShoppingList)
             {
                 GameObject spawner = Instantiate(itemSpawnerPrefab, itemSpawnerLocation.position, Quaternion.identity);
@@ -112,6 +132,11 @@ namespace Quaranteam
 
             // restart game loop
             StartCoroutine(WaitForEnterButton());
+        }
+
+        protected internal void OnItemCollected(ShoppingItem item)
+        {
+            CurrentScore += item.BaseReward;
         }
     }
 }

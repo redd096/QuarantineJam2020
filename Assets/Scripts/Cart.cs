@@ -20,9 +20,15 @@ namespace Quaranteam
         /// </summary>
         public event ItemCollectedDelegate onItemCollected;
 
+        private GameManager gameManager;
+
         // Start is called before the first frame update
         void Start()
         {
+            // The cart will notify the game manager at each new item collected.
+            gameManager = FindObjectOfType<GameManager>();
+            onItemCollected += gameManager.OnItemCollected;
+
             foreach (SpawnRule spawn in requiredItems)
             {
                 Debug.Log("required Item: " + spawn.item.DisplayName);
