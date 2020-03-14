@@ -24,6 +24,7 @@ namespace Quaranteam
             sprite.sprite = item.Sprite;
             rb.mass = item.Weight;
             reward = item.BaseReward;
+            boxCollider.size = sprite.size;
         }
     }
 }

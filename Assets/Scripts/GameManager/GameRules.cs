@@ -1,9 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Quaranteam
 {
+    [Serializable]
+    public class SpawnRule
+    {
+        public ShoppingItem item;
+        public float minSpawnDelay;
+        public float maxSpawnDelay;
+    }
+
     /// <summary>
     /// The rules of a level.
     /// </summary>
@@ -25,36 +34,22 @@ namespace Quaranteam
         /// </summary>
         public float GameTime { get { return gameTime; } }
 
-        //[SerializeField, Min(0)]
-        //private int numItemsInShoppingList = 5;
-
-        ///// <summary>
-        ///// The number of items picked from DB for the shopping list.
-        ///// </summary>
-        //public int NumItemsInShoppingList { get { return numItemsInShoppingList; } }
-
-        //[SerializeField, Min(1)]
-        //private int numSpawnsForEachItemInShoppingList = 3;
-
-        ///// <summary>
-        ///// The minimum number of spawns for each item in the shopping list.
-        ///// </summary>
-        //public int NumSpawnsForEachItemInShoppingList { get { return numSpawnsForEachItemInShoppingList; } }
-
-        //[SerializeField, Min(1f)]
-        //private float baseTimeBetweenItemSpawn = 5f;
-
-        ///// <summary>
-        ///// The base amount of time between each item spawn.
-        ///// </summary>
-        //public float BaseTimeBetweenItemSpawn { get { return baseTimeBetweenItemSpawn; } }
-
         [SerializeField]
-        private ShoppingItem[] availableItems;
+        private SpawnRule[] itemsInShoppingList;
         /// <summary>
         /// The items that can be spawned during the game.
         /// </summary>
-        public ShoppingItem[] AvailableItems { get { return availableItems; } }
+        public SpawnRule[] ItemsInShoppingList { get { return itemsInShoppingList; } }
+
+        [Header("Other items"), SerializeField]
+        private ShoppingItem[] otherItems;
+        /// <summary>
+        /// Items spawned but not in the shopping list.
+        /// </summary>
+        public ShoppingItem[] OtherItems { get { return otherItems; } }
+
+        public float generalMinDelay = 0.1f;
+        public float generalMaxDelay = 1.0f;
     }
 }
 

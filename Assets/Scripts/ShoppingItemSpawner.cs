@@ -47,7 +47,7 @@ namespace Quaranteam
         private void OnItemSpawned()
         {
             float newDelay = Random.Range(minDelay, maxDelay);
-            int newIndex = Random.Range(0, itemsToSpawn.Count - 1);
+            int newIndex = Random.Range(0, itemsToSpawn.Count);
 
             StartCoroutine(SpawnAfterDelay(newDelay, newIndex));
         }
