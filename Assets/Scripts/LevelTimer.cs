@@ -1,64 +1,104 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
-
-public class LevelTimer : MonoBehaviour
+namespace Quaranteam
 {
-    [Tooltip("Level time in seconds")]
-    [SerializeField] float baseTime = 10f;
-    [SerializeField] float preparationTime = 30f;
-    [SerializeField] Text countdownTimerText;
-
-    bool triggeredLevelFinish;
-    bool levelStarted;
-
-    // cached references
-    Slider slider;
-
-    private void Start()
+    public class LevelTimer : MonoBehaviour
     {
-        slider = GetComponent<Slider>();
+        [Tooltip("Level time in seconds")]
+        [SerializeField] float baseTime = 10f;
+        [SerializeField] float preparationTime = 30f;
+        [SerializeField] private TextMeshProUGUI countdownTimer = default;
+        [SerializeField] private TextMeshProUGUI levelTimer = default;
+        [SerializeField] private GameObject preparationTimePanel = default;
+
+
+        private bool triggeredLevelFinish;
+        private bool levelStarted;
+        private float pTime;
+
+        // cached references
+        private Slider slider;
+
+        private float elapsedTime = 0f;
+
+        private void OnEnable()
+        {
+            slider = GetComponentInChildren<Slider>();
+            slider.gameObject.SetActive(false);
+            pTime = preparationTime;
+        }
+
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (triggeredLevelFinish) { return; }
+            if (!levelStarted)
+            {
+                CountdownToStart();
+            }
+            else
+            {
+                UpdateLevelTimer();
+            }
+        }
+
+        private void UpdateLevelTimer()
+        {
+            elapsedTime += 1 * Time.deltaTime;
+            slider.value = elapsedTime / baseTime;
+
+            TimeSpan time = TimeSpan.FromSeconds(baseTime - elapsedTime);
+            levelTimer.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
+            bool timerFinished = (elapsedTime >= baseTime);
+            if (timerFinished)
+            {
+                // A chi comunico che ho finito?
+                triggeredLevelFinish = true;
+            }
+
+        }
+
+        private void CountdownToStart()
+        {
+            preparationTime -= 1 * Time.deltaTime;
+            countdownTimer.text = preparationTime.ToString("00");
+            if (preparationTime <= 0)
+            {
+                levelStarted = true;
+                preparationTimePanel.SetActive(false);
+                slider.gameObject.SetActive(true);
+                //FindObjectOfType<MinigameManager>().TriggeredTimerStart();
+
+                // A chi comunico che ho iniziato?
+
+
+                // Fai partire lo spawn degli oggetti
+
+
+                //GetComponentInChildren<Canvas>().enabled = false;
+                //var enemySpawners = FindObjectsOfType<AttackerSpawner>();
+                //foreach(AttackerSpawner spawner in enemySpawners)
+                //{
+                //    spawner.StartSpawning();
+                //}
+
+            }
+        }
+
+
+        private void OnDisable()
+        {
+            levelStarted = false;
+            preparationTimePanel.SetActive(true);
+            slider.gameObject.SetActive(false);
+            preparationTime = pTime;
+            elapsedTime = 0f;
+            triggeredLevelFinish = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (triggeredLevelFinish) { return; }
-        if (!levelStarted)
-        {
-            CountdownToStart();
-        }
-        else
-        {
-            UpdateLevelTimer();
-        }
-    }
-
-    private void UpdateLevelTimer()
-    {
-        slider.value = (Time.timeSinceLevelLoad - preparationTime) / baseTime;
-        bool timerFinished = (Time.timeSinceLevelLoad >= baseTime);
-        if (timerFinished)
-        {
-            FindObjectOfType<LevelController>().LevelTimerFinished();
-            triggeredLevelFinish = true;
-            GetComponent<Animator>().enabled = false;
-        }
-    }
-
-    private void CountdownToStart()
-    {
-        preparationTime -= 1 * Time.deltaTime;
-        countdownTimerText.text = preparationTime.ToString("00");
-        if (preparationTime <= 0)
-        {
-            levelStarted = true;
-            //GetComponentInChildren<Canvas>().enabled = false;
-            //var enemySpawners = FindObjectsOfType<AttackerSpawner>();
-            //foreach(AttackerSpawner spawner in enemySpawners)
-            //{
-            //    spawner.StartSpawning();
-            //}
-        }
-    }
 }
