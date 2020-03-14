@@ -11,20 +11,12 @@ public class Player : MonoBehaviour
 
     [Header("AccelerationMovement")]
     public float acceleration;
-    Rigidbody2D rb;
+    bool pressedInput;
 
-    //to keep inside camera
-    Camera cam;
-    Transform backLimit, frontLimit;
+    Rigidbody2D rb;
 
     void Start()
     {
-        cam = Camera.main;
-
-        Transform limits = transform.Find("Limits");
-        backLimit = limits.Find("BackLimit");
-        frontLimit = limits.Find("FrontLimit");
-
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -40,63 +32,58 @@ public class Player : MonoBehaviour
 
     #region movement
 
-    bool IsOutScreen()
-    {
-        //if out of the screen
-        if (cam.WorldToViewportPoint(backLimit.position).x < 0 || cam.WorldToViewportPoint(frontLimit.position).x > 1)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
     void NormalMovement()
     {
-        Vector2 previousPosition = transform.position;
-
-        //add speed
-        float newX = transform.position.x + Input.GetAxis("Horizontal") * speed;
-        transform.position = new Vector2(newX, transform.position.y);
-
-        //keep inside camera
-        if(IsOutScreen())
-        {
-            transform.position = previousPosition;
-        }
+        //move right or left
+        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0);
     }
 
     void AccelerationMovement()
     {
-        Vector2 previousPosition = transform.position;
-
         //push player
         if (Input.GetAxisRaw("Horizontal") > 0.1f)
-            rb.AddForce(Vector2.right * acceleration);
-        else if (Input.GetAxisRaw("Horizontal") < -0.1f)
-            rb.AddForce(Vector2.left * acceleration);
-
-        //keep inside camera
-        if (IsOutScreen())
         {
-            rb.velocity = Vector2.zero;
-            transform.position = previousPosition;
+            //only if input is not just pressed
+            if (pressedInput == false)
+            {
+                rb.AddForce(Vector2.right * acceleration);
+                pressedInput = true;
+            }
         }
+        else if (Input.GetAxisRaw("Horizontal") < -0.1f)
+        {
+            //only if input is not just pressed
+            if (pressedInput == false)
+            {
+                rb.AddForce(Vector2.left * acceleration);
+                pressedInput = true;
+            }
+        }
+
+        //check if release input
+        CheckReleasedInput(Input.GetAxisRaw("Horizontal"));
+    }
+
+    void CheckReleasedInput(float axis)
+    {
+        //if axis is 0, then player released input
+        if (pressedInput && axis == 0)
+            pressedInput = false;
     }
 
     #endregion
 
-    void OnLeftCart()
+    void OnLeftCart(Collider2D other)
     {
 
     }
 
-    void OnCenterCart()
+    void OnCenterCart(Collider2D other)
     {
 
     }
 
-    void OnRightCart()
+    void OnRightCart(Collider2D other)
     {
 
     }
@@ -105,19 +92,19 @@ public class Player : MonoBehaviour
 
     #region public API
 
-    public void OnChildTriggerEnter(Transform child, Collider other)
+    public void OnChildTriggerEnter(Transform child, Collider2D other)
     {
         if(child.CompareTag("Left"))
         {
-            OnLeftCart();
+            OnLeftCart(other);
         }
         else if (child.CompareTag("Center"))
         {
-            OnCenterCart();
+            OnCenterCart(other);
         }
         else if (child.CompareTag("Right"))
         {
-            OnRightCart();
+            OnRightCart(other);
         }
     }
 
