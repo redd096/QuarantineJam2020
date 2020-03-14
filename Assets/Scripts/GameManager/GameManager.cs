@@ -26,6 +26,10 @@ namespace Quaranteam
 
         private LevelTimer levelTimer;
 
+        public GameObject overlay;
+
+        private List<GameObject> spawners;
+
         private void Awake()
         {       
             
@@ -56,6 +60,8 @@ namespace Quaranteam
 
         public void OnGameStarted()
         {
+            overlay.SetActive(false);
+
             foreach (SpawnRule itemInList in appliedGameRules.ItemsInShoppingList)
             {
                 GameObject spawner = Instantiate(itemSpawnerPrefab, itemSpawnerLocation.position, Quaternion.identity);
@@ -63,6 +69,7 @@ namespace Quaranteam
                 spawnerComp.itemsToSpawn.Add(itemInList.item);
                 spawnerComp.minDelay = itemInList.minSpawnDelay;
                 spawnerComp.maxDelay = itemInList.maxSpawnDelay;
+                spawners.Add(spawner);
 
             }
 
@@ -71,10 +78,36 @@ namespace Quaranteam
             ShoppingItemSpawner generalSpawnerComp = generalSpawner.GetComponent<ShoppingItemSpawner>();
             generalSpawnerComp.minDelay = appliedGameRules.generalMinDelay;
             generalSpawnerComp.maxDelay = appliedGameRules.generalMaxDelay;
+            spawners.Add(generalSpawner);
             foreach (ShoppingItem generalItem in appliedGameRules.OtherItems)
             {
                 generalSpawnerComp.itemsToSpawn.Add(generalItem);
             }
+        }
+
+        public void OnTimerEnd()
+        {
+            // @todo check shoppint chart
+            bool win = false;
+
+            levelTimer.gameObject.SetActive(false);
+            overlay.SetActive(true);
+            if (win)
+            {
+                overlay.GetComponentInChildren<Text>().text = "You win!";
+            }
+            else
+            {
+                overlay.GetComponentInChildren<Text>().text = "You lose!";
+            }
+
+            foreach (var spawner in spawners)
+            {
+                Destroy(spawner);
+            }
+
+            // restart game loop
+            StartCoroutine(WaitForEnterButton());
         }
     }
 }
