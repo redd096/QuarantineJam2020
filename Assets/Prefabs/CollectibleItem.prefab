@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8282028590734023851}
   - component: {fileID: 6975851596390361362}
   - component: {fileID: 4015166113563795414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CollectibleItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &6975851596390361362
 Rigidbody2D:
