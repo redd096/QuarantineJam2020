@@ -280,11 +280,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba6fec030d1eba4bbf71e7ca26a44a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTime: 30
-  preparationTime: 5
+  gameRules: {fileID: 0}
   countdownTimer: {fileID: 740265794}
   levelTimer: {fileID: 1096063124}
   preparationTimePanel: {fileID: 999468337}
+  baseTime: 30
+  preparationTime: 5
 --- !u!1 &315443184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,6 +1230,7 @@ MonoBehaviour:
   itemSpawnerPrefab: {fileID: 3717245475991055594, guid: cac292c420d350140a631a3f6c0753c6,
     type: 3}
   itemSpawnerLocation: {fileID: 1483378277}
+  levelTimer: {fileID: 0}
   overlay: {fileID: 1418872066}
 --- !u!114 &1218876261
 MonoBehaviour:

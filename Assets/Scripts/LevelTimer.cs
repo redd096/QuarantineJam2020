@@ -7,13 +7,20 @@ namespace Quaranteam
 {
     public class LevelTimer : MonoBehaviour
     {
-        [Tooltip("Level time in seconds")]
-        [SerializeField] float baseTime = 10f;
-        [SerializeField] float preparationTime = 30f;
+        [Tooltip("Game rules")]
+        [SerializeField] GameRules gameRules;
+
+        [Header("Player Prefab")]
+        [SerializeField] GameObject player;
+
+        [Header("UI Elements")]
         [SerializeField] private TextMeshProUGUI countdownTimer = default;
         [SerializeField] private TextMeshProUGUI levelTimer = default;
         [SerializeField] private GameObject preparationTimePanel = default;
 
+        [Header("Debugging Purposes only")]
+        [SerializeField] float baseTime = 10f;
+        [SerializeField] float preparationTime = 30f;
 
         private bool triggeredLevelFinish;
         private bool levelStarted;
@@ -21,6 +28,7 @@ namespace Quaranteam
 
         // cached references
         private Slider slider;
+        
 
         private float elapsedTime = 0f;
 
@@ -28,6 +36,12 @@ namespace Quaranteam
         {
             slider = GetComponentInChildren<Slider>();
             slider.gameObject.SetActive(false);
+
+            if(gameRules != null)
+            {
+                preparationTime = gameRules.PreparationTime;
+                baseTime = gameRules.GameTime;
+            }
             pTime = preparationTime;
         }
 
@@ -44,6 +58,11 @@ namespace Quaranteam
             {
                 UpdateLevelTimer();
             }
+        }
+
+        internal void SetGameRules(GameRules appliedGameRules)
+        {
+            gameRules = appliedGameRules; 
         }
 
         private void UpdateLevelTimer()
@@ -71,10 +90,10 @@ namespace Quaranteam
                 levelStarted = true;
                 preparationTimePanel.SetActive(false);
                 slider.gameObject.SetActive(true);
-                //FindObjectOfType<MinigameManager>().TriggeredTimerStart();
 
                 // A chi comunico che ho iniziato?
-
+                FindObjectOfType<GameManager>().OnGameStarted();
+                player.SetActive(true);
 
                 // Fai partire lo spawn degli oggetti
 
