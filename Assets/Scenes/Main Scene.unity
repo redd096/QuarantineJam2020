@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 236442703}
   - component: {fileID: 236442704}
+  - component: {fileID: 236442705}
   m_Layer: 5
   m_Name: Level Timer
   m_TagString: Untagged
@@ -210,6 +211,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &236442705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236442702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba6fec030d1eba4bbf71e7ca26a44a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseTime: 10
+  preparationTime: 30
+  countdownTimerText: {fileID: 0}
 --- !u!1 &292167429
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +299,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292167429}
   m_CullTransparentMesh: 0
+--- !u!1 &382010519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782151710}
+  - component: {fileID: 382010521}
+  - component: {fileID: 382010520}
+  m_Layer: 0
+  m_Name: Level Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &382010520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382010519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c432e1c618f1ab944af1ba46b9b89a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delaySeconds: 3.5
+--- !u!114 &382010521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382010519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b288b3c0cb94047af98f8045c5aa39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winLabel: {fileID: 0}
+  loseLabel: {fileID: 0}
+  delay4WinCondition: 4
+  numberOfAttackers: 0
+  levelTimerFinished: 0
 --- !u!1 &597419969
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,92 +430,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &782151709
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1575737088}
-    m_Modifications:
-    - target: {fileID: 8396540388138343936, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_Name
-      value: Level Controller
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343939, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: winLabel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8396540388138343939, guid: 851e719f05e868d4fb4c35825e112128,
-        type: 3}
-      propertyPath: loseLabel
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8758654266574091548, guid: 851e719f05e868d4fb4c35825e112128, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 851e719f05e868d4fb4c35825e112128, type: 3}
---- !u!4 &782151710 stripped
+--- !u!4 &782151710
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8396540388138343938, guid: 851e719f05e868d4fb4c35825e112128,
-    type: 3}
-  m_PrefabInstance: {fileID: 782151709}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382010519}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1575737088}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1156787693
 GameObject:
   m_ObjectHideFlags: 0
