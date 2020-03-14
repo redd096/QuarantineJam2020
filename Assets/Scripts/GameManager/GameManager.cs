@@ -31,10 +31,13 @@ namespace Quaranteam
 
         private List<GameObject> spawners = new List<GameObject>();
 
+        private ShoppingListUI shoppingListUI;
+
         private void Awake()
-        {       
-            
-           // levelTimer = FindObjectOfType<LevelTimer>();   
+        {
+
+            // levelTimer = FindObjectOfType<LevelTimer>();   
+            shoppingListUI = FindObjectOfType<ShoppingListUI>();
         }
 
         private void Start()
@@ -71,7 +74,7 @@ namespace Quaranteam
                 spawnerComp.minDelay = itemInList.minSpawnDelay;
                 spawnerComp.maxDelay = itemInList.maxSpawnDelay;
                 spawners.Add(spawner);
-
+                shoppingListUI.AddRequiredShoppingItem(itemInList.item);
             }
 
             // General items spawner

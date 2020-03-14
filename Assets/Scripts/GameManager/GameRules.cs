@@ -34,21 +34,24 @@ namespace Quaranteam
         /// </summary>
         public float GameTime { get { return gameTime; } }
 
-        [SerializeField]
+        [Header("Fill this list with the items in the shopping list:"), SerializeField]
         private SpawnRule[] itemsInShoppingList;
         /// <summary>
         /// The items that can be spawned during the game.
         /// </summary>
         public SpawnRule[] ItemsInShoppingList { get { return itemsInShoppingList; } }
 
-        [Header("Other items"), SerializeField]
+        [Header("Fill this list with the items that are NOT in the shopping list:"), SerializeField]
         private ShoppingItem[] otherItems;
         /// <summary>
         /// Items spawned but not in the shopping list.
         /// </summary>
         public ShoppingItem[] OtherItems { get { return otherItems; } }
 
+        [Header("Minimum time between two spawns")]
         public float generalMinDelay = 0.1f;
+
+        [Header("Maximum time between two spawns")]
         public float generalMaxDelay = 1.0f;
     }
 }

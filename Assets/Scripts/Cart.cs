@@ -13,6 +13,13 @@ namespace Quaranteam
 
         Dictionary<ShoppingItem, bool> checklist = new Dictionary<ShoppingItem, bool>();
 
+        public delegate void ItemCollectedDelegate(ShoppingItem collectedItem);
+
+        /// <summary>
+        /// Event fired whenever a collectible item is collected.
+        /// </summary>
+        public event ItemCollectedDelegate onItemCollected;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -50,6 +57,9 @@ namespace Quaranteam
             if (checklist.ContainsKey(item))
             {
                 checklist[item] = true;
+
+                // Notifies UI
+                onItemCollected?.Invoke(item);
             }
         }
     }
