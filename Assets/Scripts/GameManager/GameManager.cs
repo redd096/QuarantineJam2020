@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 namespace Quaranteam
 {
+    [RequireComponent(typeof(AudioSource))]
     public class GameManager : MonoBehaviour
     {
         /// <summary>
@@ -28,6 +29,7 @@ namespace Quaranteam
         [SerializeField]
         private LevelTimer levelTimer;
 
+        [Header("Overlays")]
         public GameObject overlay;
 
         /// <summary>
@@ -40,7 +42,6 @@ namespace Quaranteam
         /// </summary>
         private ShoppingListUI shoppingListUI;
 
-        [Header("Overlays")]
         /// <summary>
         /// The overlay displayed at the beginning of the game.
         /// </summary>
@@ -55,6 +56,19 @@ namespace Quaranteam
 
         public event ScoreUpdateDelegate onCurrentScoreUpdate;
 
+        /// <summary>
+        /// The source for music.
+        /// </summary>
+        private AudioSource audioSource;
+
+        [Header("Audio")]
+        [SerializeField] private AudioClip youWinAudioClip;
+        [SerializeField] private AudioClip youLoseAudioClip;
+        [SerializeField] private AudioClip bgMusic;
+
+        /// <summary>
+        /// The player's score.
+        /// </summary>
         private int currentScore = 0;
         public int CurrentScore
         {
@@ -71,6 +85,7 @@ namespace Quaranteam
 
             // levelTimer = FindObjectOfType<LevelTimer>();   
             shoppingListUI = FindObjectOfType<ShoppingListUI>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -87,6 +102,10 @@ namespace Quaranteam
             levelTimer.SetGameRules(appliedGameRules);
             levelTimer.gameObject.SetActive(true);
             waitForEnterButtonOverlay.gameObject.SetActive(false);
+
+            audioSource.loop = true;
+            audioSource.clip = bgMusic;
+            audioSource.Play();
         }
 
         private IEnumerator WaitForEnterButtonAndRestartGame()
@@ -128,15 +147,21 @@ namespace Quaranteam
             // @todo check shoppint chart
             bool win = FindObjectOfType<Cart>().IsChecklistComplete();
 
+            audioSource.Stop();
+            audioSource.loop = false;
             levelTimer.gameObject.SetActive(false);
             overlay.SetActive(true);
             if (win)
             {
                 overlay.GetComponentInChildren<Text>().text = "You win!";
+                audioSource.clip = youWinAudioClip;
+                audioSource.Play();
             }
             else
             {
                 overlay.GetComponentInChildren<Text>().text = "You lose!";
+                audioSource.clip = youLoseAudioClip;
+                audioSource.Play();
             }
 
             foreach (var spawner in spawners)
