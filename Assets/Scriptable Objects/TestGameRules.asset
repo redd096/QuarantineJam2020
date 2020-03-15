@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestGameRules
   m_EditorClassIdentifier: 
   preparationTime: 5
-  gameTime: 30
+  gameTime: 45
   itemsInShoppingList:
   - item: {fileID: 11400000, guid: 6af339745763020409b38afbd9955d3a, type: 2}
     minSpawnDelay: 1

@@ -1,0 +1,691 @@
+fileFormatVersion: 2
+guid: bbbf902253d5b4e469b8ebc9b8ecc518
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -806260961232852540
+    second: Shopping_Run_item_Giorgio_256x256_0
+  - first:
+      213: 2526478705483729519
+    second: Shopping_Run_item_Giorgio_256x256_1
+  - first:
+      213: -2994271405126303931
+    second: Shopping_Run_item_Giorgio_256x256_2
+  - first:
+      213: -3806834834231778738
+    second: Shopping_Run_item_Giorgio_256x256_3
+  - first:
+      213: -5060985023415463107
+    second: Shopping_Run_item_Giorgio_256x256_4
+  - first:
+      213: 8554920310537877354
+    second: Shopping_Run_item_Giorgio_256x256_5
+  - first:
+      213: -8552825657752178154
+    second: Shopping_Run_item_Giorgio_256x256_6
+  - first:
+      213: 6530374463015685630
+    second: Shopping_Run_item_Giorgio_256x256_7
+  - first:
+      213: 4555112910153003320
+    second: Shopping_Run_item_Giorgio_256x256_8
+  - first:
+      213: -3054957940881765242
+    second: Shopping_Run_item_Giorgio_256x256_9
+  - first:
+      213: -5320566108359565470
+    second: Shopping_Run_item_Giorgio_256x256_10
+  - first:
+      213: 949207732313954487
+    second: Shopping_Run_item_Giorgio_256x256_11
+  - first:
+      213: -8478529749602016725
+    second: Shopping_Run_item_Giorgio_256x256_12
+  - first:
+      213: 1081081626104052925
+    second: Shopping_Run_item_Giorgio_256x256_13
+  - first:
+      213: -3648481171351796932
+    second: Shopping_Run_item_Giorgio_256x256_14
+  - first:
+      213: 3221774454169856318
+    second: Shopping_Run_item_Giorgio_256x256_15
+  - first:
+      213: -4700213243472208946
+    second: Shopping_Run_item_Giorgio_256x256_16
+  - first:
+      213: 8441074273164273014
+    second: Shopping_Run_item_Giorgio_256x256_17
+  - first:
+      213: -3279966340825890957
+    second: Shopping_Run_item_Giorgio_256x256_18
+  - first:
+      213: -8342562523458910712
+    second: Shopping_Run_item_Giorgio_256x256_19
+  - first:
+      213: 7613118817224005299
+    second: Shopping_Run_item_Giorgio_256x256_20
+  - first:
+      213: -6394244171070389214
+    second: Shopping_Run_item_Giorgio_256x256_21
+  - first:
+      213: -4747392160050320333
+    second: Shopping_Run_item_Giorgio_256x256_22
+  - first:
+      213: 5095874209203563270
+    second: Shopping_Run_item_Giorgio_256x256_23
+  - first:
+      213: -9056831296966926058
+    second: Shopping_Run_item_Giorgio_256x256_24
+  - first:
+      213: -350381034445482822
+    second: Shopping_Run_item_Giorgio_256x256_25
+  - first:
+      213: -2837640446234366427
+    second: Shopping_Run_item_Giorgio_256x256_26
+  - first:
+      213: 6746935600022908660
+    second: Shopping_Run_item_Giorgio_256x256_27
+  - first:
+      213: -4974938291414963047
+    second: Shopping_Run_item_Giorgio_256x256_28
+  - first:
+      213: -9037817320106688833
+    second: Shopping_Run_item_Giorgio_256x256_29
+  - first:
+      213: 1738896965673660058
+    second: Shopping_Run_item_Giorgio_256x256_30
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_0
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 768
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c963717de59fc4f0800000000000000
+      internalID: -806260961232852540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_1
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 768
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a42fc2ffadf0320800000000000000
+      internalID: 2526478705483729519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_2
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 768
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f365875063276d0800000000000000
+      internalID: -2994271405126303931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_3
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 768
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42280343e76b2bc0800000000000000
+      internalID: -3806834834231778738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_4
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 768
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33dfb97fe4c3c9b0800000000000000
+      internalID: -5060985023415463107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_5
+      rect:
+        serializedVersion: 2
+        x: 2302
+        y: 768
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67726f42be29b670800000000000000
+      internalID: 8554920310537877354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_6
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 512
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612b5db01624e4980800000000000000
+      internalID: -8552825657752178154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_7
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 512
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd055689fc80aa50800000000000000
+      internalID: 6530374463015685630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_8
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 512
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8313779ce03073f30800000000000000
+      internalID: 4555112910153003320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_9
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 512
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ccbf940fb9a95d0800000000000000
+      internalID: -3054957940881765242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_10
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 512
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fde33605d8926b0800000000000000
+      internalID: -5320566108359565470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_11
+      rect:
+        serializedVersion: 2
+        x: 2302
+        y: 512
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b890a647634c2d00800000000000000
+      internalID: 949207732313954487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_12
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 256
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22e3692d16365a80800000000000000
+      internalID: -8478529749602016725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_13
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 256
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc3229d206c00f00800000000000000
+      internalID: 1081081626104052925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_14
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 256
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3300e384bdfd5dc0800000000000000
+      internalID: -3648481171351796932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_15
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39e83fdbca06bc20800000000000000
+      internalID: 3221774454169856318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_16
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 256
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb904635fc75ceb0800000000000000
+      internalID: -4700213243472208946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_17
+      rect:
+        serializedVersion: 2
+        x: 2302
+        y: 256
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67525a62458b42570800000000000000
+      internalID: 8441074273164273014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_18
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 0
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fb5d3bdf73b72d0800000000000000
+      internalID: -3279966340825890957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_19
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 0
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806ceb0f593493c80800000000000000
+      internalID: -8342562523458910712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_20
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 0
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b69a7d6a3b37a960800000000000000
+      internalID: 7613118817224005299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_21
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224cc38fdc41347a0800000000000000
+      internalID: -6394244171070389214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Giorgio_256x256_22
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 0
+        width: 255.5
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ce9b2bbffdd1eb0800000000000000
+      internalID: -4747392160050320333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
