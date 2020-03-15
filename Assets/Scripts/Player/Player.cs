@@ -12,6 +12,7 @@ namespace Quaranteam
 
         public bool firstIteration;
         public bool ObjectsAddWeight;
+        public float multiplierMass = 0.25f;
         [Range(0, 100)]
         public float itemOutOfCart;
 
@@ -205,7 +206,8 @@ namespace Quaranteam
             cart.ItemObtained(objectDetails);
             if (ObjectsAddWeight)
             {
-                rb.mass = Mathf.Clamp(rb.mass + objectDetails.Weight, 1f, 25f);
+                float addedMass = objectDetails.Weight * multiplierMass;
+                rb.mass = Mathf.Clamp(rb.mass + addedMass, 1f, 25f);
             }
 
             //stick on cart
@@ -308,7 +310,8 @@ namespace Quaranteam
 
         IEnumerator LoseGame()
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(2f);
+
             //end game
             LevelTimer levelTimer = FindObjectOfType<LevelTimer>();
             if (levelTimer)
