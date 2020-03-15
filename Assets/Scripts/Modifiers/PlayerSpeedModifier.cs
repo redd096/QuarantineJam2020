@@ -19,31 +19,16 @@ namespace Quaranteam
         [Header("Second iteration"), SerializeField]
         private float valueToAddToAcceleration;
 
-        /// <summary>
-        /// The duration of the effect.
-        /// </summary>
-        [Header("Duration of the effect (-1 for permanent)"), SerializeField]
-        private float effectDuration = 5f;
-
-        public override void ApplyRule(GameManager gameManager)
+        protected override void ApplyRule(GameManager gameManager)
         {
             gameManager.Player.speed += valueToAddToSpeed;
             gameManager.Player.acceleration += valueToAddToAcceleration;
-
-            if (effectDuration > 0.0f)
-            {
-                gameManager.Player.StartCoroutine(RevertEffectAfterDelay(gameManager.Player));
-            }
         }
 
-        private IEnumerator RevertEffectAfterDelay(Player player)
+        protected override void RevertRule(GameManager gameManager)
         {
-            yield return new WaitForSeconds(effectDuration);
-
-            player.speed -= valueToAddToSpeed;
-            player.acceleration -= valueToAddToAcceleration;
-
-            yield break;
+            gameManager.Player.speed -= valueToAddToSpeed;
+            gameManager.Player.acceleration -= valueToAddToAcceleration;
         }
     }
 }
