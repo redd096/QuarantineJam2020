@@ -2613,17 +2613,22 @@ PrefabInstance:
         type: 3}
       propertyPath: youWinAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 9b51a9b8cb6dd054fb6792950a522d1a, type: 3}
+      objectReference: {fileID: 8300000, guid: 6833b2ed655ff5b428a4e5f932aaf6b7, type: 3}
     - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: bgMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 4eeccd230ece95e4da2a0bc926296c38, type: 3}
+      objectReference: {fileID: 8300000, guid: aee8aafa14cf96e4fb8322bd6ef5763a, type: 3}
     - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2073751594}
+    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
+        type: 3}
+      propertyPath: youLoseAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ead60e36535c3d4cbaf6eab04b7076f, type: 3}
     - target: {fileID: 9199099103535242519, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: m_Name
