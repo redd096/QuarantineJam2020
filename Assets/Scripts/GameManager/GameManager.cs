@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Quaranteam
 {
+    [RequireComponent(typeof(AudioSource))]
     public class GameManager : MonoBehaviour
     {
         /// <summary>
@@ -27,39 +29,90 @@ namespace Quaranteam
         [SerializeField]
         private LevelTimer levelTimer;
 
+        [Header("Overlays")]
         public GameObject overlay;
 
+        /// <summary>
+        /// The instantiated spawners.
+        /// </summary>
         private List<GameObject> spawners = new List<GameObject>();
 
+        /// <summary>
+        /// The UI manager for the shopping list UI
+        /// </summary>
         private ShoppingListUI shoppingListUI;
+
+        /// <summary>
+        /// The overlay displayed at the beginning of the game.
+        /// </summary>
+        [SerializeField]
+        private GameObject waitForEnterButtonOverlay;
+
+        /// <summary>
+        /// Delegate for methods that are called whenever the score is updated.
+        /// </summary>
+        /// <param name="newScore"></param>
+        public delegate void ScoreUpdateDelegate(int newScore);
+
+        public event ScoreUpdateDelegate onCurrentScoreUpdate;
+
+        /// <summary>
+        /// The source for music.
+        /// </summary>
+        private AudioSource audioSource;
+
+        [Header("Audio")]
+        [SerializeField] private AudioClip youWinAudioClip;
+        [SerializeField] private AudioClip youLoseAudioClip;
+        [SerializeField] private AudioClip bgMusic;
+
+        /// <summary>
+        /// The player's score.
+        /// </summary>
+        private int currentScore = 0;
+        public int CurrentScore
+        {
+            get { return currentScore; }
+            set
+            {
+                currentScore = value;
+                onCurrentScoreUpdate?.Invoke(currentScore);
+            }
+        }
 
         private void Awake()
         {
 
             // levelTimer = FindObjectOfType<LevelTimer>();   
             shoppingListUI = FindObjectOfType<ShoppingListUI>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
         {
             Debug.Log("Press Enter to start the game");
-
-            StartCoroutine(WaitForEnterButton());
+            
+            StartCoroutine(WaitForEnterButtonAndStartGame());
         }
 
-        private IEnumerator WaitForEnterButton()
+        private IEnumerator WaitForEnterButtonAndStartGame()
         {
-            while (true)
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    levelTimer.SetGameRules(appliedGameRules);
-                    levelTimer.gameObject.SetActive(true);
-                    yield break;
-                }
+            yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return));
 
-                yield return null;
-            }
+            levelTimer.SetGameRules(appliedGameRules);
+            levelTimer.gameObject.SetActive(true);
+            waitForEnterButtonOverlay.gameObject.SetActive(false);
+
+            audioSource.loop = true;
+            audioSource.clip = bgMusic;
+            audioSource.Play();
+        }
+
+        private IEnumerator WaitForEnterButtonAndRestartGame()
+        {
+            yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return));
+
+            SceneManager.LoadScene("Main Scene", LoadSceneMode.Single);
         }
 
         public void OnGameStarted()
@@ -94,15 +147,21 @@ namespace Quaranteam
             // @todo check shoppint chart
             bool win = FindObjectOfType<Cart>().IsChecklistComplete();
 
+            audioSource.Stop();
+            audioSource.loop = false;
             levelTimer.gameObject.SetActive(false);
             overlay.SetActive(true);
             if (win)
             {
                 overlay.GetComponentInChildren<Text>().text = "You win!";
+                audioSource.clip = youWinAudioClip;
+                audioSource.Play();
             }
             else
             {
                 overlay.GetComponentInChildren<Text>().text = "You lose!";
+                audioSource.clip = youLoseAudioClip;
+                audioSource.Play();
             }
 
             foreach (var spawner in spawners)
@@ -111,7 +170,21 @@ namespace Quaranteam
             }
 
             // restart game loop
-            StartCoroutine(WaitForEnterButton());
+            StartCoroutine(WaitForEnterButtonAndRestartGame());
+        }
+
+        protected internal void OnItemCollected(ShoppingItem item)
+        {
+            CurrentScore += item.BaseReward;
+        }
+
+        private void Update()
+        {
+            // Brutally exit the game.
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
     }
 }
