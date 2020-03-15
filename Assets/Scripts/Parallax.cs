@@ -38,8 +38,8 @@ namespace Quaranteam
                 if(player.isActiveAndEnabled)
                 {
                     calculatedSmooth = Mathf.Lerp(0.2f, 1f, Mathf.InverseLerp(-5f, 5f, player.MovementSpeed)); 
-                    Debug.Log("Player Movement: " + player.MovementSpeed);
-                    Debug.Log("Calculated Smooth : " + calculatedSmooth * smooth);
+                    //Debug.Log("Player Movement: " + player.MovementSpeed);
+                    //Debug.Log("Calculated Smooth : " + calculatedSmooth * smooth);
                 }
                 
                 //backgrounds[i].position = Vector2.Lerp(backgrounds[i].position, newPosition, smooth * Time.deltaTime);

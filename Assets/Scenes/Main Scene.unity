@@ -1403,6 +1403,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 534453201}
+    - target: {fileID: 7102830203004176635, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102830203004176635, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8069205429201176289, guid: 80c99f7571d024044964c3fbda64d17e,
         type: 3}
       propertyPath: m_Name

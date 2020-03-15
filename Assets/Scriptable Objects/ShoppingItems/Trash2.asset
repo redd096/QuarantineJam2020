@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Trash2
   sprite: {fileID: 1990600301535586919, guid: 25016171e9a3d6b40b1fb1c3e780a2dc, type: 3}
-  colliderSizeFactor: 0.75
+  colliderSizeFactor: 0.25
   baseReward: 0
   weight: 1
   modifiers: []
+  pickedSound: {fileID: 0}
+  lostSound: {fileID: 0}
