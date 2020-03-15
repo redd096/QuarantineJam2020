@@ -7,6 +7,8 @@ namespace Quaranteam
     public class Player : MonoBehaviour
     {
         public Sprite[] spriteItems;
+        public AudioClip inizioCarrello;
+        public AudioClip loopCarrello;
 
         public bool firstIteration;
 
@@ -19,16 +21,19 @@ namespace Quaranteam
 
         Rigidbody2D rb;
         Cart cart;
+        AudioSource audioSource;
+        bool test;
 
         //for sprites shopping cart
         Transform spritesParent;
-        float lastSpriteY = -0.7f;
+        float lastSpriteY = -0.4f;
         int spriteIndex = -1;
 
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             cart = GetComponentInChildren<Cart>();
+            audioSource = GetComponent<AudioSource>();
 
             spritesParent = transform.Find("Cart").Find("Items");
         }
@@ -39,6 +44,8 @@ namespace Quaranteam
                 NormalMovement();
             else
                 AccelerationMovement();
+
+            TestSuoni();
         }
 
         #region private API
@@ -88,6 +95,8 @@ namespace Quaranteam
 
         #region pick object
 
+        #region first iteration
+
         void PickObject(Collider2D other)
         {
             //add sprite in shopping cart
@@ -127,49 +136,111 @@ namespace Quaranteam
             if (spriteIndex == 0)
             {
                 lastSpriteY -= 0.3f;
-                return new Vector2(1.7f, lastSpriteY);
+                return new Vector2(-0.2f, lastSpriteY);
             }
             else if (spriteIndex == 1)
             {
-                return new Vector2(1.8f, lastSpriteY);
+                return new Vector2(-0.1f, lastSpriteY);
             }
             else if (spriteIndex == 2)
             {
                 lastSpriteY -= 0.1f;
-                return new Vector2(2.2f, lastSpriteY);
+                return new Vector2(0.3f, lastSpriteY);
             }
             else if (spriteIndex == 3)
             {
-                return new Vector2(1.8f, lastSpriteY);
+                return new Vector2(-0.1f, lastSpriteY);
             }
             else if (spriteIndex == 4)
             {
-                return new Vector2(2, lastSpriteY);
+                return new Vector2(0.1f, lastSpriteY);
             }
             else
             {
-                return new Vector2(2, lastSpriteY);
+                return new Vector2(0.1f, lastSpriteY);
             }
         }
 
-        void OnLeftCart(Collider2D other)
-        {
+        #endregion
 
+        #region second iteration
+
+        void PickObject_SecondIteration(GameObject itemObject)
+        {
+            //call function in cart
+            cart.ItemObtained(itemObject.GetComponent<CollectibleItem>().GetItemDetails());
+
+            //stick on cart
+            StickObject(itemObject);
+
+            //check if out of the cart
+            CheckObjectPosition(itemObject.transform);
+        } 
+        
+        void StickObject(GameObject itemObject)
+        {
+            //remove script and rigidbody
+            Destroy(itemObject.GetComponent<CollectibleItem>());
+            Destroy(itemObject.GetComponent<Rigidbody2D>());
+
+            //reset layer so can collide with others collectible item
+            itemObject.layer = LayerMask.NameToLayer("Default");
+
+            //set parent
+            itemObject.transform.parent = spritesParent;
+            itemObject.AddComponent<ChildCollision>();
         }
 
-        void OnCenterCart(Collider2D other)
+        void CheckObjectPosition(Transform itemObject)
         {
-
-        }
-
-        void OnRightCart(Collider2D other)
-        {
-
+            //check if the object is out to the left or to the right
+            if(itemObject.localPosition.x < -0.9f)
+            {
+                //out left
+            }
+            else if(itemObject.localPosition.x > 0.9f)
+            {
+                //out right
+            }
         }
 
         #endregion
 
         #endregion
+
+        #region sound
+
+        void TestSuoni()
+        {
+            float speed = rb.velocity.x;
+
+            if (rb.velocity.x == 0)
+            {
+                audioSource.loop = false;
+                audioSource.Stop();
+                test = false;
+            }
+
+            if (test == false && (Input.GetAxis("Horizontal") > 0.1f || Input.GetAxis("Horizontal") < -0.1f))
+            {
+                test = true;
+                audioSource.clip = inizioCarrello;
+                audioSource.Play();
+                Invoke("LoopSuono", inizioCarrello.length);
+            }
+        }
+
+        void LoopSuono()
+        {
+            audioSource.clip = loopCarrello;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+
+        #endregion
+
+        #endregion
+
 
         #region public API
 
@@ -185,22 +256,10 @@ namespace Quaranteam
             }
             else
             {
-                //check if left, right or center of the cart (child is the collider in the center of the cart)
-                if(other.transform.position.x < child.position.x - 0.3f)
-                {
-                    OnLeftCart(other);
-                }
-                else if(other.transform.position.x > child.position.x + 0.3f)
-                {
-                    OnRightCart(other);
-                }
-                else
-                {
-                    OnCenterCart(other);
-                }
+                PickObject_SecondIteration(other.gameObject);
             }
         }
-
+        
         #endregion
     } 
 }
