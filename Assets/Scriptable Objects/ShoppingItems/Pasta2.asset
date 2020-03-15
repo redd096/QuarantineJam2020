@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Pasta
   sprite: {fileID: 4131631878662126393, guid: 25016171e9a3d6b40b1fb1c3e780a2dc, type: 3}
-  colliderSizeFactor: 0.75
+  colliderSizeFactor: 0.25
   baseReward: 10
   weight: 1
   modifiers:
   - {fileID: 11400000, guid: a1619b7fb36ac9848bca77a471f16564, type: 2}
+  pickedSound: {fileID: 0}
+  lostSound: {fileID: 0}

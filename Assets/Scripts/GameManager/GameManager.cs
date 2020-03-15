@@ -40,6 +40,10 @@ namespace Quaranteam
         /// </summary>
         public Player Player { get { return player; } }
 
+
+        [SerializeField]
+        protected internal GameObject previewIconPrefab;
+
         [Header("Overlays")]
         public GameObject overlay;
 
@@ -169,6 +173,8 @@ namespace Quaranteam
                 spawnerComp.maxDelay = itemInList.maxSpawnDelay;
                 spawners.Add(spawner);
                 shoppingListUI.AddRequiredShoppingItem(itemInList.item);
+                spawnerComp.previewIconPrefab = previewIconPrefab;
+                spawnerComp.previewIconTime = itemInList.previewIconAnticipationTime;
             }
 
             // General items spawner
@@ -181,6 +187,8 @@ namespace Quaranteam
             {
                 generalSpawnerComp.itemsToSpawn.Add(generalItem);
             }
+            generalSpawnerComp.previewIconPrefab = previewIconPrefab;
+            generalSpawnerComp.previewIconTime = appliedGameRules.previewIconAnticipationTime;
         }
 
         public void OnTimerEnd()
