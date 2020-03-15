@@ -62,7 +62,6 @@ namespace Quaranteam
 
         internal void ItemObtained(ShoppingItem item)
         {
-            Debug.Log("Collected");
             if (checklist.ContainsKey(item))
             {
                 checklist[item] = true;
@@ -77,6 +76,12 @@ namespace Quaranteam
                 modifier.Apply(gameManager);
             }
         }
+
+        internal void ClearChecklist()
+        {
+            checklist.Clear();
+        }
+
     }
 
 }

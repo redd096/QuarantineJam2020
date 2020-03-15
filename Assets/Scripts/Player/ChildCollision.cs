@@ -8,19 +8,21 @@ namespace Quaranteam
     {
         Player player;
 
+        public bool risky;
+
         private void Start()
         {
-            PlayerReference();
+            GetPlayerReference();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            PlayerReference();
+            GetPlayerReference();
 
-            player.OnChildTriggerEnter(transform, other);
+            player.OnChildTriggerEnter(this, other);
         }
 
-        void PlayerReference()
+        void GetPlayerReference()
         {
             if (player == null)
                 player = GetComponentInParent<Player>();
