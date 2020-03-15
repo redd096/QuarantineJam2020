@@ -18,8 +18,10 @@ namespace Quaranteam
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.GetComponent<CollectibleItem>() != null)
+            var collectibleItem = other.gameObject.GetComponent<CollectibleItem>();
+            if (collectibleItem != null)
             {
+                AudioSource.PlayClipAtPoint(collectibleItem.GetItemDetails().LostSound, other.gameObject.transform.position);
                 Destroy(other.gameObject);
             }
         }
