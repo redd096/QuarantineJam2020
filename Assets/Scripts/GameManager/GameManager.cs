@@ -72,6 +72,18 @@ namespace Quaranteam
 
         public event ScoreUpdateDelegate onCurrentScoreUpdate;
 
+        private ModifiersPanelUI modifiersPanel;
+
+        public delegate void ModifierRemovedDelegate(ModifiersId id);
+        public event ModifierRemovedDelegate onModifierRemoved;
+
+
+        public delegate void ModifierUpdatedDelegate(ModifiersId id, string newDescription, float newTimer);
+        public event ModifierUpdatedDelegate onModifierUpdated;
+
+        protected Dictionary<ModifiersId, ModifierRule> appliedModifiers
+            = new Dictionary<ModifiersId, ModifierRule>();
+
         /// <summary>
         /// The source for music.
         /// </summary>
@@ -114,6 +126,7 @@ namespace Quaranteam
             // levelTimer = FindObjectOfType<LevelTimer>();   
             shoppingListUI = FindObjectOfType<ShoppingListUI>();
             audioSource = GetComponent<AudioSource>();
+            modifiersPanel = FindObjectOfType<ModifiersPanelUI>();
         }
 
         private void Start()
@@ -213,6 +226,36 @@ namespace Quaranteam
             {
                 Application.Quit();
             }
+
+            List<ModifierRule> toRemove = new List<ModifierRule>(); 
+            foreach (var modifier in appliedModifiers.Values)
+            {
+                modifier.RemainingTime -= Time.deltaTime;
+                onModifierUpdated?.Invoke(modifier.Id, modifier.Description, modifier.RemainingTime);
+
+                if (modifier.RemainingTime <= 0f)
+                {
+                    toRemove.Add(modifier);
+                }
+            }
+
+            foreach (ModifierRule modifier in toRemove)
+            {
+                RemoveModifier(modifier);
+            }
+        }
+
+        public void AddModifier(ModifierRule newModifier)
+        {
+            appliedModifiers[newModifier.Id] = newModifier;
+            modifiersPanel.AddModifier(newModifier);
+        }
+
+        public void RemoveModifier(ModifierRule modifier)
+        {
+            modifier.RevertRule(this);
+            onModifierRemoved?.Invoke(modifier.Id);
+            appliedModifiers.Remove(modifier.Id);
         }
     }
 }

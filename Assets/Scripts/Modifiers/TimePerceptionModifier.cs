@@ -13,12 +13,16 @@ namespace Quaranteam
         [Header("Time will be multiplied by this value"), SerializeField, Range(0.001f, 2.0f)]
         private float timeScaleApplied = 0.5f;
 
+        public override ModifiersId Id { get { return ModifiersId.TimePerception; } }
+
+        public override string Description { get { return "Time dilation: " + timeScaleApplied.ToString("00"); } }
+
         protected override void ApplyRule(GameManager gameManager)
         {
             gameManager.fallingItemsTimeScale = timeScaleApplied;
         }
 
-        protected override void RevertRule(GameManager gameManager)
+        public override void RevertRule(GameManager gameManager)
         {
             gameManager.fallingItemsTimeScale = 1.0f;
         }

@@ -11,24 +11,28 @@ namespace Quaranteam
         /// The value that must be added to the current speed.
         /// </summary>
         [Header("First iteration"), SerializeField]
-        private float valueToAddToSpeed;
+        private float newSpeed;
 
         /// <summary>
         /// The value that must be added to the current speed.
         /// </summary>
         [Header("Second iteration"), SerializeField]
-        private float valueToAddToAcceleration;
+        private float newAcceleration;
+
+        public override ModifiersId Id { get { return ModifiersId.PlayerSpeed; } }
+
+        public override string Description { get { return "Speed modifier: " + newSpeed.ToString(); } }
 
         protected override void ApplyRule(GameManager gameManager)
         {
-            gameManager.Player.speed += valueToAddToSpeed;
-            gameManager.Player.acceleration += valueToAddToAcceleration;
+            gameManager.Player.actualSpeed = newSpeed;
+            gameManager.Player.actualAcceleration = newAcceleration;
         }
 
-        protected override void RevertRule(GameManager gameManager)
+        public override void RevertRule(GameManager gameManager)
         {
-            gameManager.Player.speed -= valueToAddToSpeed;
-            gameManager.Player.acceleration -= valueToAddToAcceleration;
+            gameManager.Player.actualSpeed = gameManager.Player.speed;
+            gameManager.Player.actualAcceleration = gameManager.Player.acceleration;
         }
     }
 }
