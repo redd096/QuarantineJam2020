@@ -7,6 +7,8 @@ namespace Quaranteam
 {
     public class LevelTimer : MonoBehaviour
     {
+        [HideInInspector] public bool endGame;
+
         [Tooltip("Game rules")]
         [SerializeField] GameRules gameRules;
 
@@ -73,7 +75,7 @@ namespace Quaranteam
             TimeSpan time = TimeSpan.FromSeconds(baseTime - elapsedTime);
             levelTimer.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
             bool timerFinished = (elapsedTime >= baseTime);
-            if (timerFinished)
+            if (timerFinished || endGame)
             {
                 // A chi comunico che ho finito?
                 triggeredLevelFinish = true;
