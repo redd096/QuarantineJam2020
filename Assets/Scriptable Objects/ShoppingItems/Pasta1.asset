@@ -18,3 +18,4 @@ MonoBehaviour:
   weight: 1
   modifiers:
   - {fileID: 11400000, guid: 4a13ea266b3013743bfd713b54728e4e, type: 2}
+  - {fileID: 11400000, guid: 1c6441b1f5b0d044d8d559f19945ed1e, type: 2}

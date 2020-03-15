@@ -96,6 +96,18 @@ namespace Quaranteam
             }
         }
 
+        private float currentMultiplier = 1;
+        public float CurrentMultiplier
+        {
+            get { return currentMultiplier; }
+            set
+            {
+                currentMultiplier = value;
+                if (currentMultiplier < 0)
+                    currentMultiplier = 0;
+            }
+        }
+
         private void Awake()
         {
 
@@ -191,7 +203,7 @@ namespace Quaranteam
 
         protected internal void OnItemCollected(ShoppingItem item)
         {
-            CurrentScore += item.BaseReward;
+            CurrentScore += (int)(item.BaseReward * CurrentMultiplier);
         }
 
         private void Update()
