@@ -139,7 +139,8 @@ MonoBehaviour:
   inizioCarrello: {fileID: 8300000, guid: 8c5a35eda943ce546a6111cc2f32d951, type: 3}
   loopCarrello: {fileID: 8300000, guid: 9700b171b9d938b47a3fdab0dd8857fa, type: 3}
   firstIteration: 0
-  ObjectsAddWeight: 0
+  ObjectsAddWeight: 1
+  itemOutOfCart: 0
   speed: 5
   acceleration: 100
 --- !u!50 &-4830708119720146117
@@ -633,7 +634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8293022884368932639}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.05, y: -0.39999998, z: 0}
+  m_LocalPosition: {x: 2.05, y: -1.06, z: 0}
   m_LocalScale: {x: 2, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2074471271815302832}
@@ -651,6 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588f69ab4243fdb45a1a6242fd9c4397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  risky: 0
 --- !u!61 &6839218748141206529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -664,7 +666,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06542094, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -675,5 +677,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.86915815, y: 1}
   m_EdgeRadius: 0

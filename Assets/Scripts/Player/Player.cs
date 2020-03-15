@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -259,7 +258,7 @@ namespace Quaranteam
             {
                 FallenObject(child);
             }
-
+            cart.ClearChecklist();
             LoseGame();
         }
 

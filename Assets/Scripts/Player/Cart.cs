@@ -76,6 +76,12 @@ namespace Quaranteam
                 modifier.Apply(gameManager);
             }
         }
+
+        internal void ClearChecklist()
+        {
+            checklist.Clear();
+        }
+
     }
 
 }
