@@ -19,6 +19,10 @@ namespace Quaranteam
 
         private GameManager gameManager;
 
+        protected internal GameObject previewIconPrefab;
+
+        protected internal float previewIconTime = 2f;
+
         private void Awake()
         {
             boundingBox = GetComponent<BoxCollider2D>();
@@ -41,6 +45,12 @@ namespace Quaranteam
             spawnLocation.x = spawnLocation.x - halfWidth + randomSpawnPoint * boundingBox.size.x;
 
             ShoppingItem item = itemsToSpawn[itemIndex];
+            GameObject previewIcon = Instantiate(previewIconPrefab, spawnLocation, Quaternion.identity);
+            PreviewIconUI iconComponent = previewIcon.GetComponent<PreviewIconUI>();
+            iconComponent.itemSprite.sprite = item.Sprite;
+
+            yield return new WaitForSeconds(previewIconTime);
+            Destroy(previewIcon);
             GameObject spawnedItem = Instantiate(collectibleItemPrefab, spawnLocation, Quaternion.identity);
             spawnedItem.GetComponent<CollectibleItem>().LoadFromShoppingItem(item, gameManager);
 

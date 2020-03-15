@@ -9,6 +9,7 @@ namespace Quaranteam
     public class SpawnRule
     {
         public ShoppingItem item;
+        public float previewIconAnticipationTime = 2f;
         public float minSpawnDelay;
         public float maxSpawnDelay;
     }
@@ -50,6 +51,9 @@ namespace Quaranteam
 
         [Header("Minimum time between two spawns")]
         public float generalMinDelay = 0.1f;
+
+        [Header("Duration of the preview icon")]
+        public float previewIconAnticipationTime = 2f;
 
         [Header("Maximum time between two spawns")]
         public float generalMaxDelay = 1.0f;

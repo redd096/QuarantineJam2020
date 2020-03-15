@@ -1678,6 +1678,12 @@ PrefabInstance:
       propertyPath: youLoseAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7ead60e36535c3d4cbaf6eab04b7076f, type: 3}
+    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
+        type: 3}
+      propertyPath: previewIconPrefab
+      value: 
+      objectReference: {fileID: 3695912569688757199, guid: 757dd82101ad75d4eaa0016a8da73879,
+        type: 3}
     - target: {fileID: 9199099103535242519, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: m_Name
