@@ -9,20 +9,20 @@ namespace Quaranteam
     {
 
         [SerializeField, Header("To add to the multiplier")]
-        private float multiplierGainOrLoss = 0.5f;
+        private float newMultiplier = 2f;
 
         public override ModifiersId Id { get { return ModifiersId.ScoreMultiplier; } }
 
-        public override string Description { get { return "Score Multiplier: " + multiplierGainOrLoss.ToString(); } }
+        public override string Description { get { return "Score Multiplier: " + newMultiplier.ToString(); } }
 
         protected override void ApplyRule(GameManager gameManager)
         {
-            gameManager.CurrentMultiplier += multiplierGainOrLoss;
+            gameManager.CurrentMultiplier = newMultiplier;
         }
 
         public override void RevertRule(GameManager gameManager)
         {
-            gameManager.CurrentMultiplier -= multiplierGainOrLoss;
+            gameManager.CurrentMultiplier = 1f;
         }
     }
 }
