@@ -2115,7 +2115,7 @@ PrefabInstance:
     - target: {fileID: 772135383600782408, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
       propertyPath: m_Text
-      value: D
+      value: Smash D
       objectReference: {fileID: 0}
     - target: {fileID: 772135383600782408, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
@@ -2256,7 +2256,7 @@ PrefabInstance:
     - target: {fileID: 3665206126609370143, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
       propertyPath: m_Text
-      value: 'move right
+      value: 'to move right
 
 '
       objectReference: {fileID: 0}
@@ -2266,6 +2266,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: a70b965228873ff469eb6ea0f9e92136,
         type: 3}
+    - target: {fileID: 5735591208566032119, guid: 47ea2169642d3534ea4167ec223f50c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -26
+      objectReference: {fileID: 0}
     - target: {fileID: 6452423042070580607, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
       propertyPath: m_Name
@@ -2464,6 +2469,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: a70b965228873ff469eb6ea0f9e92136,
         type: 3}
+    - target: {fileID: 772135383600782408, guid: 47ea2169642d3534ea4167ec223f50c3,
+        type: 3}
+      propertyPath: m_Text
+      value: Smash A
+      objectReference: {fileID: 0}
     - target: {fileID: 1544356751159347788, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
       propertyPath: boundKey
@@ -2600,6 +2610,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: a70b965228873ff469eb6ea0f9e92136,
         type: 3}
+    - target: {fileID: 3665206126609370143, guid: 47ea2169642d3534ea4167ec223f50c3,
+        type: 3}
+      propertyPath: m_Text
+      value: to move left
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735591208566032119, guid: 47ea2169642d3534ea4167ec223f50c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -27
+      objectReference: {fileID: 0}
     - target: {fileID: 6452423042070580607, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
       propertyPath: m_Name
