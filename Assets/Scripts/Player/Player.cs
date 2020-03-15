@@ -23,6 +23,8 @@ namespace Quaranteam
         public float acceleration;
         protected internal float actualAcceleration;
         bool pressedInput;
+        [Range(0f, 1000f)]
+        public float spintaEsplosione;
 
         Rigidbody2D rb;
         Animator animator;
@@ -32,7 +34,7 @@ namespace Quaranteam
         AudioSource audioSource;
         bool playerMoving;
 
-
+        private List<GameObject> itemsInCart = new List<GameObject>();
         public float MovementSpeed { get { return rb.velocity.x; } }
 
         //for sprites shopping cart
@@ -58,9 +60,14 @@ namespace Quaranteam
             CheckEndSound();
 
             if (firstIteration)
+            {
                 NormalMovement();
+            }
             else
+            {
                 AccelerationMovement();
+            }
+
             TestAnimazione();
         }
 
@@ -220,6 +227,7 @@ namespace Quaranteam
             //set parent and add child collision
             itemObject.transform.parent = itemsParent;
             itemObject.AddComponent<ChildCollision>();
+            itemsInCart.Add(itemObject);
         }
 
         void CheckObjectPosition(Transform itemObject)
@@ -257,12 +265,12 @@ namespace Quaranteam
         {
             DisableEverything();
 
-            foreach (Transform child in itemsParent)
+            foreach (GameObject item in itemsInCart)
             {
-                FallenObject(child);
+                FallenObject(item);
             }
-            cart.ClearChecklist();
-            LoseGame();
+            
+            StartCoroutine(LoseGame());
         }
 
         void DisableEverything()
@@ -276,25 +284,28 @@ namespace Quaranteam
             //set to 0 speed and sound
             rb.velocity = Vector2.zero;
             CheckEndSound();
+            cart.ClearChecklist();
+            TestAnimazione();
         }
 
-        void FallenObject(Transform item)
+        void FallenObject(GameObject item)
         {
             //remove childCollision and parent just to be sure
             item.GetComponent<ChildCollision>().enabled = false;
-            item.parent = null;
+            item.transform.parent = null;
 
             //get or add rigidbody
             Rigidbody2D itemRb = item.GetComponent<Rigidbody2D>();
             if (itemRb == null)
-                itemRb = item.gameObject.AddComponent<Rigidbody2D>();
+                itemRb = item.AddComponent<Rigidbody2D>();
 
             //push rigidbody in random direction
-            itemRb.AddForce(Random.insideUnitCircle * 100);
+            itemRb.AddForce(Random.insideUnitCircle * spintaEsplosione);
         }
 
-        void LoseGame()
+        IEnumerator LoseGame()
         {
+            yield return new WaitForSeconds(4f);
             //end game
             LevelTimer levelTimer = FindObjectOfType<LevelTimer>();
             if (levelTimer)

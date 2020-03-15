@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Quaranteam
@@ -79,7 +80,8 @@ namespace Quaranteam
 
         internal void ClearChecklist()
         {
-            checklist.Clear();
+            checklist = checklist.ToDictionary(p => p.Key, p => false);
+            
         }
 
     }

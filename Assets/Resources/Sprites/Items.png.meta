@@ -84,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,6 +121,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -136,7 +148,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -35.875, y: 157.53847}
+        - {x: -184.62498, y: 22.755556}
+        - {x: -184.62498, y: -147.0359}
+        - {x: -179.37498, y: -162.78975}
+        - {x: -20.125, y: -162.78975}
+        - {x: 76.125, y: -127.7812}
+        - {x: 182.87498, y: 29.757265}
+        - {x: 182.87498, y: 155.78804}
+        - {x: 179.37498, y: 157.53847}
       tessellationDetail: 0
       bones: []
       spriteID: 51f4dc0ce0f195030800000000000000
@@ -178,7 +199,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 121.87504, y: 171.54189}
+        - {x: 37.875046, y: 171.54189}
+        - {x: -163, y: 86}
+        - {x: -163.37495, y: -157.53847}
+        - {x: 139.37505, y: -157.53847}
+        - {x: 148.12505, y: -150.53676}
+        - {x: 163.87505, y: -91.022224}
+        - {x: 163.87505, y: 115.528206}
+        - {x: 142.87505, y: 161.03932}
       tessellationDetail: 0
       bones: []
       spriteID: 746a31969eb7a6b10800000000000000

@@ -140,9 +140,10 @@ MonoBehaviour:
   loopCarrello: {fileID: 8300000, guid: 9700b171b9d938b47a3fdab0dd8857fa, type: 3}
   firstIteration: 0
   ObjectsAddWeight: 1
-  itemOutOfCart: 0
+  itemOutOfCart: 41
   speed: 5
   acceleration: 100
+  spintaEsplosione: 440
 --- !u!50 &-4830708119720146117
 Rigidbody2D:
   serializedVersion: 4
