@@ -66,6 +66,7 @@ namespace Quaranteam
             if (checklist.ContainsKey(item))
             {
                 checklist[item] = true;
+                AudioSource.PlayClipAtPoint(item.PickedSound, transform.position);
 
                 // Notifies UI
                 onItemCollected?.Invoke(item);
