@@ -88,6 +88,8 @@ namespace Quaranteam
 
         #region pick object
 
+        #region first iteration
+
         void PickObject(Collider2D other)
         {
             //add sprite in shopping cart
@@ -152,24 +154,52 @@ namespace Quaranteam
             }
         }
 
-        void OnLeftCart(Collider2D other)
-        {
+        #endregion
 
+        #region second iteration
+
+        void PickObject_SecondIteration(GameObject itemObject)
+        {
+            //stick on cart
+            StickObject(itemObject);
+
+            //call function in cart
+            cart.ItemObtained(itemObject.GetComponent<CollectibleItem>().GetItemDetails());
+
+            //check if out of the cart
+            CheckObjectPosition(itemObject.transform);
+        } 
+        
+        void StickObject(GameObject itemObject)
+        {
+            //remove rigidbody and reset layer (so it can collide with other collectibleItems)
+            Destroy(itemObject.GetComponent<Rigidbody>());
+            itemObject.layer = LayerMask.NameToLayer("Default");
+
+            //set parent and add childCollision
+            itemObject.transform.parent = spritesParent;
+            itemObject.AddComponent<ChildCollision>();
         }
 
-        void OnCenterCart(Collider2D other)
+        void CheckObjectPosition(Transform itemObject)
         {
-
-        }
-
-        void OnRightCart(Collider2D other)
-        {
-
+            //check if the object is out to the left or to the right
+            if(itemObject.localPosition.x < -0.9f)
+            {
+                //out left
+            }
+            else if(itemObject.localPosition.x > 0.9f)
+            {
+                //out right
+            }
         }
 
         #endregion
 
         #endregion
+
+        #endregion
+
 
         #region public API
 
@@ -185,19 +215,7 @@ namespace Quaranteam
             }
             else
             {
-                //check if left, right or center of the cart (child is the collider in the center of the cart)
-                if(other.transform.position.x < child.position.x - 0.3f)
-                {
-                    OnLeftCart(other);
-                }
-                else if(other.transform.position.x > child.position.x + 0.3f)
-                {
-                    OnRightCart(other);
-                }
-                else
-                {
-                    OnCenterCart(other);
-                }
+                PickObject_SecondIteration(other.gameObject);
             }
         }
 
