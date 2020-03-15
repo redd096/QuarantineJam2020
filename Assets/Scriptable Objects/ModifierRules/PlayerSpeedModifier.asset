@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72ac04c24543ad46ad106c431a31478, type: 3}
   m_Name: PlayerSpeedModifier
   m_EditorClassIdentifier: 
-  valueToAddToSpeed: 2.5
-  valueToAddToAcceleration: 5
   effectDuration: 5
+  newSpeed: 10
+  newAcceleration: 200

@@ -14,9 +14,11 @@ namespace Quaranteam
 
         [Header("FirstIteration")]
         public float speed;
+        protected internal float actualSpeed;
 
         [Header("SecondIteration")]
         public float acceleration;
+        protected internal float actualAcceleration;
         bool pressedInput;
 
         Rigidbody2D rb;
@@ -36,6 +38,9 @@ namespace Quaranteam
             audioSource = GetComponent<AudioSource>();
 
             spritesParent = transform.Find("Cart").Find("Items");
+
+            actualSpeed = speed;
+            actualAcceleration = acceleration;
         }
 
         void Update()
@@ -55,7 +60,7 @@ namespace Quaranteam
         void NormalMovement()
         {
             //move right or left
-            rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0);
+            rb.velocity = new Vector2(Input.GetAxis("Horizontal") * actualSpeed, 0);
         }
 
         void AccelerationMovement()
@@ -66,7 +71,7 @@ namespace Quaranteam
                 //only if input is not just pressed
                 if (pressedInput == false)
                 {
-                    rb.AddForce(Vector2.right * acceleration);
+                    rb.AddForce(Vector2.right * actualAcceleration);
                     pressedInput = true;
                 }
             }
@@ -75,7 +80,7 @@ namespace Quaranteam
                 //only if input is not just pressed
                 if (pressedInput == false)
                 {
-                    rb.AddForce(Vector2.left * acceleration);
+                    rb.AddForce(Vector2.left * actualAcceleration);
                     pressedInput = true;
                 }
             }
