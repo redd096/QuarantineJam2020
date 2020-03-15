@@ -60,6 +60,11 @@ namespace Quaranteam
         private GameObject waitForEnterButtonOverlay;
 
         /// <summary>
+        /// The time scale applied to all the falling objects.
+        /// </summary>
+        protected internal float fallingItemsTimeScale = 1.0f;
+
+        /// <summary>
         /// Delegate for methods that are called whenever the score is updated.
         /// </summary>
         /// <param name="newScore"></param>

@@ -74,7 +74,7 @@ namespace Quaranteam
             // Applies modifier rule.
             foreach (ModifierRule modifier in item.Modifiers)
             {
-                modifier.ApplyRule(gameManager);
+                modifier.Apply(gameManager);
             }
         }
     }
