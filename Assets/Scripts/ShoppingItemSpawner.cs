@@ -17,6 +17,8 @@ namespace Quaranteam
 
         private BoxCollider2D boundingBox;
 
+        private GameManager gameManager;
+
         private void Awake()
         {
             boundingBox = GetComponent<BoxCollider2D>();
@@ -25,6 +27,7 @@ namespace Quaranteam
         private void Start()
         {
             OnItemSpawned();
+            gameManager = FindObjectOfType<GameManager>();
         }
 
         private IEnumerator SpawnAfterDelay(float delay, int itemIndex)
@@ -39,7 +42,7 @@ namespace Quaranteam
 
             ShoppingItem item = itemsToSpawn[itemIndex];
             GameObject spawnedItem = Instantiate(collectibleItemPrefab, spawnLocation, Quaternion.identity);
-            spawnedItem.GetComponent<CollectibleItem>().LoadFromShoppingItem(item);
+            spawnedItem.GetComponent<CollectibleItem>().LoadFromShoppingItem(item, gameManager);
 
             OnItemSpawned();
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Quaranteam
 {
-    [CreateAssetMenu(fileName = "ShoppingItem", menuName = "Assets/QuarantineShopping/Item")]
+    [CreateAssetMenu(fileName = "ShoppingItem", menuName = "QuarantineShopping/Item")]
     public class ShoppingItem : ScriptableObject
     {
         [SerializeField]
@@ -21,6 +21,13 @@ namespace Quaranteam
         /// </summary>
         public Sprite Sprite { get { return sprite; } }
 
+        [SerializeField, Range(0f, 1f)]
+        private float colliderSizeFactor = 0.8f;
+        /// <summary>
+        /// The factor the sprite size must be multiplied by in order to obtain the collider size.
+        /// </summary>
+        public float ColliderSizeFactor { get { return colliderSizeFactor; } }
+
         [SerializeField, Min(0)]
         private int baseReward = 0;
         /// <summary>
@@ -34,6 +41,13 @@ namespace Quaranteam
         /// The weight of the object: modifies its falling speed.
         /// </summary>
         public float Weight { get { return weight; } }
+
+        [SerializeField]
+        private ModifierRule[] modifiers;
+        /// <summary>
+        /// The modifiers applied by this shopping items.
+        /// </summary>
+        public ModifierRule[] Modifiers { get { return modifiers; } }
     }
 }
 
