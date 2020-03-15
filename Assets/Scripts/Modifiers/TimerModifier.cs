@@ -11,12 +11,15 @@ namespace Quaranteam
         [Header("To add to the timer"), SerializeField]
         private float timerGainOrLoss = 5;
 
+        public override ModifiersId Id { get { return ModifiersId.Timer; } }
+
+        public override string Description { get { return "Timer boost"; } }
         protected override void ApplyRule(GameManager gameManager)
         {
             gameManager.LevelTimer.elapsedTime -= timerGainOrLoss;
         }
 
-        protected override void RevertRule(GameManager gameManager)
+        public override void RevertRule(GameManager gameManager)
         {
             gameManager.LevelTimer.elapsedTime += timerGainOrLoss;
         }

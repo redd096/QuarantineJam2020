@@ -3,6 +3,14 @@ using UnityEngine;
 
 namespace Quaranteam
 {
+    public enum ModifiersId
+    {
+        PlayerSpeed,
+        TimePerception,
+        Timer,
+        ScoreMultiplier
+    }
+
     public abstract class ModifierRule : ScriptableObject
     {
         /// <summary>
@@ -10,6 +18,7 @@ namespace Quaranteam
         /// </summary>
         [Header("Duration of the effect (-1 for permanent)"), SerializeField]
         protected float effectDuration = 5f;
+        public float Duration { get { return effectDuration; } }
 
         /// <summary>
         /// Applies the rule on the given game manager.
@@ -21,25 +30,20 @@ namespace Quaranteam
         /// Reverts the rule, causing the game manager to return to the initial state.
         /// </summary>
         /// <param name="gameManager"></param>
-        protected virtual void RevertRule(GameManager gameManager) { }
+        public virtual void RevertRule(GameManager gameManager) { }
+
+        public abstract ModifiersId Id { get; }
+
+        public abstract string Description { get; }
+
+        private float remainingTime;
+        public float RemainingTime { get { return remainingTime; } set { remainingTime = value; } }
 
         public void Apply(GameManager gameManager)
         {
             ApplyRule(gameManager);
-
-            if (effectDuration > 0.0f)
-            {
-                gameManager.StartCoroutine(RevertEffectAfterDelay(gameManager));
-            }
-        }
-
-        protected IEnumerator RevertEffectAfterDelay(GameManager gameManager)
-        {
-            yield return new WaitForSeconds(effectDuration);
-
-            RevertRule(gameManager);
-
-            yield break;
+            remainingTime = effectDuration;
+            gameManager.AddModifier(this);
         }
 
     }

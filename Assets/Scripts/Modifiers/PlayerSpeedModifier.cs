@@ -19,13 +19,17 @@ namespace Quaranteam
         [Header("Second iteration"), SerializeField]
         private float valueToAddToAcceleration;
 
+        public override ModifiersId Id { get { return ModifiersId.PlayerSpeed; } }
+
+        public override string Description { get { return "Speed modifier: " + valueToAddToSpeed.ToString(); } }
+
         protected override void ApplyRule(GameManager gameManager)
         {
             gameManager.Player.speed += valueToAddToSpeed;
             gameManager.Player.acceleration += valueToAddToAcceleration;
         }
 
-        protected override void RevertRule(GameManager gameManager)
+        public override void RevertRule(GameManager gameManager)
         {
             gameManager.Player.speed -= valueToAddToSpeed;
             gameManager.Player.acceleration -= valueToAddToAcceleration;

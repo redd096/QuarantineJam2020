@@ -18,12 +18,6 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 6af339745763020409b38afbd9955d3a, type: 2}
     minSpawnDelay: 1
     maxSpawnDelay: 3
-  - item: {fileID: 11400000, guid: fdc8f9b4fe893b84b89678ad66084a54, type: 2}
-    minSpawnDelay: 1
-    maxSpawnDelay: 3
-  - item: {fileID: 11400000, guid: 910029e674200144f9e2766267c31453, type: 2}
-    minSpawnDelay: 1
-    maxSpawnDelay: 3
   otherItems:
   - {fileID: 11400000, guid: 7a5ac74efc6137a45955934ee63d83a7, type: 2}
   - {fileID: 11400000, guid: ad8af0b05f925ac47a2b799d059f5e74, type: 2}
