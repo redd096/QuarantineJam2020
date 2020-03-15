@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Quaranteam
 {
-    [CreateAssetMenu(fileName = "ShoppingItem", menuName = "Assets/QuarantineShopping/Item")]
+    [CreateAssetMenu(fileName = "ShoppingItem", menuName = "QuarantineShopping/Item")]
     public class ShoppingItem : ScriptableObject
     {
         [SerializeField]
@@ -34,6 +34,13 @@ namespace Quaranteam
         /// The weight of the object: modifies its falling speed.
         /// </summary>
         public float Weight { get { return weight; } }
+
+        [SerializeField]
+        private ModifierRule[] modifiers;
+        /// <summary>
+        /// The modifiers applied by this shopping items.
+        /// </summary>
+        public ModifierRule[] Modifiers { get { return modifiers; } }
     }
 }
 

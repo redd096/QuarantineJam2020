@@ -22,12 +22,15 @@ namespace Quaranteam
 
         private GameManager gameManager;
 
+        private Player player;
+
         // Start is called before the first frame update
         void Start()
         {
             // The cart will notify the game manager at each new item collected.
             gameManager = FindObjectOfType<GameManager>();
             onItemCollected += gameManager.OnItemCollected;
+            player = GetComponentInParent<Player>();
 
             foreach (SpawnRule spawn in requiredItems)
             {
@@ -66,6 +69,12 @@ namespace Quaranteam
 
                 // Notifies UI
                 onItemCollected?.Invoke(item);
+            }
+
+            // Applies modifier rule.
+            foreach (ModifierRule modifier in item.Modifiers)
+            {
+                modifier.ApplyRule(gameManager);
             }
         }
     }

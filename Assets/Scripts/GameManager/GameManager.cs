@@ -28,6 +28,17 @@ namespace Quaranteam
 
         [SerializeField]
         private LevelTimer levelTimer;
+        /// <summary>
+        /// The timer of the game.
+        /// </summary>
+        public LevelTimer LevelTimer { get { return levelTimer; } }
+
+        [SerializeField]
+        private Player player;
+        /// <summary>
+        /// The player character.
+        /// </summary>
+        public Player Player { get { return player; } }
 
         [Header("Overlays")]
         public GameObject overlay;
