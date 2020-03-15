@@ -21,6 +21,13 @@ namespace Quaranteam
         /// </summary>
         public Sprite Sprite { get { return sprite; } }
 
+        [SerializeField, Range(0f, 1f)]
+        private float colliderSizeFactor = 0.8f;
+        /// <summary>
+        /// The factor the sprite size must be multiplied by in order to obtain the collider size.
+        /// </summary>
+        public float ColliderSizeFactor { get { return colliderSizeFactor; } }
+
         [SerializeField, Min(0)]
         private int baseReward = 0;
         /// <summary>

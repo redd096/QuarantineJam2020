@@ -39,7 +39,7 @@ namespace Quaranteam
             sprite.sprite = item.Sprite;
             defaultMass = item.Weight;
             reward = item.BaseReward;
-            boxCollider.size = sprite.size;
+            boxCollider.size = sprite.size * item.ColliderSizeFactor;
         }
 
         public ShoppingItem GetItemDetails()
