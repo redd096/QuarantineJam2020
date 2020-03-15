@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7757649892564214ea8c8f52298718f0, type: 3}
   inizioCarrello: {fileID: 8300000, guid: 8c5a35eda943ce546a6111cc2f32d951, type: 3}
   loopCarrello: {fileID: 8300000, guid: 9700b171b9d938b47a3fdab0dd8857fa, type: 3}
-  firstIteration: 1
+  firstIteration: 0
   speed: 5
   acceleration: 100
 --- !u!50 &-4830708119720146117

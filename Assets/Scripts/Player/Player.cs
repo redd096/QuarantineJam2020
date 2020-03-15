@@ -11,6 +11,7 @@ namespace Quaranteam
         public AudioClip loopCarrello;
 
         public bool firstIteration;
+        public bool ObjectsAddWeight;
 
         [Header("FirstIteration")]
         public float speed;
@@ -25,7 +26,7 @@ namespace Quaranteam
         bool test;
 
 
-        public float MovementSpeed   { get { return rb.velocity.x; }  }
+        public float MovementSpeed { get { return rb.velocity.x; } }
 
         //for sprites shopping cart
         Transform spritesParent;
@@ -171,15 +172,20 @@ namespace Quaranteam
         void PickObject_SecondIteration(GameObject itemObject)
         {
             //call function in cart
-            cart.ItemObtained(itemObject.GetComponent<CollectibleItem>().GetItemDetails());
+            ShoppingItem objectDetails = itemObject.GetComponent<CollectibleItem>().GetItemDetails();
+            cart.ItemObtained(objectDetails);
+            if (ObjectsAddWeight)
+            {
+                rb.mass += objectDetails.Weight;
+            }
 
             //stick on cart
             StickObject(itemObject);
 
             //check if out of the cart
             CheckObjectPosition(itemObject.transform);
-        } 
-        
+        }
+
         void StickObject(GameObject itemObject)
         {
             //remove script and rigidbody
@@ -197,11 +203,11 @@ namespace Quaranteam
         void CheckObjectPosition(Transform itemObject)
         {
             //check if the object is out to the left or to the right
-            if(itemObject.localPosition.x < -0.9f)
+            if (itemObject.localPosition.x < -0.9f)
             {
                 //out left
             }
-            else if(itemObject.localPosition.x > 0.9f)
+            else if (itemObject.localPosition.x > 0.9f)
             {
                 //out right
             }
@@ -262,7 +268,7 @@ namespace Quaranteam
                 PickObject_SecondIteration(other.gameObject);
             }
         }
-        
+
         #endregion
-    } 
+    }
 }
