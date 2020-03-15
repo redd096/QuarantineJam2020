@@ -28,6 +28,17 @@ namespace Quaranteam
 
         [SerializeField]
         private LevelTimer levelTimer;
+        /// <summary>
+        /// The timer of the game.
+        /// </summary>
+        public LevelTimer LevelTimer { get { return levelTimer; } }
+
+        [SerializeField]
+        private Player player;
+        /// <summary>
+        /// The player character.
+        /// </summary>
+        public Player Player { get { return player; } }
 
         [Header("Overlays")]
         public GameObject overlay;
@@ -47,6 +58,11 @@ namespace Quaranteam
         /// </summary>
         [SerializeField]
         private GameObject waitForEnterButtonOverlay;
+
+        /// <summary>
+        /// The time scale applied to all the falling objects.
+        /// </summary>
+        protected internal float fallingItemsTimeScale = 1.0f;
 
         /// <summary>
         /// Delegate for methods that are called whenever the score is updated.
@@ -77,6 +93,18 @@ namespace Quaranteam
             {
                 currentScore = value;
                 onCurrentScoreUpdate?.Invoke(currentScore);
+            }
+        }
+
+        private float currentMultiplier = 1;
+        public float CurrentMultiplier
+        {
+            get { return currentMultiplier; }
+            set
+            {
+                currentMultiplier = value;
+                if (currentMultiplier < 0)
+                    currentMultiplier = 0;
             }
         }
 
@@ -175,7 +203,7 @@ namespace Quaranteam
 
         protected internal void OnItemCollected(ShoppingItem item)
         {
-            CurrentScore += item.BaseReward;
+            CurrentScore += (int)(item.BaseReward * CurrentMultiplier);
         }
 
         private void Update()

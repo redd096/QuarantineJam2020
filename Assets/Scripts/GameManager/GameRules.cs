@@ -16,7 +16,7 @@ namespace Quaranteam
     /// <summary>
     /// The rules of a level.
     /// </summary>
-    [CreateAssetMenu(fileName = "GameRules", menuName = "Assets/QuarantineShopping/GameRules")]
+    [CreateAssetMenu(fileName = "GameRules", menuName = "QuarantineShopping/GameRules")]
     public class GameRules : ScriptableObject
     {
         [SerializeField, Min(0f)]
