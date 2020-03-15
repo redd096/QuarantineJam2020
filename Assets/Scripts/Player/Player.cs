@@ -28,6 +28,7 @@ namespace Quaranteam
         public float acceleration;
         protected internal float actualAcceleration;
         bool pressedInput;
+        public GameObject vfx;
 
         Rigidbody2D rb;
         Animator animator;
@@ -71,12 +72,26 @@ namespace Quaranteam
                 AccelerationMovement();
             }
 
-            TestAnimazione();
+            SetAnimationSpeed();
+            SetVFX();
         }
 
-        private void TestAnimazione()
+        private void SetAnimationSpeed()
         {
             animator.SetFloat("animationSpeed", Mathf.Clamp(Mathf.Abs(rb.velocity.x), 0f, 5f));
+        }
+
+        private void SetVFX()
+        {
+            if(Mathf.Abs(rb.velocity.x) > 4f)
+            {
+                vfx.SetActive(true);
+            }
+            else
+            {
+                vfx.SetActive(false);
+            }
+
         }
 
         #region private API
@@ -302,7 +317,7 @@ namespace Quaranteam
             //set to 0 speed and relatives
             rb.velocity = Vector2.zero;
             CheckEndSound();
-            TestAnimazione();
+            SetAnimationSpeed();
 
             //reset list in the cart
             cart.ClearChecklist();
