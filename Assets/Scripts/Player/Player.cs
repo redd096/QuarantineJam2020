@@ -233,10 +233,11 @@ namespace Quaranteam
         void CheckObjectPosition(Transform itemObject)
         {
             //how much can go out of the cart
-            float percentage = itemObject.GetComponent<Collider2D>().bounds.size.x / 100 * itemOutOfCart;
+            float sizeX = itemObject.GetComponent<Collider2D>().bounds.size.x;
+            float percentage = sizeX / 100 * itemOutOfCart;
 
             //check if the object is out to the left or to the right of the cart
-            if (itemObject.localPosition.x + percentage < -0.9f)
+            if (itemObject.localPosition.x < -0.9f)
             {
                 //out to the left
                 SetRiskyObject(itemObject);
@@ -279,19 +280,21 @@ namespace Quaranteam
             this.enabled = false;
 
             //disable cart trigger
-            cartTrigger.enabled = false;
+            Destroy(cartTrigger.GetComponent<Collider2D>());
             
-            //set to 0 speed and sound
+            //set to 0 speed and relatives
             rb.velocity = Vector2.zero;
             CheckEndSound();
-            cart.ClearChecklist();
             TestAnimazione();
+
+            //reset list in the cart
+            cart.ClearChecklist();
         }
 
         void FallenObject(GameObject item)
         {
             //remove childCollision and parent just to be sure
-            item.GetComponent<ChildCollision>().enabled = false;
+            Destroy(item.GetComponent<Collider2D>());
             item.transform.parent = null;
 
             //get or add rigidbody
