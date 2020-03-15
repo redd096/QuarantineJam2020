@@ -20,6 +20,9 @@ namespace Quaranteam
         Rigidbody2D rb;
         Cart cart;
 
+
+        public float MovementSpeed   { get { return rb.velocity.x; }  }
+
         //for sprites shopping cart
         Transform spritesParent;
         float lastSpriteY = -0.7f;

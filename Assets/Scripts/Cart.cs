@@ -59,7 +59,6 @@ namespace Quaranteam
 
         internal void ItemObtained(ShoppingItem item)
         {
-            Debug.Log("Collected");
             if (checklist.ContainsKey(item))
             {
                 checklist[item] = true;
