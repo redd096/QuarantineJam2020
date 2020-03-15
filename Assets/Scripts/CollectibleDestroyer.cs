@@ -21,7 +21,8 @@ namespace Quaranteam
             var collectibleItem = other.gameObject.GetComponent<CollectibleItem>();
             if (collectibleItem != null)
             {
-                AudioSource.PlayClipAtPoint(collectibleItem.GetItemDetails().LostSound, other.gameObject.transform.position);
+                if (collectibleItem.GetItemDetails().LostSound) 
+                    AudioSource.PlayClipAtPoint(collectibleItem.GetItemDetails().LostSound, other.gameObject.transform.position);
                 Destroy(other.gameObject);
             }
         }
