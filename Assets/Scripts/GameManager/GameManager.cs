@@ -187,6 +187,7 @@ namespace Quaranteam
         {
             // @todo check shoppint chart
             bool win = FindObjectOfType<Cart>().IsChecklistComplete();
+            player.gameObject.SetActive(false);
 
             audioSource.Stop();
             audioSource.loop = false;
