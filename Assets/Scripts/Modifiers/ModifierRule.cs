@@ -43,7 +43,8 @@ namespace Quaranteam
         {
             ApplyRule(gameManager);
             remainingTime = effectDuration;
-            gameManager.AddModifier(this);
+            if (remainingTime > 0f)
+                gameManager.AddModifier(this);
         }
 
     }
