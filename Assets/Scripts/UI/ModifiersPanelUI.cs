@@ -22,12 +22,10 @@ namespace Quaranteam
 
         public void AddModifier(ModifierRule modifier)
         {
-            Debug.Log("AddModifier");
             if (!modifierDescriptors.ContainsKey(modifier.Id))
             {
                 ModifierTextUI newDescriptor = 
                     Instantiate(modifierUiPrefab, transform).GetComponent<ModifierTextUI>();
-                Debug.Log("Instantiated new modifier");
                 modifierDescriptors[modifier.Id] = newDescriptor;
                 gameManager.onModifierUpdated += newDescriptor.OnModifierUpdated;
                 gameManager.onModifierRemoved += newDescriptor.OnModifierRemoved;
