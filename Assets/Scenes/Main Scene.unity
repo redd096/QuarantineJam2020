@@ -929,6 +929,11 @@ PrefabInstance:
       propertyPath: firstIteration
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: ObjectsAddWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1716691418430056081, guid: 1e331426f02e1d84480d7ced64fb1268,
         type: 3}
       propertyPath: m_IsActive

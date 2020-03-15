@@ -770,6 +770,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2073751593}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &534453206 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+    type: 3}
+  m_PrefabInstance: {fileID: 2073751593}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534453201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea76bb41847950478e7c139f533ce4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &596712168 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2860329387197469372, guid: 80c99f7571d024044964c3fbda64d17e,
@@ -1472,6 +1484,7 @@ MonoBehaviour:
   - {fileID: 320381130}
   - {fileID: 332951526}
   smooth: 0
+  player: {fileID: 534453206}
 --- !u!4 &1202889628
 Transform:
   m_ObjectHideFlags: 0
@@ -2053,7 +2066,7 @@ PrefabInstance:
     - target: {fileID: 1716691417251421570, guid: 1e331426f02e1d84480d7ced64fb1268,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1716691417251421572, guid: 1e331426f02e1d84480d7ced64fb1268,
         type: 3}
@@ -2063,7 +2076,7 @@ PrefabInstance:
     - target: {fileID: 1716691417251421572, guid: 1e331426f02e1d84480d7ced64fb1268,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: 1.607
       objectReference: {fileID: 0}
     - target: {fileID: 1716691417251421572, guid: 1e331426f02e1d84480d7ced64fb1268,
         type: 3}
@@ -2124,6 +2137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: ObjectsAddWeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1716691418430056081, guid: 1e331426f02e1d84480d7ced64fb1268,
         type: 3}
@@ -2638,6 +2656,11 @@ PrefabInstance:
       propertyPath: bgMusic
       value: 
       objectReference: {fileID: 8300000, guid: 4eeccd230ece95e4da2a0bc926296c38, type: 3}
+    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 534453206}
     - target: {fileID: 9199099103535242519, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: m_Name

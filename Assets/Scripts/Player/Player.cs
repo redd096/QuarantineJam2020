@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ namespace Quaranteam
         bool pressedInput;
 
         Rigidbody2D rb;
+        Animator animator;
         Cart cart;
         AudioSource audioSource;
         bool test;
@@ -36,6 +38,7 @@ namespace Quaranteam
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
             cart = GetComponentInChildren<Cart>();
             audioSource = GetComponent<AudioSource>();
 
@@ -48,8 +51,13 @@ namespace Quaranteam
                 NormalMovement();
             else
                 AccelerationMovement();
-
+            TestAnimazione();
             TestSuoni();
+        }
+
+        private void TestAnimazione()
+        {
+            animator.SetFloat("animationSpeed", Mathf.Clamp(Mathf.Abs(rb.velocity.x), 0f, 5f));
         }
 
         #region private API
@@ -176,7 +184,7 @@ namespace Quaranteam
             cart.ItemObtained(objectDetails);
             if (ObjectsAddWeight)
             {
-                rb.mass += objectDetails.Weight;
+                rb.mass = Mathf.Clamp(rb.mass + objectDetails.Weight, 1f, 25f);
             }
 
             //stick on cart
