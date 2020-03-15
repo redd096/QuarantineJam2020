@@ -30,7 +30,7 @@ namespace Quaranteam
         private Slider slider;
         
 
-        private float elapsedTime = 0f;
+        protected internal float elapsedTime = 0f;
 
         private void OnEnable()
         {
