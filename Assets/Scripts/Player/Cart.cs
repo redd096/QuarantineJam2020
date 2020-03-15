@@ -82,6 +82,10 @@ namespace Quaranteam
         {
             checklist = checklist.ToDictionary(p => p.Key, p => false);
             
+            //foreach(ShoppingItem shoppingItem in checklist.Keys.ToList())
+            //{
+            //    checklist[shoppingItem] = true;
+            //}
         }
 
     }

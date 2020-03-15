@@ -15,6 +15,10 @@ namespace Quaranteam
         public float multiplierMass = 0.25f;
         [Range(0, 100)]
         public float itemOutOfCart;
+        [Range(0f, 1000f)]
+        public float spintaEsplosione;
+        bool objectsFalling;
+        public bool modifierLoseOnRed;
 
         [Header("FirstIteration")]
         public float speed;
@@ -24,8 +28,6 @@ namespace Quaranteam
         public float acceleration;
         protected internal float actualAcceleration;
         bool pressedInput;
-        [Range(0f, 1000f)]
-        public float spintaEsplosione;
 
         Rigidbody2D rb;
         Animator animator;
@@ -199,6 +201,16 @@ namespace Quaranteam
 
         #region second iteration
 
+        void PickModifier(GameObject itemObject)
+        {
+            //add to cart, so it add the modifier
+            ShoppingItem objectDetails = itemObject.GetComponent<CollectibleItem>().GetItemDetails();
+            cart.ItemObtained(objectDetails);
+
+            //destroy modifier
+            Destroy(itemObject);
+        }
+
         void PickObject_SecondIteration(GameObject itemObject)
         {
             //call function in cart
@@ -281,9 +293,12 @@ namespace Quaranteam
             //disable this script
             this.enabled = false;
 
+            //disable possibility to pick objects
+            objectsFalling = true;
+
             //disable cart trigger
-            Destroy(cartTrigger.GetComponent<Collider2D>());
-            
+            //Destroy(cartTrigger.GetComponent<Collider2D>());
+
             //set to 0 speed and relatives
             rb.velocity = Vector2.zero;
             CheckEndSound();
@@ -296,8 +311,8 @@ namespace Quaranteam
         void FallenObject(GameObject item)
         {
             //remove childCollision and parent just to be sure
-            Destroy(item.GetComponent<Collider2D>());
-            item.transform.parent = null;
+            //Destroy(item.GetComponent<Collider2D>());
+            //item.transform.parent = null;
 
             //get or add rigidbody
             Rigidbody2D itemRb = item.GetComponent<Rigidbody2D>();
@@ -371,6 +386,9 @@ namespace Quaranteam
             //only if on the child
             if (other.transform.position.y < child.transform.position.y) return;
 
+            //only if not falling objects
+            if (objectsFalling) return;
+
             //pick object
             if (firstIteration)
             {
@@ -378,11 +396,25 @@ namespace Quaranteam
             }
             else
             {
-                //if child was risky, then everything fall down - else pick object
-                if (child.risky)
-                    EverythingFall();
+                //is a modifier or normal object?
+                bool isModifier = other.gameObject.GetComponent<CollectibleItem>().GetItemDetails().Modifiers.Length > 0;
+
+                if (isModifier)
+                {
+                    //if could lose on risky child, then everything fall down - else pick modifier
+                    if (modifierLoseOnRed && child.risky)
+                        EverythingFall();
+                    else
+                        PickModifier(other.gameObject);
+                }
                 else
-                    PickObject_SecondIteration(other.gameObject);
+                {
+                    //if child was risky, then everything fall down - else pick object
+                    if (child.risky)
+                        EverythingFall();
+                    else
+                        PickObject_SecondIteration(other.gameObject);
+                }
             }
         }
 
