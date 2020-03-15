@@ -15,8 +15,7 @@ public class Parallax : MonoBehaviour
         backgroundsDepth = new float[backgrounds.Length];
         for (int i = 0; i < backgroundsDepth.Length; i++)
         {
-            //backgroundsDepth[i] = backgrounds[i].position.z * -1;
-            backgroundsDepth[i] = i * 30 * -1;
+            backgroundsDepth[i] = backgrounds[i].position.z * -1;
         }
     }
 
@@ -27,7 +26,7 @@ public class Parallax : MonoBehaviour
         {
             //get movement (deltaTime on X axis) multiplied to depth
             float parallax = Time.deltaTime * backgroundsDepth[i];
-            float newX = backgrounds[i].position.x + parallax;
+            float newX = backgrounds[i].position.x - parallax;
 
             //smooth lerp
             Vector2 newPosition = new Vector2(newX, backgrounds[i].position.y);
