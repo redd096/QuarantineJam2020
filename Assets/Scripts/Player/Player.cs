@@ -7,6 +7,8 @@ namespace Quaranteam
     public class Player : MonoBehaviour
     {
         public Sprite[] spriteItems;
+        public AudioClip inizioCarrello;
+        public AudioClip loopCarrello;
 
         public bool firstIteration;
 
@@ -19,16 +21,19 @@ namespace Quaranteam
 
         Rigidbody2D rb;
         Cart cart;
+        AudioSource audioSource;
+        bool test;
 
         //for sprites shopping cart
         Transform spritesParent;
-        float lastSpriteY = -0.7f;
+        float lastSpriteY = -0.4f;
         int spriteIndex = -1;
 
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             cart = GetComponentInChildren<Cart>();
+            audioSource = GetComponent<AudioSource>();
 
             spritesParent = transform.Find("Cart").Find("Items");
         }
@@ -39,6 +44,8 @@ namespace Quaranteam
                 NormalMovement();
             else
                 AccelerationMovement();
+
+            TestSuoni();
         }
 
         #region private API
@@ -129,28 +136,28 @@ namespace Quaranteam
             if (spriteIndex == 0)
             {
                 lastSpriteY -= 0.3f;
-                return new Vector2(1.7f, lastSpriteY);
+                return new Vector2(-0.2f, lastSpriteY);
             }
             else if (spriteIndex == 1)
             {
-                return new Vector2(1.8f, lastSpriteY);
+                return new Vector2(-0.1f, lastSpriteY);
             }
             else if (spriteIndex == 2)
             {
                 lastSpriteY -= 0.1f;
-                return new Vector2(2.2f, lastSpriteY);
+                return new Vector2(0.3f, lastSpriteY);
             }
             else if (spriteIndex == 3)
             {
-                return new Vector2(1.8f, lastSpriteY);
+                return new Vector2(-0.1f, lastSpriteY);
             }
             else if (spriteIndex == 4)
             {
-                return new Vector2(2, lastSpriteY);
+                return new Vector2(0.1f, lastSpriteY);
             }
             else
             {
-                return new Vector2(2, lastSpriteY);
+                return new Vector2(0.1f, lastSpriteY);
             }
         }
 
@@ -160,11 +167,11 @@ namespace Quaranteam
 
         void PickObject_SecondIteration(GameObject itemObject)
         {
-            //stick on cart
-            StickObject(itemObject);
-
             //call function in cart
             cart.ItemObtained(itemObject.GetComponent<CollectibleItem>().GetItemDetails());
+
+            //stick on cart
+            StickObject(itemObject);
 
             //check if out of the cart
             CheckObjectPosition(itemObject.transform);
@@ -172,11 +179,14 @@ namespace Quaranteam
         
         void StickObject(GameObject itemObject)
         {
-            //remove rigidbody and reset layer (so it can collide with other collectibleItems)
-            Destroy(itemObject.GetComponent<Rigidbody>());
+            //remove script and rigidbody
+            Destroy(itemObject.GetComponent<CollectibleItem>());
+            Destroy(itemObject.GetComponent<Rigidbody2D>());
+
+            //reset layer so can collide with others collectible item
             itemObject.layer = LayerMask.NameToLayer("Default");
 
-            //set parent and add childCollision
+            //set parent
             itemObject.transform.parent = spritesParent;
             itemObject.AddComponent<ChildCollision>();
         }
@@ -195,6 +205,37 @@ namespace Quaranteam
         }
 
         #endregion
+
+        #endregion
+
+        #region sound
+
+        void TestSuoni()
+        {
+            float speed = rb.velocity.x;
+
+            if (rb.velocity.x == 0)
+            {
+                audioSource.loop = false;
+                audioSource.Stop();
+                test = false;
+            }
+
+            if (test == false && (Input.GetAxis("Horizontal") > 0.1f || Input.GetAxis("Horizontal") < -0.1f))
+            {
+                test = true;
+                audioSource.clip = inizioCarrello;
+                audioSource.Play();
+                Invoke("LoopSuono", inizioCarrello.length);
+            }
+        }
+
+        void LoopSuono()
+        {
+            audioSource.clip = loopCarrello;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
 
         #endregion
 
@@ -218,7 +259,7 @@ namespace Quaranteam
                 PickObject_SecondIteration(other.gameObject);
             }
         }
-
+        
         #endregion
     } 
 }
