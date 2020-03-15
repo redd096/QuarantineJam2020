@@ -26,7 +26,7 @@ public class Parallax : MonoBehaviour
         {
             //get movement (deltaTime on X axis) multiplied to depth
             float parallax = Time.deltaTime * backgroundsDepth[i];
-            float newX = backgrounds[i].position.x - parallax;
+            float newX = backgrounds[i].position.x + parallax;
 
             //smooth lerp
             Vector2 newPosition = new Vector2(newX, backgrounds[i].position.y);
