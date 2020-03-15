@@ -12,8 +12,13 @@ namespace Quaranteam
 
         public bool firstIteration;
         public bool ObjectsAddWeight;
+        public float multiplierMass = 0.25f;
         [Range(0, 100)]
         public float itemOutOfCart;
+        [Range(0f, 1000f)]
+        public float spintaEsplosione;
+        bool objectsFalling;
+        public bool modifierLoseOnRed;
 
         [Header("FirstIteration")]
         public float speed;
@@ -32,7 +37,7 @@ namespace Quaranteam
         AudioSource audioSource;
         bool playerMoving;
 
-
+        private List<GameObject> itemsInCart = new List<GameObject>();
         public float MovementSpeed { get { return rb.velocity.x; } }
 
         //for sprites shopping cart
@@ -58,9 +63,14 @@ namespace Quaranteam
             CheckEndSound();
 
             if (firstIteration)
+            {
                 NormalMovement();
+            }
             else
+            {
                 AccelerationMovement();
+            }
+
             TestAnimazione();
         }
 
@@ -191,6 +201,16 @@ namespace Quaranteam
 
         #region second iteration
 
+        void PickModifier(GameObject itemObject)
+        {
+            //add to cart, so it add the modifier
+            ShoppingItem objectDetails = itemObject.GetComponent<CollectibleItem>().GetItemDetails();
+            cart.ItemObtained(objectDetails);
+
+            //destroy modifier
+            Destroy(itemObject);
+        }
+
         void PickObject_SecondIteration(GameObject itemObject)
         {
             //call function in cart
@@ -198,7 +218,8 @@ namespace Quaranteam
             cart.ItemObtained(objectDetails);
             if (ObjectsAddWeight)
             {
-                rb.mass = Mathf.Clamp(rb.mass + objectDetails.Weight, 1f, 25f);
+                float addedMass = objectDetails.Weight * multiplierMass;
+                rb.mass = Mathf.Clamp(rb.mass + addedMass, 1f, 25f);
             }
 
             //stick on cart
@@ -220,15 +241,17 @@ namespace Quaranteam
             //set parent and add child collision
             itemObject.transform.parent = itemsParent;
             itemObject.AddComponent<ChildCollision>();
+            itemsInCart.Add(itemObject);
         }
 
         void CheckObjectPosition(Transform itemObject)
         {
             //how much can go out of the cart
-            float percentage = itemObject.GetComponent<Collider2D>().bounds.size.x / 100 * itemOutOfCart;
+            float sizeX = itemObject.GetComponent<Collider2D>().bounds.size.x;
+            float percentage = sizeX / 100 * itemOutOfCart;
 
             //check if the object is out to the left or to the right of the cart
-            if (itemObject.localPosition.x + percentage < -0.9f)
+            if (itemObject.localPosition.x < -0.9f)
             {
                 //out to the left
                 SetRiskyObject(itemObject);
@@ -257,12 +280,12 @@ namespace Quaranteam
         {
             DisableEverything();
 
-            foreach (Transform child in itemsParent)
+            foreach (GameObject item in itemsInCart)
             {
-                FallenObject(child);
+                FallenObject(item);
             }
-            cart.ClearChecklist();
-            LoseGame();
+            
+            StartCoroutine(LoseGame());
         }
 
         void DisableEverything()
@@ -270,31 +293,40 @@ namespace Quaranteam
             //disable this script
             this.enabled = false;
 
+            //disable possibility to pick objects
+            objectsFalling = true;
+
             //disable cart trigger
-            cartTrigger.enabled = false;
-            
-            //set to 0 speed and sound
+            //Destroy(cartTrigger.GetComponent<Collider2D>());
+
+            //set to 0 speed and relatives
             rb.velocity = Vector2.zero;
             CheckEndSound();
+            TestAnimazione();
+
+            //reset list in the cart
+            cart.ClearChecklist();
         }
 
-        void FallenObject(Transform item)
+        void FallenObject(GameObject item)
         {
             //remove childCollision and parent just to be sure
-            item.GetComponent<ChildCollision>().enabled = false;
-            item.parent = null;
+            //Destroy(item.GetComponent<Collider2D>());
+            //item.transform.parent = null;
 
             //get or add rigidbody
             Rigidbody2D itemRb = item.GetComponent<Rigidbody2D>();
             if (itemRb == null)
-                itemRb = item.gameObject.AddComponent<Rigidbody2D>();
+                itemRb = item.AddComponent<Rigidbody2D>();
 
             //push rigidbody in random direction
-            itemRb.AddForce(Random.insideUnitCircle * 100);
+            itemRb.AddForce(Random.insideUnitCircle * spintaEsplosione);
         }
 
-        void LoseGame()
+        IEnumerator LoseGame()
         {
+            yield return new WaitForSeconds(2f);
+
             //end game
             LevelTimer levelTimer = FindObjectOfType<LevelTimer>();
             if (levelTimer)
@@ -354,6 +386,9 @@ namespace Quaranteam
             //only if on the child
             if (other.transform.position.y < child.transform.position.y) return;
 
+            //only if not falling objects
+            if (objectsFalling) return;
+
             //pick object
             if (firstIteration)
             {
@@ -361,11 +396,25 @@ namespace Quaranteam
             }
             else
             {
-                //if child was risky, then everything fall down - else pick object
-                if (child.risky)
-                    EverythingFall();
+                //is a modifier or normal object?
+                bool isModifier = other.gameObject.GetComponent<CollectibleItem>().GetItemDetails().Modifiers.Length > 0;
+
+                if (isModifier)
+                {
+                    //if could lose on risky child, then everything fall down - else pick modifier
+                    if (modifierLoseOnRed && child.risky)
+                        EverythingFall();
+                    else
+                        PickModifier(other.gameObject);
+                }
                 else
-                    PickObject_SecondIteration(other.gameObject);
+                {
+                    //if child was risky, then everything fall down - else pick object
+                    if (child.risky)
+                        EverythingFall();
+                    else
+                        PickObject_SecondIteration(other.gameObject);
+                }
             }
         }
 

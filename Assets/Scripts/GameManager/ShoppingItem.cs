@@ -48,6 +48,20 @@ namespace Quaranteam
         /// The modifiers applied by this shopping items.
         /// </summary>
         public ModifierRule[] Modifiers { get { return modifiers; } }
+
+        [SerializeField]
+        private AudioClip pickedSound;
+        /// <summary>
+        /// The audioclip played when the item is picked in the cart.
+        /// </summary>
+        public AudioClip PickedSound { get { return pickedSound; } }
+
+        [SerializeField]
+        private AudioClip lostSound;
+        /// <summary>
+        /// The audioclip played when the item is smashed on the floor.
+        /// </summary>
+        public AudioClip LostSound { get { return lostSound; } }
     }
 }
 

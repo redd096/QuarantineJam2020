@@ -1,46 +1,46 @@
 fileFormatVersion: 2
-guid: 25016171e9a3d6b40b1fb1c3e780a2dc
+guid: 0940f127976e6664c9490ea632a3b118
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3483849934972473109
-    second: S_Bread
+      213: -2964407831842676800
+    second: Shopping_Run_item_Ad_256x256_0
   - first:
-      213: 5903249350998873581
-    second: S_Milk
+      213: -1257229006967873822
+    second: Shopping_Run_item_Ad_256x256_1
   - first:
-      213: 1975527628975875655
-    second: S_Bananas
+      213: -7431116402975250900
+    second: Shopping_Run_item_Ad_256x256_2
   - first:
-      213: -6881650922941908246
-    second: S_Eggs
+      213: -4722468788507356697
+    second: Shopping_Run_item_Ad_256x256_3
   - first:
-      213: -9107367477640362555
-    second: S_Cereals
+      213: -3435841002997792819
+    second: Shopping_Run_item_Ad_256x256_4
   - first:
-      213: 3164512869874468951
-    second: S_Chips
+      213: -1637715996561175536
+    second: Shopping_Run_item_Ad_256x256_5
   - first:
-      213: -4248271371739741512
-    second: S_Beer
+      213: -8576448252782735842
+    second: Shopping_Run_item_Ad_256x256_6
   - first:
-      213: 4131631878662126393
-    second: S_Cheese
+      213: 1634626965429278019
+    second: Shopping_Run_item_Ad_256x256_7
   - first:
-      213: 1990600301535586919
-    second: S_Wine
+      213: -896069172500094407
+    second: Shopping_Run_item_Ad_256x256_8
   - first:
-      213: -4098896521058527763
-    second: Shopping_Run_item_512x512_9
+      213: 1583244438585148173
+    second: Shopping_Run_item_Ad_256x256_9
   - first:
-      213: -2019215813452855947
-    second: Shopping_Run_item_512x512_10
+      213: 1176362367115644545
+    second: Shopping_Run_item_Ad_256x256_10
   - first:
-      213: 7213986793671336980
-    second: Shopping_Run_item_512x512_11
+      213: 1819891232997494274
+    second: Shopping_Run_item_Ad_256x256_11
   - first:
-      213: 8524211760394104167
-    second: Shopping_Run_item_512x512_12
+      213: 2133478147137779699
+    second: Shopping_Run_item_Ad_256x256_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 600
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -137,292 +137,274 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: S_Bread
+      name: Shopping_Run_item_Ad_256x256_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 512
-        height: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -35.875, y: 157.53847}
-        - {x: -184.62498, y: 22.755556}
-        - {x: -184.62498, y: -147.0359}
-        - {x: -179.37498, y: -162.78975}
-        - {x: -20.125, y: -162.78975}
-        - {x: 76.125, y: -127.7812}
-        - {x: 182.87498, y: 29.757265}
-        - {x: 182.87498, y: 155.78804}
-        - {x: 179.37498, y: 157.53847}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51f4dc0ce0f195030800000000000000
-      internalID: 3483849934972473109
+      spriteID: 0cf91a578ce4cd6d0800000000000000
+      internalID: -2964407831842676800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: S_Milk
+      name: Shopping_Run_item_Ad_256x256_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eedc5611ec6d8ee0800000000000000
+      internalID: -1257229006967873822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Ad_256x256_2
       rect:
         serializedVersion: 2
         x: 512
-        y: 512
-        width: 512
-        height: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de5d7da020e8ce150800000000000000
-      internalID: 5903249350998873581
+      spriteID: c26e414d00f5fd890800000000000000
+      internalID: -7431116402975250900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: S_Bananas
+      name: Shopping_Run_item_Ad_256x256_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1562658ab667eb0800000000000000
+      internalID: -4722468788507356697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Ad_256x256_4
       rect:
         serializedVersion: 2
         x: 1024
-        y: 512
-        width: 512
-        height: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 121.87504, y: 171.54189}
-        - {x: 37.875046, y: 171.54189}
-        - {x: -163, y: 86}
-        - {x: -163.37495, y: -157.53847}
-        - {x: 139.37505, y: -157.53847}
-        - {x: 148.12505, y: -150.53676}
-        - {x: 163.87505, y: -91.022224}
-        - {x: 163.87505, y: 115.528206}
-        - {x: 142.87505, y: 161.03932}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 746a31969eb7a6b10800000000000000
-      internalID: 1975527628975875655
+      spriteID: dcf3897cfc07150d0800000000000000
+      internalID: -3435841002997792819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: S_Eggs
+      name: Shopping_Run_item_Ad_256x256_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c0ff56af9a549e0800000000000000
+      internalID: -1637715996561175536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Ad_256x256_6
       rect:
         serializedVersion: 2
         x: 1536
-        y: 512
-        width: 512
-        height: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeafec532f67f70a0800000000000000
-      internalID: -6881650922941908246
+      spriteID: e1e8d5a01c55af880800000000000000
+      internalID: -8576448252782735842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: S_Cereals
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c50d4038812c9180800000000000000
-      internalID: -9107367477640362555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_Chips
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 758050850bb9aeb20800000000000000
-      internalID: 3164512869874468951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_Beer
-      rect:
-        serializedVersion: 2
-        x: 3072
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b2cdf912bb1b05c0800000000000000
-      internalID: -4248271371739741512
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_Cheese
+      name: Shopping_Run_item_Ad_256x256_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93bf556ad41865930800000000000000
-      internalID: 4131631878662126393
+      spriteID: 345dfae709c5fa610800000000000000
+      internalID: 1634626965429278019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: S_Wine
+      name: Shopping_Run_item_Ad_256x256_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93224fec5d58093f0800000000000000
+      internalID: -896069172500094407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Ad_256x256_9
       rect:
         serializedVersion: 2
         x: 512
         y: 0
-        width: 512
-        height: 512
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a60d67d6800ab10800000000000000
-      internalID: 1990600301535586919
+      spriteID: d030b72bd60d8f510800000000000000
+      internalID: 1583244438585148173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_512x512_9
+      name: Shopping_Run_item_Ad_256x256_10
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ec01b1757435010800000000000000
+      internalID: 1176362367115644545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopping_Run_item_Ad_256x256_11
       rect:
         serializedVersion: 2
         x: 1024
         y: 0
-        width: 512
-        height: 512
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de5d83bb45bcd17c0800000000000000
-      internalID: -4098896521058527763
+      spriteID: 20ec9a82f6d814910800000000000000
+      internalID: 1819891232997494274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_512x512_10
+      name: Shopping_Run_item_Ad_256x256_12
       rect:
         serializedVersion: 2
-        x: 1536
+        x: 1280
         y: 0
-        width: 512
-        height: 512
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5758a4a7aed4af3e0800000000000000
-      internalID: -2019215813452855947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shopping_Run_item_512x512_11
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 414a32b74ca3d1460800000000000000
-      internalID: 7213986793671336980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shopping_Run_item_512x512_12
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76d6f70de651c4670800000000000000
-      internalID: 8524211760394104167
+      spriteID: 3f7b4383213ab9d10800000000000000
+      internalID: 2133478147137779699
       vertices: []
       indices: 
       edges: []

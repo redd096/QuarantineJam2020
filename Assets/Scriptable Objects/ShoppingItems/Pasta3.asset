@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Pasta3
   m_EditorClassIdentifier: 
   displayName: Pasta
-  sprite: {fileID: 21300000, guid: 8b073dd7f8a096743867a6c16e99b06c, type: 3}
+  sprite: {fileID: 1975527628975875655, guid: 25016171e9a3d6b40b1fb1c3e780a2dc, type: 3}
+  colliderSizeFactor: 0.75
   baseReward: 10
   weight: 1
   modifiers:
