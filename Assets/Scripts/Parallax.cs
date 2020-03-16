@@ -88,6 +88,7 @@ namespace Quaranteam
         {
             //sposta il clone a destra
             float newXPosition = background.position.x + background.GetComponent<SpriteRenderer>().bounds.size.x * 2;
+            background.position = new Vector3(newXPosition, background.position.y, background.position.z);
         }
     }
 
