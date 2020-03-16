@@ -1999,6 +1999,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3846490197405173855, guid: 61b3b7f09df9df54186dd68fa6a27443,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846490197405173855, guid: 61b3b7f09df9df54186dd68fa6a27443,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9199099103535242517, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: m_LocalPosition.x

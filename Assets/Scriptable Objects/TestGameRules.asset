@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestGameRules
   m_EditorClassIdentifier: 
   preparationTime: 5
-  gameTime: 25
+  gameTime: 300
   shoppingList:
   - item: {fileID: 11400000, guid: fdc8f9b4fe893b84b89678ad66084a54, type: 2}
     previewIconAnticipationTime: 2

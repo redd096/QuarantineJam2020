@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Bonus_SubTimer
   sprite: {fileID: 9065417183278575934, guid: 839c6f2268dcd0a40b8b0bef1480196b, type: 3}
-  colliderSizeFactor: 0.25
+  colliderSizeFactor: 0.8
   baseReward: 0
   weight: 1
   modifiers:

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class ScreenLoader : MonoBehaviour
 {
-    [SerializeField] float delaySeconds = 3.5f;
+    [SerializeField] float delaySeconds = 5f;
     int currentSceneIndex;
 
     private void Start()
@@ -20,7 +20,7 @@ public class ScreenLoader : MonoBehaviour
 
         yield return new WaitForSeconds(delaySeconds);
         GetComponent<Animator>().SetTrigger("To_Fade_OUT");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 }
