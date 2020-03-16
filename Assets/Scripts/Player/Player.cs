@@ -13,8 +13,10 @@ namespace Quaranteam
         public bool firstIteration;
         public bool ObjectsAddWeight;
         public float multiplierMass = 0.25f;
-        [Range(0, 100)]
-        public float itemOutOfCart;
+        [Range(0, 150)]
+        public float itemOutOfCartLeft;
+        [Range(0, 150)]
+        public float itemOutOfCartRight;
         [Range(0f, 1000f)]
         public float spintaEsplosione;
         bool objectsFalling;
@@ -54,9 +56,16 @@ namespace Quaranteam
             audioSource = GetComponent<AudioSource>();
             cartTrigger = cart.GetComponentInChildren<ChildCollision>();
 
-            itemsParent = transform.Find("Cart").Find("Items");
             actualSpeed = speed;
             actualAcceleration = acceleration;
+
+            itemsParent = transform.Find("Cart").Find("Items");
+            //add already inside objects - so when everything fall down, they fall too
+            Transform items_alreadyInside = itemsParent.Find("AlreadyInside");
+            foreach(Transform child in items_alreadyInside)
+            {
+                itemsInCart.Add(child.gameObject);
+            }
         }
 
         void Update()
@@ -263,15 +272,19 @@ namespace Quaranteam
         {
             //how much can go out of the cart
             float sizeX = itemObject.GetComponent<Collider2D>().bounds.size.x;
-            float percentage = sizeX / 100 * itemOutOfCart;
+            float half = sizeX / 2;
+            float left = sizeX / 100 * itemOutOfCartLeft;
+            float right = sizeX / 100 * itemOutOfCartRight;
+
+            //centralPosition - half = leftPoint of the object -> add right to be safe
 
             //check if the object is out to the left or to the right of the cart
-            if (itemObject.localPosition.x < -0.9f)
+            if (itemObject.localPosition.x - half + left < -0.9f)
             {
                 //out to the left
                 SetRiskyObject(itemObject);
             }
-            else if (itemObject.localPosition.x - percentage > 0.9f)
+            else if (itemObject.localPosition.x + half - right > 0.9f)
             {
                 //out to the right
                 SetRiskyObject(itemObject);
