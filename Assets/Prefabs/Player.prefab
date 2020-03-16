@@ -146,9 +146,11 @@ MonoBehaviour:
   itemOutOfCartRight: 90
   spintaEsplosione: 440
   modifierLoseOnRed: 0
+  rightKeyCodeList: 64000000
+  leftKeyCodeList: 61000000
   speed: 5
-  acceleration: 100
-  vfx: {fileID: 0}
+  acceleration: 230
+  vfx: {fileID: 6171147412563970445, guid: f1437d9bbacabd64da2a70233693cab7, type: 3}
 --- !u!50 &-4830708119720146117
 Rigidbody2D:
   serializedVersion: 4

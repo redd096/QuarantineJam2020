@@ -18,6 +18,6 @@ MonoBehaviour:
   baseReward: 0
   weight: 1
   modifiers:
-  - {fileID: 11400000, guid: 7fa71c6a1533d174baed67acbcf0a0c6, type: 2}
+  - {fileID: 11400000, guid: d51f3347c710b804f8977deed6360f01, type: 2}
   pickedSound: {fileID: 8300000, guid: 69fb424edfd80c846a12583dacf6d52f, type: 3}
   lostSound: {fileID: 8300000, guid: 3ece779556acf0246b31b18b101dfee8, type: 3}

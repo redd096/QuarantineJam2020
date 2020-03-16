@@ -92,7 +92,7 @@ namespace Quaranteam
             {
                 // A chi comunico che ho finito?
                 triggeredLevelFinish = true;
-                gameManager.OnTimerEnd();
+                gameManager.OnTimerEnd(endGame);
             }
 
         }

@@ -193,7 +193,7 @@ namespace Quaranteam
             generalSpawnerComp.previewIconTime = appliedGameRules.previewIconAnticipationTime;
         }
 
-        public void OnTimerEnd()
+        public void OnTimerEnd(bool causeTiltedCart)
         {
             // @todo check shoppint chart
             bool win = FindObjectOfType<Cart>().IsChecklistComplete();
@@ -211,7 +211,8 @@ namespace Quaranteam
             }
             else
             {
-                overlay.GetComponentInChildren<Text>().text = "You lose!" +"\n" + "Score: " + CurrentScore;
+                string loseText = causeTiltedCart ? "You tilted the cart" : "You didn't finish the spesa";
+                overlay.GetComponentInChildren<Text>().text = "You lose!" + "\n" + loseText;
                 audioSource.clip = youLoseAudioClip;
                 audioSource.Play();
             }

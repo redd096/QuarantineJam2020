@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Pane
   sprite: {fileID: -2964407831842676800, guid: 0940f127976e6664c9490ea632a3b118, type: 3}
-  colliderSizeFactor: 0.745
+  colliderSizeFactor: 0.5
   baseReward: 100
-  weight: 1
+  weight: 20
   modifiers: []
   pickedSound: {fileID: 8300000, guid: 009fd268c18c38847b244e0fa338516d, type: 3}
   lostSound: {fileID: 8300000, guid: b8ba5b4999d5413418b409caed75a962, type: 3}

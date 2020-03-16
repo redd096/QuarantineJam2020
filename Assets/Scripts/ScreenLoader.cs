@@ -16,42 +16,11 @@ public class ScreenLoader : MonoBehaviour
         }
     }
 
-    public void ReloadLevel()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(currentSceneIndex);
-    }
-
-    public void LoadMainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Start Menu");
-    }
-
-    public void LoadOptionsMenu()
-    {
-        SceneManager.LoadScene("Options Menu");
-    }
-
-
-    public void LoadNextLevel()
-    {
-        SceneManager.LoadScene(currentSceneIndex + 1);
-    }
-
     private IEnumerator WaitAndLoad()
     {
         yield return new WaitForSeconds(delaySeconds);
+        GetComponent<Animator>().SetTrigger("To_Fade_OUT");
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(currentSceneIndex + 1);
-    }
-
-    public void LoadYouLose()
-    {
-        SceneManager.LoadScene("Lose Screen");
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 }
