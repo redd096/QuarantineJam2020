@@ -244,12 +244,6 @@ namespace Quaranteam
 
         private void Update()
         {
-            // Brutally exit the game.
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
-
             List<ModifierRule> toRemove = new List<ModifierRule>();
             foreach (var modifier in appliedModifiers.Values)
             {

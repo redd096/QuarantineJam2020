@@ -101,7 +101,7 @@ namespace Quaranteam
             SetAnimationSpeed();
             SetVFX();
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.K))
             {
                 gm.PauseGame();
             }

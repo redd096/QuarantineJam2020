@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: -6534617223597242267, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
   colliderSizeFactor: 0.5
   baseReward: 100
-  weight: 20
+  weight: 1
   modifiers: []
   pickedSound: {fileID: 8300000, guid: eab90fff85b1b7d4db174f72a36a3f5f, type: 3}
   lostSound: {fileID: 8300000, guid: b52a6752f24f0464da44dc5990160a30, type: 3}
