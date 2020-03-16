@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
-  m_Name: Pasta
+  m_Name: Farina
   m_EditorClassIdentifier: 
-  displayName: Pasta
-  sprite: {fileID: -2329216249841504092, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
+  displayName: Farina
+  sprite: {fileID: -7288441110757242134, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
   colliderSizeFactor: 0.745
   baseReward: 100
-  weight: 1
+  weight: 2
   modifiers: []
   pickedSound: {fileID: 8300000, guid: eab90fff85b1b7d4db174f72a36a3f5f, type: 3}
   lostSound: {fileID: 8300000, guid: b8ba5b4999d5413418b409caed75a962, type: 3}

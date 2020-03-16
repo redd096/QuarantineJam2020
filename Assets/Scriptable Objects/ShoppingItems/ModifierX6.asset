@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
-  m_Name: Pasta
+  m_Name: ModifierX6
   m_EditorClassIdentifier: 
-  displayName: Pasta
-  sprite: {fileID: -2329216249841504092, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
+  displayName: Multiplicatore X 6
+  sprite: {fileID: -7150801340580488144, guid: 839c6f2268dcd0a40b8b0bef1480196b, type: 3}
   colliderSizeFactor: 0.745
-  baseReward: 100
+  baseReward: 0
   weight: 1
-  modifiers: []
-  pickedSound: {fileID: 8300000, guid: eab90fff85b1b7d4db174f72a36a3f5f, type: 3}
-  lostSound: {fileID: 8300000, guid: b8ba5b4999d5413418b409caed75a962, type: 3}
+  modifiers:
+  - {fileID: 11400000, guid: 7fa71c6a1533d174baed67acbcf0a0c6, type: 2}
+  pickedSound: {fileID: 8300000, guid: 69fb424edfd80c846a12583dacf6d52f, type: 3}
+  lostSound: {fileID: 8300000, guid: 3ece779556acf0246b31b18b101dfee8, type: 3}

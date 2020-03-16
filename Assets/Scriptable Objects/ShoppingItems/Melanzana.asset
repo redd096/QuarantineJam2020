@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
-  m_Name: Trash3
+  m_Name: Melanzana
   m_EditorClassIdentifier: 
-  displayName: Trash3
-  sprite: {fileID: 2955402999628765189, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
-  colliderSizeFactor: 0.8
-  baseReward: 0
+  displayName: Melanzana
+  sprite: {fileID: 8273198409643930575, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
+  colliderSizeFactor: 0.745
+  baseReward: 100
   weight: 1
   modifiers: []
-  pickedSound: {fileID: 0}
-  lostSound: {fileID: 0}
+  pickedSound: {fileID: 8300000, guid: 009fd268c18c38847b244e0fa338516d, type: 3}
+  lostSound: {fileID: 8300000, guid: 29eef1bb35d39254ea542e4d55c298c0, type: 3}

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
-  m_Name: Bonus_SubTimer
+  m_Name: Sapone
   m_EditorClassIdentifier: 
-  displayName: Bonus_SubTimer
-  sprite: {fileID: 9065417183278575934, guid: 839c6f2268dcd0a40b8b0bef1480196b, type: 3}
-  colliderSizeFactor: 0.8
-  baseReward: 0
+  displayName: Sapone
+  sprite: {fileID: 3285048617293039767, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
+  colliderSizeFactor: 0.745
+  baseReward: 300
   weight: 1
-  modifiers:
-  - {fileID: 11400000, guid: a59109500eff73041a2363a0e96241d9, type: 2}
-  pickedSound: {fileID: 0}
-  lostSound: {fileID: 0}
+  modifiers: []
+  pickedSound: {fileID: 8300000, guid: 009fd268c18c38847b244e0fa338516d, type: 3}
+  lostSound: {fileID: 8300000, guid: b8ba5b4999d5413418b409caed75a962, type: 3}

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
-  m_Name: Bonus_AddTimer
+  m_Name: Riso
   m_EditorClassIdentifier: 
-  displayName: Bonus_AddTimer
-  sprite: {fileID: -902623553796980250, guid: 839c6f2268dcd0a40b8b0bef1480196b, type: 3}
-  colliderSizeFactor: 0.8
-  baseReward: 0
-  weight: 1
-  modifiers:
-  - {fileID: 11400000, guid: 1600dd704eaf9694d81ff0342e1f6f1f, type: 2}
-  pickedSound: {fileID: 0}
-  lostSound: {fileID: 0}
+  displayName: Riso
+  sprite: {fileID: -5148095355665216755, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
+  colliderSizeFactor: 0.745
+  baseReward: 100
+  weight: 2
+  modifiers: []
+  pickedSound: {fileID: 8300000, guid: eab90fff85b1b7d4db174f72a36a3f5f, type: 3}
+  lostSound: {fileID: 8300000, guid: 28ddf017abfb7414a87c67a31699db64, type: 3}
