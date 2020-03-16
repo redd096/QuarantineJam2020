@@ -205,13 +205,13 @@ namespace Quaranteam
             overlay.SetActive(true);
             if (win)
             {
-                overlay.GetComponentInChildren<Text>().text = "You win!";
+                overlay.GetComponentInChildren<Text>().text = "You win!" + "\n" + "Score: " + CurrentScore;
                 audioSource.clip = youWinAudioClip;
                 audioSource.Play();
             }
             else
             {
-                overlay.GetComponentInChildren<Text>().text = "You lose!";
+                overlay.GetComponentInChildren<Text>().text = "You lose!" +"\n" + "Score: " + CurrentScore;
                 audioSource.clip = youLoseAudioClip;
                 audioSource.Play();
             }
