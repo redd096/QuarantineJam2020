@@ -35,7 +35,7 @@ namespace Quaranteam
         Rigidbody2D rb;
         Animator animator;
         Cart cart;
-        ChildCollision cartTrigger;
+        Transform leftLimit, rightLimit;
 
         AudioSource audioSource;
         bool playerMoving;
@@ -54,12 +54,14 @@ namespace Quaranteam
             animator = GetComponent<Animator>();
             cart = GetComponentInChildren<Cart>();
             audioSource = GetComponent<AudioSource>();
-            cartTrigger = cart.GetComponentInChildren<ChildCollision>();
+            Transform limits = cart.transform.Find("Limits");
+            leftLimit = limits.Find("LeftLimit");
+            rightLimit = limits.Find("RightLimit");
 
             actualSpeed = speed;
             actualAcceleration = acceleration;
 
-            itemsParent = transform.Find("Cart").Find("Items");
+            itemsParent = cart.transform.Find("Items");
             //add already inside objects - so when everything fall down, they fall too
             Transform items_alreadyInside = itemsParent.Find("AlreadyInside");
             foreach(Transform child in items_alreadyInside)
@@ -279,12 +281,12 @@ namespace Quaranteam
             //centralPosition - half = leftPoint of the object -> add right to be safe
 
             //check if the object is out to the left or to the right of the cart
-            if (itemObject.localPosition.x - half + left < -0.9f)
+            if (itemObject.position.x - half + left < leftLimit.position.x)
             {
                 //out to the left
                 SetRiskyObject(itemObject);
             }
-            else if (itemObject.localPosition.x + half - right > 0.9f)
+            else if (itemObject.position.x + half - right > rightLimit.position.x)
             {
                 //out to the right
                 SetRiskyObject(itemObject);
