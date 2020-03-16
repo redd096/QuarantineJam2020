@@ -96,7 +96,7 @@ namespace Quaranteam
         [Header("Audio")]
         [SerializeField] private AudioClip youWinAudioClip;
         [SerializeField] private AudioClip youLoseAudioClip;
-        [SerializeField] private AudioClip bgMusic;
+        [SerializeField] private AudioClip[] bgMusic;
 
         /// <summary>
         /// The player's score.
@@ -149,7 +149,7 @@ namespace Quaranteam
             waitForEnterButtonOverlay.gameObject.SetActive(false);
 
             audioSource.loop = true;
-            audioSource.clip = bgMusic;
+            audioSource.clip = bgMusic[0];
             audioSource.Play();
         }
 
@@ -265,6 +265,23 @@ namespace Quaranteam
             modifier.RevertRule(this);
             onModifierRemoved?.Invoke(modifier.Id);
             appliedModifiers.Remove(modifier.Id);
+        }
+
+        public void changeMusicTrack(int trackNumber)
+        {
+            if(trackNumber > bgMusic.Length )
+            {
+                return;
+            }
+            if(audioSource.clip == bgMusic[trackNumber])
+            {
+                return;
+            }
+            
+            audioSource.Stop();
+            audioSource.loop = true;
+            audioSource.clip = bgMusic[trackNumber];
+            audioSource.Play();
         }
     }
 }

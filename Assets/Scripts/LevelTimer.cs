@@ -21,6 +21,8 @@ namespace Quaranteam
         [SerializeField] private TextMeshProUGUI levelTimer = default;
         [SerializeField] private TextMeshProUGUI bonusTimer = default;
         [SerializeField] private GameObject preparationTimePanel = default;
+        [Min(0f)]
+        [SerializeField] private float whenToChangeMusicSpeed = default;
 
         [Header("Debugging Purposes only")]
         [SerializeField] float baseTime = 10f;
@@ -32,7 +34,7 @@ namespace Quaranteam
 
         // cached references
         //private Slider slider;
-        
+        private GameManager gameManager;
 
         protected internal float elapsedTime = 0f;
 
@@ -47,6 +49,7 @@ namespace Quaranteam
                 baseTime = gameRules.GameTime;
             }
             pTime = preparationTime;
+            gameManager = FindObjectOfType<GameManager>();
         }
 
 
@@ -76,12 +79,20 @@ namespace Quaranteam
 
             TimeSpan time = TimeSpan.FromSeconds(baseTime - elapsedTime);
             levelTimer.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
+            if ((baseTime - elapsedTime) > whenToChangeMusicSpeed)
+            {
+                gameManager.changeMusicTrack(0);
+            }
+            else
+            {
+                gameManager.changeMusicTrack(1);
+            }
             bool timerFinished = (elapsedTime >= baseTime);
             if (timerFinished || endGame)
             {
                 // A chi comunico che ho finito?
                 triggeredLevelFinish = true;
-                FindObjectOfType<GameManager>().OnTimerEnd();
+                gameManager.OnTimerEnd();
             }
 
         }
@@ -97,7 +108,7 @@ namespace Quaranteam
                 //slider.gameObject.SetActive(true);
 
                 // A chi comunico che ho iniziato?
-                FindObjectOfType<GameManager>().OnGameStarted();
+                gameManager.OnGameStarted();
                 
                 player.SetActive(true);
                 player.GetComponentInChildren<Cart>().SetRequiredItems(gameRules);
@@ -119,12 +130,21 @@ namespace Quaranteam
         {
             elapsedTime += timeModifier;
 
-            StartCoroutine(ShowTimeBonus(timeModifier));
+            StartCoroutine(ShowTimeBonus(-timeModifier));
         }
 
         private IEnumerator ShowTimeBonus(float timeModifier)
         {
-            bonusTimer.text = timeModifier.ToString();
+            if(timeModifier > 0)
+            {
+                bonusTimer.text = "+" + timeModifier.ToString();
+                bonusTimer.color = Color.green;
+            }
+            else
+            {
+                bonusTimer.text = timeModifier.ToString();
+                bonusTimer.color = Color.red;
+            }
             bonusTimer.gameObject.SetActive(true);
             yield return new WaitForSeconds(1f);
             bonusTimer.gameObject.SetActive(false);
