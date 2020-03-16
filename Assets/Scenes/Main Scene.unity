@@ -1530,9 +1530,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
         type: 3}
+      propertyPath: rightKeyCodeList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: leftKeyCodeList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
       propertyPath: vfx
       value: 
       objectReference: {fileID: 2073751595}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: rightKeyCodeList.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: rightKeyCodeList.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: rightKeyCodeList.Array.data[3]
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: rightKeyCodeList.Array.data[4]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: rightKeyCodeList.Array.data[0]
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: leftKeyCodeList.Array.data[1]
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: leftKeyCodeList.Array.data[2]
+      value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: leftKeyCodeList.Array.data[3]
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716691417251421573, guid: 1e331426f02e1d84480d7ced64fb1268,
+        type: 3}
+      propertyPath: leftKeyCodeList.Array.data[0]
+      value: 113
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e331426f02e1d84480d7ced64fb1268, type: 3}
 --- !u!114 &2073751594 stripped
@@ -2012,7 +2067,7 @@ PrefabInstance:
     - target: {fileID: 3846490197405173855, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: m_Pitch
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3846490197405173855, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
@@ -2158,7 +2213,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bgMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 2cf63153aee001b49812d98bcdabb5f4, type: 3}
+      objectReference: {fileID: 8300000, guid: 3e59e2faff9e5a449a46705113df416c, type: 3}
     - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: player
