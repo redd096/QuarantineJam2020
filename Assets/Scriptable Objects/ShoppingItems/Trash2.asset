@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Trash2
   m_EditorClassIdentifier: 
   displayName: Trash2
-  sprite: {fileID: 1990600301535586919, guid: 25016171e9a3d6b40b1fb1c3e780a2dc, type: 3}
+  sprite: {fileID: 5472871573216486487, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
   colliderSizeFactor: 0.25
   baseReward: 0
   weight: 1
