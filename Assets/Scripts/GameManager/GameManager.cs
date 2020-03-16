@@ -138,7 +138,7 @@ namespace Quaranteam
         private void Start()
         {
             Debug.Log("Press Enter to start the game");
-            
+
             StartCoroutine(WaitForEnterButtonAndStartGame());
         }
 
@@ -239,7 +239,7 @@ namespace Quaranteam
                 Application.Quit();
             }
 
-            List<ModifierRule> toRemove = new List<ModifierRule>(); 
+            List<ModifierRule> toRemove = new List<ModifierRule>();
             foreach (var modifier in appliedModifiers.Values)
             {
                 modifier.RemainingTime -= Time.deltaTime;
@@ -270,21 +270,14 @@ namespace Quaranteam
             appliedModifiers.Remove(modifier.Id);
         }
 
-        public void changeMusicTrack(int trackNumber)
+        public void changeMusicSpeed(float trackSpeed)
         {
-            if(trackNumber > bgMusic.Length )
+            if (trackSpeed > 1.5f || trackSpeed < 1f)
             {
                 return;
             }
-            if(audioSource.clip == bgMusic[trackNumber])
-            {
-                return;
-            }
-            
-            audioSource.Stop();
-            audioSource.loop = true;
-            audioSource.clip = bgMusic[trackNumber];
-            audioSource.Play();
+
+            audioSource.pitch = trackSpeed;
         }
     }
 }
