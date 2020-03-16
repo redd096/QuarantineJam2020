@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
-  m_Name: Pasta2
+  m_Name: Bonus_AddTimer
   m_EditorClassIdentifier: 
-  displayName: Pasta
-  sprite: {fileID: 4131631878662126393, guid: 25016171e9a3d6b40b1fb1c3e780a2dc, type: 3}
+  displayName: Bonus_AddTimer
+  sprite: {fileID: -902623553796980250, guid: 839c6f2268dcd0a40b8b0bef1480196b, type: 3}
   colliderSizeFactor: 0.25
   baseReward: 10
   weight: 1
   modifiers:
-  - {fileID: 11400000, guid: a1619b7fb36ac9848bca77a471f16564, type: 2}
+  - {fileID: 11400000, guid: 1600dd704eaf9694d81ff0342e1f6f1f, type: 2}
   pickedSound: {fileID: 0}
   lostSound: {fileID: 0}

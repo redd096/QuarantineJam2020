@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
-  m_Name: Pasta1
+  m_Name: Bonus_X2
   m_EditorClassIdentifier: 
-  displayName: Pasta
-  sprite: {fileID: 3483849934972473109, guid: 25016171e9a3d6b40b1fb1c3e780a2dc, type: 3}
+  displayName: Bonus_x2
+  sprite: {fileID: -2111631064707378967, guid: 839c6f2268dcd0a40b8b0bef1480196b, type: 3}
   colliderSizeFactor: 0.25
   baseReward: 10
   weight: 1

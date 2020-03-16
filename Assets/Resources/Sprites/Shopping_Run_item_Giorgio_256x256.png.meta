@@ -4,73 +4,73 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -806260961232852540
-    second: Shopping_Run_item_Giorgio_256x256_0
+    second: S_Aubergines
   - first:
       213: 2526478705483729519
-    second: Shopping_Run_item_Giorgio_256x256_1
+    second: S_ Sweet_Pepper
   - first:
       213: -2994271405126303931
-    second: Shopping_Run_item_Giorgio_256x256_2
+    second: S_Onion
   - first:
       213: -3806834834231778738
-    second: Shopping_Run_item_Giorgio_256x256_3
+    second: S_Carrot
   - first:
       213: -5060985023415463107
-    second: Shopping_Run_item_Giorgio_256x256_4
+    second: S_Chilli_Pepper
   - first:
       213: 8554920310537877354
-    second: Shopping_Run_item_Giorgio_256x256_5
+    second: S_Tomatoes
   - first:
       213: -8552825657752178154
-    second: Shopping_Run_item_Giorgio_256x256_6
+    second: S_Oil
   - first:
       213: 6530374463015685630
-    second: Shopping_Run_item_Giorgio_256x256_7
+    second: S_Vinegar
   - first:
       213: 4555112910153003320
-    second: Shopping_Run_item_Giorgio_256x256_8
+    second: S_Water
   - first:
       213: -3054957940881765242
-    second: Shopping_Run_item_Giorgio_256x256_9
+    second: S_Wine
   - first:
       213: -5320566108359565470
-    second: Shopping_Run_item_Giorgio_256x256_10
+    second: S_Juice
   - first:
       213: 949207732313954487
-    second: Shopping_Run_item_Giorgio_256x256_11
+    second: S_Energy_Drink
   - first:
       213: -8478529749602016725
-    second: Shopping_Run_item_Giorgio_256x256_12
+    second: S_Gloves
   - first:
       213: 1081081626104052925
-    second: Shopping_Run_item_Giorgio_256x256_13
+    second: S_Plasters
   - first:
       213: -3648481171351796932
-    second: Shopping_Run_item_Giorgio_256x256_14
+    second: S_Patches
   - first:
       213: 3221774454169856318
-    second: Shopping_Run_item_Giorgio_256x256_15
+    second: S_ToiletPaper
   - first:
       213: -4700213243472208946
-    second: Shopping_Run_item_Giorgio_256x256_16
+    second: S_AMUCHINA
   - first:
       213: 8441074273164273014
-    second: Shopping_Run_item_Giorgio_256x256_17
+    second: S_Mask
   - first:
       213: -3279966340825890957
-    second: Shopping_Run_item_Giorgio_256x256_18
+    second: S_Flour
   - first:
       213: -8342562523458910712
-    second: Shopping_Run_item_Giorgio_256x256_19
+    second: S_PENNE_LISCE
   - first:
       213: 7613118817224005299
-    second: Shopping_Run_item_Giorgio_256x256_20
+    second: S_Rice
   - first:
       213: -6394244171070389214
-    second: Shopping_Run_item_Giorgio_256x256_21
+    second: S_Soap
   - first:
       213: -4747392160050320333
-    second: Shopping_Run_item_Giorgio_256x256_22
+    second: S_Rusks
   - first:
       213: 5095874209203563270
     second: Shopping_Run_item_Giorgio_256x256_23
@@ -95,6 +95,144 @@ TextureImporter:
   - first:
       213: 1738896965673660058
     second: Shopping_Run_item_Giorgio_256x256_30
+  - first:
+      213: 8273198409643930575
+    second: S_Aubergines
+  - first:
+      213: 8747038491897342605
+    second: S_ Sweet_Pepper
+  - first:
+      213: 5555679642283349176
+    second: S_Onion
+  - first:
+      213: -5222368501515699556
+    second: S_Carrot
+  - first:
+      213: 5472871573216486487
+    second: S_Chilli_Pepper
+  - first:
+      213: -4260242617057027013
+    second: S_Tomatoes
+  - first:
+      213: -2513972806642638260
+    second: S_Oil
+  - first:
+      213: -6381557751035363041
+    second: S_Vinegar
+  - first:
+      213: -3299950178097070518
+    second: S_Water
+  - first:
+      213: -6534617223597242267
+    second: S_Wine
+  - first:
+      213: 8870671489970233724
+    second: S_Juice
+  - first:
+      213: -7189018816564343296
+    second: S_Energy_Drink
+  - first:
+      213: -3965782253413838297
+    second: S_Gloves
+  - first:
+      213: 4673886354978198582
+    second: S_Plasters
+  - first:
+      213: 2291746750258392306
+    second: S_Patches
+  - first:
+      213: -1336336085485079329
+    second: S_ToiletPaper
+  - first:
+      213: 2955402999628765189
+    second: S_AMUCHINA
+  - first:
+      213: -2654177428525750970
+    second: S_Mask
+  - first:
+      213: -7288441110757242134
+    second: S_Flour
+  - first:
+      213: -2329216249841504092
+    second: S_PENNE_LISCE
+  - first:
+      213: -5148095355665216755
+    second: S_Rice
+  - first:
+      213: 3285048617293039767
+    second: S_Soap
+  - first:
+      213: -610102160573162144
+    second: S_Rusks
+  - first:
+      213: 8273198409643930575
+    second: S_Melanzane
+  - first:
+      213: 8747038491897342605
+    second: S_Peperoni
+  - first:
+      213: 5555679642283349176
+    second: S_Cipolla
+  - first:
+      213: -5222368501515699556
+    second: S_Carota
+  - first:
+      213: 5472871573216486487
+    second: S_Peperoncino
+  - first:
+      213: -4260242617057027013
+    second: S_Pomodori
+  - first:
+      213: -2513972806642638260
+    second: S_Olio
+  - first:
+      213: -6381557751035363041
+    second: S_Aceto
+  - first:
+      213: -3299950178097070518
+    second: S_Acqua
+  - first:
+      213: -6534617223597242267
+    second: S_Vinoh
+  - first:
+      213: 8870671489970233724
+    second: S_Succo
+  - first:
+      213: -7189018816564343296
+    second: S_Monster
+  - first:
+      213: -3965782253413838297
+    second: S_Guanti
+  - first:
+      213: 4673886354978198582
+    second: S_Cerotti
+  - first:
+      213: 2291746750258392306
+    second: S_Patch
+  - first:
+      213: -1336336085485079329
+    second: S_CartaDaCulo
+  - first:
+      213: 2955402999628765189
+    second: S_AMUCINA
+  - first:
+      213: -2654177428525750970
+    second: S_Mscherine
+  - first:
+      213: -7288441110757242134
+    second: S_Farina
+  - first:
+      213: -2329216249841504092
+    second: S_Penne_Lisce
+  - first:
+      213: -5148095355665216755
+    second: S_Riso
+  - first:
+      213: 3285048617293039767
+    second: S_Sapone
+  - first:
+      213: -610102160573162144
+    second: S_FetteBiscottate
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -191,12 +329,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_0
+      name: S_Melanzane
       rect:
         serializedVersion: 2
-        x: 1027
+        x: 1021
         y: 768
-        width: 255.5
+        width: 257
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,19 +343,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c963717de59fc4f0800000000000000
-      internalID: -806260961232852540
+      spriteID: fc3372bce1e40d270800000000000000
+      internalID: 8273198409643930575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_1
+      name: S_Peperoni
       rect:
         serializedVersion: 2
-        x: 1282
+        x: 1276
         y: 768
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,19 +364,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6a42fc2ffadf0320800000000000000
-      internalID: 2526478705483729519
+      spriteID: d8aa5322a29b36970800000000000000
+      internalID: 8747038491897342605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_2
+      name: S_Cipolla
       rect:
         serializedVersion: 2
-        x: 1537
+        x: 1533
         y: 768
-        width: 255.5
+        width: 257
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -247,19 +385,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54f365875063276d0800000000000000
-      internalID: -2994271405126303931
+      spriteID: 8b41b2c033db91d40800000000000000
+      internalID: 5555679642283349176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_3
+      name: S_Carota
       rect:
         serializedVersion: 2
-        x: 1792
+        x: 1788
         y: 768
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -268,19 +406,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e42280343e76b2bc0800000000000000
-      internalID: -3806834834231778738
+      spriteID: c9ab7f4648b6687b0800000000000000
+      internalID: -5222368501515699556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_4
+      name: S_Peperoncino
       rect:
         serializedVersion: 2
-        x: 2047
+        x: 2045
         y: 768
-        width: 255.5
+        width: 257
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -289,19 +427,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33dfb97fe4c3c9b0800000000000000
-      internalID: -5060985023415463107
+      spriteID: 754e6e603bb83fb40800000000000000
+      internalID: 5472871573216486487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_5
+      name: S_Pomodori
       rect:
         serializedVersion: 2
-        x: 2302
+        x: 2300
         y: 768
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -310,19 +448,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a67726f42be29b670800000000000000
-      internalID: 8554920310537877354
+      spriteID: b3cd55959e390e4c0800000000000000
+      internalID: -4260242617057027013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_6
+      name: S_Olio
       rect:
         serializedVersion: 2
-        x: 1027
+        x: 1023
         y: 512
-        width: 255.5
+        width: 257
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -331,19 +469,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 612b5db01624e4980800000000000000
-      internalID: -8552825657752178154
+      spriteID: c42e21d4d039c1dd0800000000000000
+      internalID: -2513972806642638260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_7
+      name: S_Aceto
       rect:
         serializedVersion: 2
-        x: 1282
+        x: 1280
         y: 512
-        width: 255.5
+        width: 257
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -352,19 +490,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efd055689fc80aa50800000000000000
-      internalID: 6530374463015685630
+      spriteID: f1185ef49072077a0800000000000000
+      internalID: -6381557751035363041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_8
+      name: S_Acqua
       rect:
         serializedVersion: 2
-        x: 1537
+        x: 1532
+        y: 513
+        width: 257
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e79020cc83432d0800000000000000
+      internalID: -3299950178097070518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Vinoh
+      rect:
+        serializedVersion: 2
+        x: 1788
         y: 512
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -373,19 +532,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8313779ce03073f30800000000000000
-      internalID: 4555112910153003320
+      spriteID: 568465cc1406055a0800000000000000
+      internalID: -6534617223597242267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_9
+      name: S_Succo
       rect:
         serializedVersion: 2
-        x: 1792
+        x: 2044
         y: 512
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -394,19 +553,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68ccbf940fb9a95d0800000000000000
-      internalID: -3054957940881765242
+      spriteID: c716cd6a8b4fa1b70800000000000000
+      internalID: 8870671489970233724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_10
+      name: S_Monster
       rect:
         serializedVersion: 2
-        x: 2047
-        y: 512
-        width: 255.5
+        x: 2303
+        y: 513
+        width: 257
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -415,40 +574,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26fde33605d8926b0800000000000000
-      internalID: -5320566108359565470
+      spriteID: 00e4513b9797b3c90800000000000000
+      internalID: -7189018816564343296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_11
+      name: S_Guanti
       rect:
         serializedVersion: 2
-        x: 2302
-        y: 512
-        width: 255.5
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b890a647634c2d00800000000000000
-      internalID: 949207732313954487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_12
-      rect:
-        serializedVersion: 2
-        x: 1027
+        x: 1020
         y: 256
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -457,19 +595,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b22e3692d16365a80800000000000000
-      internalID: -8478529749602016725
+      spriteID: 72258b85d06b6f8c0800000000000000
+      internalID: -3965782253413838297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_13
+      name: S_Cerotti
       rect:
         serializedVersion: 2
-        x: 1282
+        x: 1276
         y: 256
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -478,19 +616,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbc3229d206c00f00800000000000000
-      internalID: 1081081626104052925
+      spriteID: 634550560eafcd040800000000000000
+      internalID: 4673886354978198582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_14
+      name: S_Patch
       rect:
         serializedVersion: 2
-        x: 1537
+        x: 1532
         y: 256
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -499,19 +637,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3300e384bdfd5dc0800000000000000
-      internalID: -3648481171351796932
+      spriteID: 2fcae44f68bedcf10800000000000000
+      internalID: 2291746750258392306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_15
+      name: S_CartaDaCulo
       rect:
         serializedVersion: 2
-        x: 1792
+        x: 1788
         y: 256
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -520,19 +658,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e39e83fdbca06bc20800000000000000
-      internalID: 3221774454169856318
+      spriteID: fd430241961647de0800000000000000
+      internalID: -1336336085485079329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_16
+      name: S_AMUCINA
       rect:
         serializedVersion: 2
-        x: 2047
+        x: 2044
         y: 256
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -541,19 +679,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecb904635fc75ceb0800000000000000
-      internalID: -4700213243472208946
+      spriteID: 5081ff8ae53b30920800000000000000
+      internalID: 2955402999628765189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_17
+      name: S_Mscherine
       rect:
         serializedVersion: 2
-        x: 2302
+        x: 2300
         y: 256
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -562,19 +700,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67525a62458b42570800000000000000
-      internalID: 8441074273164273014
+      spriteID: 645ecd1f0b77a2bd0800000000000000
+      internalID: -2654177428525750970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_18
+      name: S_Farina
       rect:
         serializedVersion: 2
-        x: 1027
+        x: 1020
         y: 0
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -583,19 +721,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37fb5d3bdf73b72d0800000000000000
-      internalID: -3279966340825890957
+      spriteID: aea06f2fc614ada90800000000000000
+      internalID: -7288441110757242134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_19
+      name: S_Penne_Lisce
       rect:
         serializedVersion: 2
-        x: 1282
+        x: 1276
         y: 0
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -604,19 +742,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 806ceb0f593493c80800000000000000
-      internalID: -8342562523458910712
+      spriteID: 4a031275926fcafd0800000000000000
+      internalID: -2329216249841504092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_20
+      name: S_Riso
       rect:
         serializedVersion: 2
-        x: 1537
-        y: 0
-        width: 255.5
+        x: 1532
+        y: 1
+        width: 257
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -625,19 +763,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b69a7d6a3b37a960800000000000000
-      internalID: 7613118817224005299
+      spriteID: d0b8cbfbc8a4e88b0800000000000000
+      internalID: -5148095355665216755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_21
+      name: S_Sapone
       rect:
         serializedVersion: 2
-        x: 1792
+        x: 1788
         y: 0
-        width: 255.5
+        width: 256.66666
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -646,19 +784,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 224cc38fdc41347a0800000000000000
-      internalID: -6394244171070389214
+      spriteID: 798c3afff46d69d20800000000000000
+      internalID: 3285048617293039767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shopping_Run_item_Giorgio_256x256_22
+      name: S_FetteBiscottate
       rect:
         serializedVersion: 2
-        x: 2047
+        x: 2045
         y: 0
-        width: 255.5
+        width: 257
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -667,8 +805,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33ce9b2bbffdd1eb0800000000000000
-      internalID: -4747392160050320333
+      spriteID: 06d9652415b7887f0800000000000000
+      internalID: -610102160573162144
       vertices: []
       indices: 
       edges: []

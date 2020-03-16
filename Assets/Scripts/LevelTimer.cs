@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Collections;
 
 namespace Quaranteam
 {
@@ -18,6 +19,7 @@ namespace Quaranteam
         [Header("UI Elements")]
         [SerializeField] private TextMeshProUGUI countdownTimer = default;
         [SerializeField] private TextMeshProUGUI levelTimer = default;
+        [SerializeField] private TextMeshProUGUI bonusTimer = default;
         [SerializeField] private GameObject preparationTimePanel = default;
 
         [Header("Debugging Purposes only")]
@@ -29,15 +31,15 @@ namespace Quaranteam
         private float pTime;
 
         // cached references
-        private Slider slider;
+        //private Slider slider;
         
 
         protected internal float elapsedTime = 0f;
 
         private void OnEnable()
         {
-            slider = GetComponentInChildren<Slider>();
-            slider.gameObject.SetActive(false);
+            //slider = GetComponentInChildren<Slider>();
+            //slider.gameObject.SetActive(false);
 
             if(gameRules != null)
             {
@@ -70,7 +72,7 @@ namespace Quaranteam
         private void UpdateLevelTimer()
         {
             elapsedTime += 1 * Time.deltaTime;
-            slider.value = elapsedTime / baseTime;
+            //slider.value = elapsedTime / baseTime;
 
             TimeSpan time = TimeSpan.FromSeconds(baseTime - elapsedTime);
             levelTimer.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
@@ -92,7 +94,7 @@ namespace Quaranteam
             {
                 levelStarted = true;
                 preparationTimePanel.SetActive(false);
-                slider.gameObject.SetActive(true);
+                //slider.gameObject.SetActive(true);
 
                 // A chi comunico che ho iniziato?
                 FindObjectOfType<GameManager>().OnGameStarted();
@@ -113,12 +115,26 @@ namespace Quaranteam
             }
         }
 
+        public void ApplyTimeModifier(float timeModifier)
+        {
+            elapsedTime += timeModifier;
+
+            StartCoroutine(ShowTimeBonus(timeModifier));
+        }
+
+        private IEnumerator ShowTimeBonus(float timeModifier)
+        {
+            bonusTimer.text = timeModifier.ToString();
+            bonusTimer.gameObject.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            bonusTimer.gameObject.SetActive(false);
+        }
 
         private void OnDisable()
         {
             levelStarted = false;
             preparationTimePanel.SetActive(true);
-            slider.gameObject.SetActive(false);
+            //slider.gameObject.SetActive(false);
             preparationTime = pTime;
             elapsedTime = 0f;
             triggeredLevelFinish = false;

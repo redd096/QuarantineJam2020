@@ -16,12 +16,14 @@ namespace Quaranteam
         public override string Description { get { return "Timer boost"; } }
         protected override void ApplyRule(GameManager gameManager)
         {
-            gameManager.LevelTimer.elapsedTime -= timerGainOrLoss;
+            gameManager.LevelTimer.ApplyTimeModifier(-timerGainOrLoss);
+            //gameManager.LevelTimer.elapsedTime -= timerGainOrLoss;
         }
 
         public override void RevertRule(GameManager gameManager)
         {
-            gameManager.LevelTimer.elapsedTime += timerGainOrLoss;
+            gameManager.LevelTimer.ApplyTimeModifier(+timerGainOrLoss);
+            //gameManager.LevelTimer.elapsedTime += timerGainOrLoss;
         }
     }
 }

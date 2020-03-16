@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Trash1
   m_EditorClassIdentifier: 
   displayName: Trash1
-  sprite: {fileID: -4248271371739741512, guid: 25016171e9a3d6b40b1fb1c3e780a2dc, type: 3}
+  sprite: {fileID: -6534617223597242267, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
   colliderSizeFactor: 0.25
   baseReward: 0
   weight: 1
   modifiers: []
-  pickedSound: {fileID: 0}
+  pickedSound: {fileID: 8300000, guid: eab90fff85b1b7d4db174f72a36a3f5f, type: 3}
   lostSound: {fileID: 0}

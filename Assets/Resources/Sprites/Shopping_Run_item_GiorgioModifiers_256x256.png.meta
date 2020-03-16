@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: 839c6f2268dcd0a40b8b0bef1480196b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2111631064707378967
+    second: Modifier_x2
+  - first:
+      213: -902623553796980250
+    second: Modifier_TimeAdd
+  - first:
+      213: 7428470213380940156
+    second: Modifier_x4
+  - first:
+      213: 9065417183278575934
+    second: Modifier_TimeSub
+  - first:
+      213: -7150801340580488144
+    second: Modifier_x6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 450
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +85,138 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Modifier_x2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540.6666
+        width: 406
+        height: 270.33334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0df6b0cbaf1b2e0800000000000000
+      internalID: -2111631064707378967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modifier_TimeAdd
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 540.6666
+        width: 406
+        height: 270.33334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1c70ef8ac3973f0800000000000000
+      internalID: -902623553796980250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modifier_x4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270.66666
+        width: 406
+        height: 270.33334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7124252d4a371760800000000000000
+      internalID: 7428470213380940156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modifier_TimeSub
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 271
+        width: 406
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31ba06c5e4decd70800000000000000
+      internalID: 9065417183278575934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modifier_x6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.6666565
+        width: 406
+        height: 270.33334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c105b311043cc90800000000000000
+      internalID: -7150801340580488144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
