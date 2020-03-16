@@ -35,14 +35,19 @@ namespace Quaranteam
         /// </summary>
         public float GameTime { get { return gameTime; } }
 
-        [Header("Fill this list with the items in the shopping list:"), SerializeField]
+
+        [Header("List of shopping items:"), SerializeField]
+        private List<SpawnRule> shoppingList = new List<SpawnRule>();
+
+        [Header("List of MODIFIER"), SerializeField]
+        private ShoppingItem[] modifierList;
+
         private SpawnRule[] itemsInShoppingList;
         /// <summary>
         /// The items that can be spawned during the game.
         /// </summary>
         public SpawnRule[] ItemsInShoppingList { get { return itemsInShoppingList; } }
 
-        [Header("Fill this list with the items that are NOT in the shopping list:"), SerializeField]
         private ShoppingItem[] otherItems;
         /// <summary>
         /// Items spawned but not in the shopping list.
@@ -67,6 +72,62 @@ namespace Quaranteam
             }
 
             return shoppingList;
+        }
+
+        public void SetLists()
+        {
+            //copy, so we don't remove nothing from original list
+            List<SpawnRule> temp_shoppingList = CopyList(shoppingList);
+
+            //itemsInShoppingList prende 4 random da shoppingList
+            {
+                //normally 4, but if shoppingList is lesser then 4, then use shoppingList length
+                int length = Mathf.Min(4, temp_shoppingList.Count);
+                itemsInShoppingList = new SpawnRule[length];
+
+                for (int i = 0; i < length; i++)
+                {
+                    int random = UnityEngine.Random.Range(0, temp_shoppingList.Count);
+
+                    //add in itemsInShoppingList an object random from shoppingList
+                    itemsInShoppingList[i] = temp_shoppingList[random];
+
+                    //remove from shoppingList (so we can't add it anymore)
+                    temp_shoppingList.RemoveAt(random);
+                }
+            }
+
+            //otherItems prende quelli che mancano da shoppingList (prendendo solo item, perché serve uno ShoppingItem e non GameRule)
+            //poi prende tutti quelli in modifierList
+            {
+                //remained shoppingList + modifierList
+                int length = temp_shoppingList.Count + modifierList.Length;
+                otherItems = new ShoppingItem[length];
+
+                //every item in shoppingList
+                for (int i = 0; i < temp_shoppingList.Count; i++)
+                {
+                    otherItems[i] = temp_shoppingList[i].item;
+                }
+
+                //every modifier
+                for(int i = 0; i < modifierList.Length; i++)
+                {
+                    otherItems[temp_shoppingList.Count + i] = modifierList[i];
+                }
+            }
+        }
+
+        List<T> CopyList<T>(List<T> listToCopy)
+        {
+            List<T> temp = new List<T>();
+
+            for(int i = 0; i < listToCopy.Count; i++)
+            {
+                temp.Add(listToCopy[i]);
+            }
+
+            return temp;
         }
     }
 }
