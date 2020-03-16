@@ -21,6 +21,8 @@ namespace Quaranteam
         public float spintaEsplosione;
         bool objectsFalling;
         public bool modifierLoseOnRed;
+        public KeyCode[] rightKeyCodeList;
+        public KeyCode[] leftKeyCodeList;
 
         [Header("FirstIteration")]
         public float speed;
@@ -48,6 +50,10 @@ namespace Quaranteam
         float lastSpriteY = -0.4f;
         int spriteIndex = -1;
 
+        ButtonTextUI leftButton, rightButton;
+        KeyCode rightKeyCode, leftKeyCode;
+        Coroutine changeKeyCodes;
+
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -68,6 +74,11 @@ namespace Quaranteam
             {
                 itemsInCart.Add(child.gameObject);
             }
+
+            leftButton = GameObject.Find("MoveLeftTutorial").GetComponent<ButtonTextUI>();
+            rightButton = GameObject.Find("MoveRightTutorial").GetComponent<ButtonTextUI>();
+
+            StartKeyCodeList();            
         }
 
         void Update()
@@ -102,7 +113,6 @@ namespace Quaranteam
             {
                 vfx.SetActive(false);
             }
-
         }
 
         #region private API
@@ -119,38 +129,18 @@ namespace Quaranteam
         void AccelerationMovement()
         {
             //push player
-            if (Input.GetAxisRaw("Horizontal") > 0.1f)
+            if (Input.GetKeyDown(rightKeyCode))
             {
-                //only if input is not just pressed
-                if (pressedInput == false)
-                {
-                    rb.AddForce(Vector2.right * actualAcceleration);
-                    pressedInput = true;
+                rb.AddForce(Vector2.right * actualAcceleration);
 
-                    StartSound();
-                }
+                StartSound();
             }
-            else if (Input.GetAxisRaw("Horizontal") < -0.1f)
+            else if (Input.GetKeyDown(leftKeyCode))
             {
-                //only if input is not just pressed
-                if (pressedInput == false)
-                {
-                    rb.AddForce(Vector2.left * actualAcceleration);
-                    pressedInput = true;
+                rb.AddForce(Vector2.left * actualAcceleration);
 
-                    StartSound();
-                }
+                StartSound();
             }
-
-            //check if release input
-            CheckReleasedInput(Input.GetAxisRaw("Horizontal"));
-        }
-
-        void CheckReleasedInput(float axis)
-        {
-            //if axis is 0, then player released input
-            if (pressedInput && axis == 0)
-                pressedInput = false;
         }
 
         #endregion
@@ -399,6 +389,99 @@ namespace Quaranteam
                 audioSource.Stop();
                 playerMoving = false;
             }
+        }
+
+        #endregion
+
+        #region randomize keys
+
+        void StartKeyCodeList()
+        {
+            //remove duplicates from lists
+            rightKeyCodeList = RemoveDuplicateArray(rightKeyCodeList);
+            leftKeyCodeList = RemoveDuplicateArray(leftKeyCodeList);
+
+            //randomize key codes
+            RandomizeKeyCodes();
+        }
+
+        T[] RemoveDuplicateArray<T>(T[] array)
+        {
+            //use Set that has only unique elements
+            HashSet<T> set = new HashSet<T>(array);
+
+            //copy into an array and return it
+            T[] result = new T[set.Count];
+            set.CopyTo(result);
+
+            return result;
+        }
+
+        void RandomizeKeyCodes()
+        {
+            //check if right and left have some keycodes in list to randomize, otherwise set default D and A
+            if (rightKeyCodeList.Length < 1)
+                rightKeyCode = KeyCode.D;
+            else
+                rightKeyCode = rightKeyCodeList[Random.Range(0, rightKeyCodeList.Length)];
+
+            if (leftKeyCodeList.Length < 1)
+                leftKeyCode = KeyCode.A;
+            else
+                leftKeyCode = leftKeyCodeList[Random.Range(0, leftKeyCodeList.Length)];
+
+            //stop if is running
+            if (changeKeyCodes != null)
+                StopCoroutine(changeKeyCodes);
+
+            //be sure left is not the same of right
+            changeKeyCodes = StartCoroutine(ChangeKeyCodes());
+        }
+
+        IEnumerator ChangeKeyCodes()
+        {
+            //change until left is different from right
+            while (leftKeyCode == rightKeyCode)
+            {
+                //if no elements in left list, randomize right key code (if no elements in right list, we have A for left and D for right, so no problem)
+                if (leftKeyCodeList.Length < 1)
+                {
+                    //if right list has only one element, than it is A. Than we force left to be D instead of A (so we invert default keys)
+                    if (rightKeyCodeList.Length == 1)
+                    {
+                        leftKeyCode = KeyCode.D;
+                        break;
+                    }
+
+                    //randomize right
+                    rightKeyCode = rightKeyCodeList[Random.Range(0, rightKeyCodeList.Length)];
+                }
+                else
+                {
+                    //if right list has no elements and left list has only one element, than it is D. Then we force right to be A instead of D (so we invert)
+                    if(rightKeyCodeList.Length < 1 && leftKeyCodeList.Length == 1)
+                    {
+                        rightKeyCode = KeyCode.A;
+                        break;
+                    }
+
+                    //otherwise randomize left key code
+                    leftKeyCode = leftKeyCodeList[Random.Range(0, leftKeyCodeList.Length)];
+                }
+
+                yield return null;
+            }
+
+            //set finals
+            changeKeyCodes = null;
+
+            SetFinalKeys();
+        }
+
+        void SetFinalKeys()
+        {
+            leftButton.SetButton(leftKeyCode);
+            rightButton.SetButton(rightKeyCode);
         }
 
         #endregion
