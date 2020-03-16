@@ -54,8 +54,12 @@ namespace Quaranteam
         KeyCode rightKeyCode, leftKeyCode;
         Coroutine changeKeyCodes;
 
+        GameManager gm;
+
         void Start()
         {
+            gm = FindObjectOfType<GameManager>();
+
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             cart = GetComponentInChildren<Cart>();
@@ -96,6 +100,11 @@ namespace Quaranteam
 
             SetAnimationSpeed();
             SetVFX();
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                gm.PauseGame();
+            }
         }
 
         private void SetAnimationSpeed()

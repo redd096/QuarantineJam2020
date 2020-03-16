@@ -888,6 +888,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1556950838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7930252414272558675, guid: 80c99f7571d024044964c3fbda64d17e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7028810675102226050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1564684289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,51 +1720,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2188708076902489319, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2248978659978966922, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3757552489663730196, guid: 80c99f7571d024044964c3fbda64d17e,
         type: 3}
       propertyPath: cart
       value: 
       objectReference: {fileID: 271784599}
-    - target: {fileID: 3878150333339123498, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878150333339123498, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878150333339123498, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 258
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878150333339123498, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 88.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878150333339123498, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 88
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878150333339123498, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -60.75
-      objectReference: {fileID: 0}
     - target: {fileID: 5574213582780461886, guid: 80c99f7571d024044964c3fbda64d17e,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1839,105 +1805,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 534453201}
-    - target: {fileID: 7028810674812634805, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: whenToChangeMusicSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810674812634807, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810675522261787, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037604, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037604, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037604, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 142
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037604, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -60.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037604, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 143.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037604, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 88
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037605, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 60.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037605, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_fontStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037605, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037605, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037605, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7028810676369037605, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885839472265430820, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885839472265430820, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1288.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885839472265430820, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8069205429201176289, guid: 80c99f7571d024044964c3fbda64d17e,
         type: 3}
       propertyPath: m_Name
       value: Game Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8069205429201176289, guid: 80c99f7571d024044964c3fbda64d17e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8069205429201176293, guid: 80c99f7571d024044964c3fbda64d17e,
         type: 3}
@@ -2064,16 +1935,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3846490197405173855, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846490197405173855, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9199099103535242517, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2181,11 +2042,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
-      propertyPath: bgMusic.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
       propertyPath: itemSpawnerLocation
       value: 
       objectReference: {fileID: 2075545908}
@@ -2196,6 +2052,16 @@ PrefabInstance:
       objectReference: {fileID: 325013559}
     - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2073751594}
+    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1556950838}
+    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
+        type: 3}
       propertyPath: overlay
       value: 
       objectReference: {fileID: 688604569}
@@ -2204,47 +2070,6 @@ PrefabInstance:
       propertyPath: waitForEnterButtonOverlay
       value: 
       objectReference: {fileID: 7028810675102226051}
-    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: youWinAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 6833b2ed655ff5b428a4e5f932aaf6b7, type: 3}
-    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: bgMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e59e2faff9e5a449a46705113df416c, type: 3}
-    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2073751594}
-    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: youLoseAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7ead60e36535c3d4cbaf6eab04b7076f, type: 3}
-    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: previewIconPrefab
-      value: 
-      objectReference: {fileID: 3695912569688757199, guid: 757dd82101ad75d4eaa0016a8da73879,
-        type: 3}
-    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: bgMusicFast
-      value: 
-      objectReference: {fileID: 8300000, guid: 505fe4e8894c4e748ab8eb088b8375ea, type: 3}
-    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: bgMusic.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2cf63153aee001b49812d98bcdabb5f4, type: 3}
-    - target: {fileID: 9199099103535242518, guid: 61b3b7f09df9df54186dd68fa6a27443,
-        type: 3}
-      propertyPath: bgMusic.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 505fe4e8894c4e748ab8eb088b8375ea, type: 3}
     - target: {fileID: 9199099103535242519, guid: 61b3b7f09df9df54186dd68fa6a27443,
         type: 3}
       propertyPath: m_Name

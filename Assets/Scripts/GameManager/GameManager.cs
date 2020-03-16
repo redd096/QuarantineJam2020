@@ -124,6 +124,15 @@ namespace Quaranteam
             }
         }
 
+        #region pause variables
+
+        private GameObject pauseMenu;
+        private Button resumeButton;
+        private Button exitButton;
+        float resumeTime;
+
+        #endregion
+
         private void Awake()
         {
 
@@ -131,6 +140,8 @@ namespace Quaranteam
             shoppingListUI = FindObjectOfType<ShoppingListUI>();
             audioSource = GetComponent<AudioSource>();
             modifiersPanel = FindObjectOfType<ModifiersPanelUI>();
+
+            SetPauseMenu();
 
             appliedGameRules.SetLists();
         }
@@ -279,6 +290,54 @@ namespace Quaranteam
 
             audioSource.pitch = trackSpeed;
         }
+
+        #region pause menu
+
+        void SetPauseMenu()
+        {
+            //find references
+            pauseMenu = GameObject.Find("PauseMenu");
+            resumeButton = pauseMenu.transform.Find("ResumeButton").GetComponent<Button>();
+            exitButton = pauseMenu.transform.Find("ExitButton").GetComponent<Button>();
+
+            //set buttons function
+            resumeButton.onClick.AddListener(Resume);
+            exitButton.onClick.AddListener(Exit);
+
+            //set false pauseMenu
+            pauseMenu.SetActive(false);
+        }
+
+        public void Resume()
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = resumeTime;
+        }
+
+        public void Exit()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+        }
+
+        public void PauseGame()
+        {
+            bool isPaused = Time.timeScale == 0;
+
+            if (isPaused)
+                Resume();
+            else
+            {
+                resumeTime = Time.timeScale;
+                Time.timeScale = 0;
+                pauseMenu.SetActive(true);
+            }
+        }
+
+        #endregion
     }
 }
 
