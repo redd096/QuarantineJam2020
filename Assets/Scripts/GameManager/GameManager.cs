@@ -131,6 +131,8 @@ namespace Quaranteam
             shoppingListUI = FindObjectOfType<ShoppingListUI>();
             audioSource = GetComponent<AudioSource>();
             modifiersPanel = FindObjectOfType<ModifiersPanelUI>();
+
+            appliedGameRules.SetLists();
         }
 
         private void Start()
