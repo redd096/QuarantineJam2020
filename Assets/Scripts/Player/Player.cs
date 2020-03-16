@@ -401,8 +401,8 @@ namespace Quaranteam
             rightKeyCodeList = RemoveDuplicateArray(rightKeyCodeList);
             leftKeyCodeList = RemoveDuplicateArray(leftKeyCodeList);
 
-            //randomize key codes
-            RandomizeKeyCodes();
+            //set defaults
+            DefaultKeyCodes();
         }
 
         T[] RemoveDuplicateArray<T>(T[] array)
@@ -415,28 +415,7 @@ namespace Quaranteam
             set.CopyTo(result);
 
             return result;
-        }
-
-        void RandomizeKeyCodes()
-        {
-            //check if right and left have some keycodes in list to randomize, otherwise set default D and A
-            if (rightKeyCodeList.Length < 1)
-                rightKeyCode = KeyCode.D;
-            else
-                rightKeyCode = rightKeyCodeList[Random.Range(0, rightKeyCodeList.Length)];
-
-            if (leftKeyCodeList.Length < 1)
-                leftKeyCode = KeyCode.A;
-            else
-                leftKeyCode = leftKeyCodeList[Random.Range(0, leftKeyCodeList.Length)];
-
-            //stop if is running
-            if (changeKeyCodes != null)
-                StopCoroutine(changeKeyCodes);
-
-            //be sure left is not the same of right
-            changeKeyCodes = StartCoroutine(ChangeKeyCodes());
-        }
+        }        
 
         IEnumerator ChangeKeyCodes()
         {
@@ -529,6 +508,35 @@ namespace Quaranteam
                         PickObject_SecondIteration(other.gameObject);
                 }
             }
+        }
+
+        public void RandomizeKeyCodes()
+        {
+            //check if right and left have some keycodes in list to randomize, otherwise set default D and A
+            if (rightKeyCodeList.Length < 1)
+                rightKeyCode = KeyCode.D;
+            else
+                rightKeyCode = rightKeyCodeList[Random.Range(0, rightKeyCodeList.Length)];
+
+            if (leftKeyCodeList.Length < 1)
+                leftKeyCode = KeyCode.A;
+            else
+                leftKeyCode = leftKeyCodeList[Random.Range(0, leftKeyCodeList.Length)];
+
+            //stop if is running
+            if (changeKeyCodes != null)
+                StopCoroutine(changeKeyCodes);
+
+            //be sure left is not the same of right
+            changeKeyCodes = StartCoroutine(ChangeKeyCodes());
+        }
+
+        public void DefaultKeyCodes()
+        {
+            leftKeyCode = KeyCode.A;
+            rightKeyCode = KeyCode.D;
+
+            SetFinalKeys();
         }
 
         #endregion
