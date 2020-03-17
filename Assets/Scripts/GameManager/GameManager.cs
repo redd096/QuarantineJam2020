@@ -155,7 +155,15 @@ namespace Quaranteam
 
         private IEnumerator WaitForEnterButtonAndStartGame()
         {
-            yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return));
+            bool touchInput = false;
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+                touchInput = true;
+
+            while(!(Input.GetKeyDown(KeyCode.Return) || touchInput || Input.GetKeyDown(KeyCode.Escape)))
+            {
+                yield return null;
+            }
+            //yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return) && !touchInput);
 
             levelTimer.SetGameRules(appliedGameRules);
             levelTimer.gameObject.SetActive(true);
@@ -168,7 +176,15 @@ namespace Quaranteam
 
         private IEnumerator WaitForEnterButtonAndRestartGame()
         {
-            yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return));
+            bool touchInput = false;
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+                touchInput = true;
+
+            while (!(Input.GetKeyDown(KeyCode.Return) || touchInput || Input.GetKeyDown(KeyCode.Escape)))
+            {
+                yield return null;
+            }
+            //yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return) && !touchInput);
 
             SceneManager.LoadScene("Main Scene", LoadSceneMode.Single);
         }

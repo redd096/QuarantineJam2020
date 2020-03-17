@@ -137,14 +137,21 @@ namespace Quaranteam
 
         void AccelerationMovement()
         {
+            //touch
+            float touchPosition = 0;
+            if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                touchPosition = Input.GetTouch(0).position.x;
+            }
+
             //push player
-            if (Input.GetKeyDown(rightKeyCode))
+            if (Input.GetKeyDown(rightKeyCode) || touchPosition > Screen.width /2 + 10)
             {
                 rb.AddForce(Vector2.right * actualAcceleration);
 
                 StartSound();
             }
-            else if (Input.GetKeyDown(leftKeyCode))
+            else if (Input.GetKeyDown(leftKeyCode) || touchPosition < Screen.width / 2 - 10)
             {
                 rb.AddForce(Vector2.left * actualAcceleration);
 
