@@ -156,11 +156,12 @@ namespace Quaranteam
         private IEnumerator WaitForEnterButtonAndStartGame()
         {
             bool touchInput = false;
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-                touchInput = true;
+            
 
             while(!(Input.GetKeyDown(KeyCode.Return) || touchInput || Input.GetKeyDown(KeyCode.Escape)))
             {
+                if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+                    touchInput = true;
                 yield return null;
             }
             //yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return) && !touchInput);
@@ -177,11 +178,11 @@ namespace Quaranteam
         private IEnumerator WaitForEnterButtonAndRestartGame()
         {
             bool touchInput = false;
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-                touchInput = true;
 
             while (!(Input.GetKeyDown(KeyCode.Return) || touchInput || Input.GetKeyDown(KeyCode.Escape)))
             {
+                if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+                    touchInput = true;
                 yield return null;
             }
             //yield return new WaitWhile(() => !Input.GetKeyDown(KeyCode.Return) && !touchInput);
@@ -250,7 +251,10 @@ namespace Quaranteam
             }
 
             // restart game loop
+#if !UNITY_ANDROID
             StartCoroutine(WaitForEnterButtonAndRestartGame());
+#endif
+            
         }
 
         protected internal void OnItemCollected(ShoppingItem item)
@@ -301,7 +305,12 @@ namespace Quaranteam
             audioSource.pitch = trackSpeed;
         }
 
-        #region pause menu
+        public void RestartButton()
+        {
+            SceneManager.LoadScene("Main Scene", LoadSceneMode.Single);
+        }
+
+#region pause menu
 
         void SetPauseMenu()
         {
@@ -347,7 +356,7 @@ namespace Quaranteam
             }
         }
 
-        #endregion
+#endregion
     }
 }
 

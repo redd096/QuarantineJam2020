@@ -35,7 +35,7 @@ namespace Quaranteam
 
             foreach (SpawnRule spawn in requiredItems)
             {
-                Debug.Log("required Item: " + spawn.item.DisplayName);
+                //Debug.Log("required Item: " + spawn.item.DisplayName);
                 if(!checklist.ContainsKey(spawn.item))
                 {
                     checklist.Add(spawn.item, false);

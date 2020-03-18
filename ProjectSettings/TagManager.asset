@@ -8,6 +8,8 @@ TagManager:
   - Center
   - Right
   - OnlyOneTrigger
+  - Restart_Text
+  - Restart_Button
   layers:
   - Default
   - TransparentFX

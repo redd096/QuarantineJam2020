@@ -70,6 +70,7 @@ namespace Quaranteam
 
             actualSpeed = speed;
             actualAcceleration = acceleration;
+            Debug.Log("actual acceleration: " + actualAcceleration);
 
             itemsParent = cart.transform.Find("Items");
             //add already inside objects - so when everything fall down, they fall too
@@ -96,6 +97,7 @@ namespace Quaranteam
             else
             {
                 AccelerationMovement();
+                Debug.Log("actual velocity: " + rb.velocity);
             }
 
             SetAnimationSpeed();
@@ -137,26 +139,52 @@ namespace Quaranteam
 
         void AccelerationMovement()
         {
+            Vector2 direction = Vector2.zero;
+#if !UNITY_ANDROID
+            //push player
+            if (Input.GetKeyDown(rightKeyCode))
+            {
+                direction = Vector2.right;
+
+                rb.AddForce(direction * actualAcceleration);
+                StartSound();                
+            }
+            else if (Input.GetKeyDown(leftKeyCode))
+            {
+                direction = Vector2.left;
+   
+                rb.AddForce(direction * actualAcceleration);
+                StartSound();
+            }
+#else
             //touch
             float touchPosition = 0;
-            if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            if (Input.touchCount > 0) 
             {
-                touchPosition = Input.GetTouch(0).position.x;
+                Touch touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Began)
+                {
+                    //Debug.Log("touch position: " + touchPosition);
+                }
+                 else if(touch.phase == TouchPhase.Ended)
+                {
+                    touchPosition = Camera.main.ScreenToViewportPoint(touch.position).x;
+                    if (touchPosition > 0.5f)
+                    {
+                        direction = Vector2.right;
+                    }
+                    else if (touchPosition < 0.5f)
+                    {
+                        direction = Vector2.left;
+                    }
+                    rb.AddForce(direction * actualAcceleration);
+
+                    StartSound();
+                }
             }
 
-            //push player
-            if (Input.GetKeyDown(rightKeyCode) || touchPosition > Screen.width /2 + 10)
-            {
-                rb.AddForce(Vector2.right * actualAcceleration);
+#endif
 
-                StartSound();
-            }
-            else if (Input.GetKeyDown(leftKeyCode) || touchPosition < Screen.width / 2 - 10)
-            {
-                rb.AddForce(Vector2.left * actualAcceleration);
-
-                StartSound();
-            }
         }
 
         #endregion
@@ -229,9 +257,9 @@ namespace Quaranteam
             }
         }
 
-        #endregion
+#endregion
 
-        #region second iteration
+#region second iteration
 
         void PickModifier(GameObject itemObject)
         {
@@ -306,11 +334,11 @@ namespace Quaranteam
             itemObject.GetComponent<ChildCollision>().risky = true;
         }
 
-        #endregion
+#endregion
 
-        #endregion
+#endregion
 
-        #region everything fall
+#region everything fall
 
         void EverythingFall()
         {
@@ -369,9 +397,9 @@ namespace Quaranteam
                 levelTimer.endGame = true;
         }
 
-        #endregion
+#endregion
 
-        #region sound
+#region sound
 
         void TestSound_FirstIteration()
         {
@@ -407,9 +435,9 @@ namespace Quaranteam
             }
         }
 
-        #endregion
+#endregion
 
-        #region randomize keys
+#region randomize keys
 
         void StartKeyCodeList()
         {
@@ -479,12 +507,12 @@ namespace Quaranteam
             rightButton.SetButton(rightKeyCode);
         }
 
-        #endregion
+#endregion
 
-        #endregion
+#endregion
 
 
-        #region public API
+#region public API
 
         public void OnChildTriggerEnter(ChildCollision child, Collider2D other)
         {
@@ -555,6 +583,6 @@ namespace Quaranteam
             SetFinalKeys();
         }
 
-        #endregion
+#endregion
     }
 }
