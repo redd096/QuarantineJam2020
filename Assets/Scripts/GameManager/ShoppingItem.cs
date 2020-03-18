@@ -28,7 +28,7 @@ namespace Quaranteam
         /// </summary>
         public float ColliderSizeFactor { get { return colliderSizeFactor; } }
 
-        [SerializeField, Min(0)]
+        [SerializeField]
         private int baseReward = 0;
         /// <summary>
         /// The reward given by the object when it is NOT in the shopping list.

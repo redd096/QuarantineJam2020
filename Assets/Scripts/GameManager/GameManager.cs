@@ -96,7 +96,7 @@ namespace Quaranteam
         [Header("Audio")]
         [SerializeField] private AudioClip youWinAudioClip;
         [SerializeField] private AudioClip youLoseAudioClip;
-        [SerializeField] private AudioClip[] bgMusic;
+        [SerializeField] private AudioClip bgMusic;
 
         /// <summary>
         /// The player's score.
@@ -124,6 +124,15 @@ namespace Quaranteam
             }
         }
 
+        #region pause variables
+
+        private GameObject pauseMenu;
+        private Button resumeButton;
+        private Button exitButton;
+        float resumeTime;
+
+        #endregion
+
         private void Awake()
         {
 
@@ -132,13 +141,15 @@ namespace Quaranteam
             audioSource = GetComponent<AudioSource>();
             modifiersPanel = FindObjectOfType<ModifiersPanelUI>();
 
+            SetPauseMenu();
+
             appliedGameRules.SetLists();
         }
 
         private void Start()
         {
             Debug.Log("Press Enter to start the game");
-            
+
             StartCoroutine(WaitForEnterButtonAndStartGame());
         }
 
@@ -151,7 +162,7 @@ namespace Quaranteam
             waitForEnterButtonOverlay.gameObject.SetActive(false);
 
             audioSource.loop = true;
-            audioSource.clip = bgMusic[0];
+            audioSource.clip = bgMusic;
             audioSource.Play();
         }
 
@@ -193,7 +204,7 @@ namespace Quaranteam
             generalSpawnerComp.previewIconTime = appliedGameRules.previewIconAnticipationTime;
         }
 
-        public void OnTimerEnd()
+        public void OnTimerEnd(bool causeTiltedCart)
         {
             // @todo check shoppint chart
             bool win = FindObjectOfType<Cart>().IsChecklistComplete();
@@ -205,13 +216,14 @@ namespace Quaranteam
             overlay.SetActive(true);
             if (win)
             {
-                overlay.GetComponentInChildren<Text>().text = "You win!";
+                overlay.GetComponentInChildren<Text>().text = "You win!" + "\n" + "Score: " + CurrentScore;
                 audioSource.clip = youWinAudioClip;
                 audioSource.Play();
             }
             else
             {
-                overlay.GetComponentInChildren<Text>().text = "You lose!";
+                string loseText = causeTiltedCart ? "You tilted the cart" : "You didn't finish the spesa";
+                overlay.GetComponentInChildren<Text>().text = "You lose!" + "\n" + loseText;
                 audioSource.clip = youLoseAudioClip;
                 audioSource.Play();
             }
@@ -232,13 +244,7 @@ namespace Quaranteam
 
         private void Update()
         {
-            // Brutally exit the game.
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
-
-            List<ModifierRule> toRemove = new List<ModifierRule>(); 
+            List<ModifierRule> toRemove = new List<ModifierRule>();
             foreach (var modifier in appliedModifiers.Values)
             {
                 modifier.RemainingTime -= Time.deltaTime;
@@ -269,22 +275,63 @@ namespace Quaranteam
             appliedModifiers.Remove(modifier.Id);
         }
 
-        public void changeMusicTrack(int trackNumber)
+        public void changeMusicSpeed(float trackSpeed)
         {
-            if(trackNumber > bgMusic.Length )
+            if (trackSpeed > 1.5f || trackSpeed < 1f)
             {
                 return;
             }
-            if(audioSource.clip == bgMusic[trackNumber])
-            {
-                return;
-            }
-            
-            audioSource.Stop();
-            audioSource.loop = true;
-            audioSource.clip = bgMusic[trackNumber];
-            audioSource.Play();
+
+            audioSource.pitch = trackSpeed;
         }
+
+        #region pause menu
+
+        void SetPauseMenu()
+        {
+            //find references
+            pauseMenu = GameObject.Find("PauseMenu");
+            resumeButton = pauseMenu.transform.Find("ResumeButton").GetComponent<Button>();
+            exitButton = pauseMenu.transform.Find("ExitButton").GetComponent<Button>();
+
+            //set buttons function
+            resumeButton.onClick.AddListener(Resume);
+            exitButton.onClick.AddListener(Exit);
+
+            //set false pauseMenu
+            pauseMenu.SetActive(false);
+        }
+
+        public void Resume()
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = resumeTime;
+        }
+
+        public void Exit()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+        }
+
+        public void PauseGame()
+        {
+            bool isPaused = Time.timeScale == 0;
+
+            if (isPaused)
+                Resume();
+            else
+            {
+                resumeTime = Time.timeScale;
+                Time.timeScale = 0;
+                pauseMenu.SetActive(true);
+            }
+        }
+
+        #endregion
     }
 }
 

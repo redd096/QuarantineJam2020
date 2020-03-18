@@ -13,27 +13,124 @@ MonoBehaviour:
   m_Name: TestGameRules
   m_EditorClassIdentifier: 
   preparationTime: 5
-  gameTime: 25
+  gameTime: 50
   shoppingList:
-  - item: {fileID: 11400000, guid: fdc8f9b4fe893b84b89678ad66084a54, type: 2}
+  - item: {fileID: 11400000, guid: 9b9403d8c8be76943af95feb2a83eac2, type: 2}
     previewIconAnticipationTime: 2
-    minSpawnDelay: 2
-    maxSpawnDelay: 5
-  - item: {fileID: 11400000, guid: 7a5ac74efc6137a45955934ee63d83a7, type: 2}
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 258bc1cbb359eec45b8ade9f94671a69, type: 2}
     previewIconAnticipationTime: 2
-    minSpawnDelay: 1
-    maxSpawnDelay: 3
-  - item: {fileID: 11400000, guid: ad8af0b05f925ac47a2b799d059f5e74, type: 2}
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 629c003e7b8144b40bfb6b2c6cb2f98c, type: 2}
     previewIconAnticipationTime: 2
-    minSpawnDelay: 1
-    maxSpawnDelay: 5
-  - item: {fileID: 11400000, guid: e51392588c1de504c8ee6bcc0b6a8a72, type: 2}
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 538aa62184bb13e4c9aa2681e3cc4166, type: 2}
     previewIconAnticipationTime: 2
-    minSpawnDelay: 0.5
-    maxSpawnDelay: 5.5
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 6825129f6128c6544a9845fa72ff9945, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 12240bf9c5ec5a640803b7721ae562b5, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 40d713be6b773ad4fbb71c9d61c207bd, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: e0678e430e2efe546ac0df8a2ce74684, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 15c66c19f4fb4c34e802a88b2d8ec976, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 19a5b5b96fd964148b98dfd5bfe53fc4, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: afcfb327a8a77af48b43e07b71f92074, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 8755be7cb8750eb4c86a6082e09aad54, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 42fd1b494a2dd9f43b7b452b885ee374, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: e8e67c227e5748f4ebaa5cf8a5556d3b, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 3079b48fcdff73d46b18377a9177516e, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 21ff6b21ddbe73049ba2b80086b4a2ab, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 69ac4c3dc6065b44180a052deaeb54ed, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: e5d71e7e1ecb66e43a1591b535cc7488, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 85303209006be26499934e060d3e7f0d, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: d3fa0177ed77a9c449676d7bc5dd8fdc, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: ad69aa5896643eb4b9bb42b7fab283ab, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: ce8eac7edac36df499753a80e381090f, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 91a63f383b4bbcc4383b3033531f8c98, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 28dff6736e38d2d4aad1717867b5a7ef, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: 985b3969463a0d44586aacd6915cb0da, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: af5d8fed3e322be4ebfd4e59bb11632d, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
+  - item: {fileID: 11400000, guid: dcffa7dc9f2e3bd4b9e30af52c9e606d, type: 2}
+    previewIconAnticipationTime: 2
+    minSpawnDelay: 0.7
+    maxSpawnDelay: 1.2
   modifierList:
-  - {fileID: 11400000, guid: 910029e674200144f9e2766267c31453, type: 2}
-  - {fileID: 11400000, guid: 98ec14c806e2de04cb49f863d2ffa064, type: 2}
+  - {fileID: 11400000, guid: 8f8c963a57ceec946b29d784c1001df8, type: 2}
+  - {fileID: 11400000, guid: f0c347b7260acdc459b06a30942b5828, type: 2}
+  - {fileID: 11400000, guid: 3c99bab18a47cdb4fb5e60cd62ff20c6, type: 2}
+  - {fileID: 11400000, guid: f45917a0f119c564bbff451a30ddf6e6, type: 2}
+  - {fileID: 11400000, guid: 91d2b9ecca0bfd5499676d68b142cf94, type: 2}
+  - {fileID: 11400000, guid: 586034ade928c2a4c80457f1817882fb, type: 2}
+  - {fileID: 11400000, guid: f253eb54ac89d3d45bf725c594a52d31, type: 2}
   generalMinDelay: 2
   previewIconAnticipationTime: 2
   generalMaxDelay: 5

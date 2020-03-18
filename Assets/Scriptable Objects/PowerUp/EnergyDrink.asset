@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
+  m_Name: EnergyDrink
+  m_EditorClassIdentifier: 
+  displayName: Energy Drink
+  sprite: {fileID: -7189018816564343296, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
+  colliderSizeFactor: 0.745
+  baseReward: 100
+  weight: 1
+  modifiers:
+  - {fileID: 11400000, guid: 9ed4f08fd20559e4f9b9cc6bf5b258a3, type: 2}
+  pickedSound: {fileID: 8300000, guid: 69fb424edfd80c846a12583dacf6d52f, type: 3}
+  lostSound: {fileID: 8300000, guid: 3ece779556acf0246b31b18b101dfee8, type: 3}

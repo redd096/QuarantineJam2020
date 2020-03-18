@@ -55,11 +55,13 @@ MonoBehaviour:
   itemSpawnerLocation: {fileID: 0}
   levelTimer: {fileID: 0}
   player: {fileID: 0}
+  previewIconPrefab: {fileID: 3695912569688757199, guid: 757dd82101ad75d4eaa0016a8da73879,
+    type: 3}
   overlay: {fileID: 0}
   waitForEnterButtonOverlay: {fileID: 0}
-  youWinAudioClip: {fileID: 0}
-  youLoseAudioClip: {fileID: 0}
-  bgMusic: {fileID: 0}
+  youWinAudioClip: {fileID: 8300000, guid: 6833b2ed655ff5b428a4e5f932aaf6b7, type: 3}
+  youLoseAudioClip: {fileID: 8300000, guid: 7ead60e36535c3d4cbaf6eab04b7076f, type: 3}
+  bgMusic: {fileID: 8300000, guid: 3e59e2faff9e5a449a46705113df416c, type: 3}
 --- !u!82 &3846490197405173855
 AudioSource:
   m_ObjectHideFlags: 0
@@ -70,11 +72,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: e82a2dbfdaa586249b0fa348d1797f76, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

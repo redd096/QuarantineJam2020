@@ -8,7 +8,8 @@ namespace Quaranteam
         PlayerSpeed,
         TimePerception,
         Timer,
-        ScoreMultiplier
+        ScoreMultiplier,
+        RandomizeKey
     }
 
     public abstract class ModifierRule : ScriptableObject

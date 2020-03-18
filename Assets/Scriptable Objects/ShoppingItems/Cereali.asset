@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
   m_Name: Cereali
   m_EditorClassIdentifier: 
-  displayName: Carta Igenica
+  displayName: Cereali
   sprite: {fileID: -3435841002997792819, guid: 0940f127976e6664c9490ea632a3b118, type: 3}
-  colliderSizeFactor: 0.745
+  colliderSizeFactor: 0.5
   baseReward: 100
   weight: 1
   modifiers: []

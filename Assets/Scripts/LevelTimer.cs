@@ -43,7 +43,7 @@ namespace Quaranteam
             //slider = GetComponentInChildren<Slider>();
             //slider.gameObject.SetActive(false);
 
-            if(gameRules != null)
+            if (gameRules != null)
             {
                 preparationTime = gameRules.PreparationTime;
                 baseTime = gameRules.GameTime;
@@ -69,7 +69,7 @@ namespace Quaranteam
 
         internal void SetGameRules(GameRules appliedGameRules)
         {
-            gameRules = appliedGameRules; 
+            gameRules = appliedGameRules;
         }
 
         private void UpdateLevelTimer()
@@ -81,18 +81,18 @@ namespace Quaranteam
             levelTimer.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
             if ((baseTime - elapsedTime) > whenToChangeMusicSpeed)
             {
-                gameManager.changeMusicTrack(0);
+                gameManager.changeMusicSpeed(1f);
             }
             else
             {
-                gameManager.changeMusicTrack(1);
+                gameManager.changeMusicSpeed(1.2f);
             }
             bool timerFinished = (elapsedTime >= baseTime);
             if (timerFinished || endGame)
             {
                 // A chi comunico che ho finito?
                 triggeredLevelFinish = true;
-                gameManager.OnTimerEnd();
+                gameManager.OnTimerEnd(endGame);
             }
 
         }
@@ -109,7 +109,7 @@ namespace Quaranteam
 
                 // A chi comunico che ho iniziato?
                 gameManager.OnGameStarted();
-                
+
                 player.SetActive(true);
                 player.GetComponentInChildren<Cart>().SetRequiredItems(gameRules);
 
@@ -135,7 +135,7 @@ namespace Quaranteam
 
         private IEnumerator ShowTimeBonus(float timeModifier)
         {
-            if(timeModifier > 0)
+            if (timeModifier > 0)
             {
                 bonusTimer.text = "+" + timeModifier.ToString();
                 bonusTimer.color = Color.green;

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b4f18e8c420a04cbf48c5fa0893f6c, type: 3}
   m_Name: AddTime
   m_EditorClassIdentifier: 
-  effectDuration: 5
+  effectDuration: -1
   timerGainOrLoss: 5

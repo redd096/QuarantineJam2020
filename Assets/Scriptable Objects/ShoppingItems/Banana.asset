@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Banana
   sprite: {fileID: -7431116402975250900, guid: 0940f127976e6664c9490ea632a3b118, type: 3}
-  colliderSizeFactor: 0.745
+  colliderSizeFactor: 0.5
   baseReward: 100
   weight: 1
   modifiers: []

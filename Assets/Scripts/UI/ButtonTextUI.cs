@@ -35,6 +35,12 @@ namespace Quaranteam
                 buttonText.color = Color.white;
             }
         }
+
+        public void SetButton(KeyCode keyCode)
+        {
+            boundKey = keyCode;
+            buttonText.text = "Smash " + keyCode.ToString();
+        }
     }
 }
 

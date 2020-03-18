@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Pane
   sprite: {fileID: -2964407831842676800, guid: 0940f127976e6664c9490ea632a3b118, type: 3}
-  colliderSizeFactor: 0.745
+  colliderSizeFactor: 0.5
   baseReward: 100
   weight: 1
   modifiers: []

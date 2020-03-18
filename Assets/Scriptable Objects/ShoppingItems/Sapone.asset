@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Sapone
   sprite: {fileID: 3285048617293039767, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
-  colliderSizeFactor: 0.745
+  colliderSizeFactor: 0.5
   baseReward: 300
   weight: 1
   modifiers: []

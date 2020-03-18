@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Carta Igenica
   sprite: {fileID: -1336336085485079329, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
-  colliderSizeFactor: 0.745
+  colliderSizeFactor: 0.5
   baseReward: 200
   weight: 1
   modifiers: []

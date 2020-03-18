@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90a005fa6ead8142acfa169b3e3724e, type: 3}
   m_Name: Cerotti
   m_EditorClassIdentifier: 
-  displayName: Carta Igenica
+  displayName: Cerotti
   sprite: {fileID: 4673886354978198582, guid: bbbf902253d5b4e469b8ebc9b8ecc518, type: 3}
-  colliderSizeFactor: 0.745
+  colliderSizeFactor: 0.5
   baseReward: 200
   weight: 1
   modifiers: []

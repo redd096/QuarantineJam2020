@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 6x_ScoreMultiplier
   m_EditorClassIdentifier: 
   effectDuration: 10
-  multiplierGainOrLoss: 6
+  newMultiplier: 6

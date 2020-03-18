@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 5
   newSpeed: 10
-  newAcceleration: 200
+  newAcceleration: 230
