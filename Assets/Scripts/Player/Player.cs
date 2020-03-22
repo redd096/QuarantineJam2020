@@ -101,12 +101,7 @@ namespace Quaranteam
             }
 
             SetAnimationSpeed();
-            SetVFX();
-
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.K))
-            {
-                gm.PauseGame();
-            }
+            SetVFX();            
         }
 
         private void SetAnimationSpeed()
@@ -501,8 +496,11 @@ namespace Quaranteam
 
         void SetFinalKeys()
         {
-            leftButton.SetButton(leftKeyCode);
-            rightButton.SetButton(rightKeyCode);
+            if (Application.platform != RuntimePlatform.Android)
+            {
+                leftButton.SetButton(leftKeyCode);
+                rightButton.SetButton(rightKeyCode);
+            }
         }
 
 #endregion

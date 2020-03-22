@@ -279,6 +279,13 @@ namespace Quaranteam
             {
                 RemoveModifier(modifier);
             }
+
+            #region update pause
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.K))
+            {
+                PauseGame();
+            }
+            #endregion
         }
 
         public void AddModifier(ModifierRule newModifier)

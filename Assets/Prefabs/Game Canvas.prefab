@@ -1488,11 +1488,11 @@ MonoBehaviour:
     most that stays in the cart, but don''t forget any item she has in her list!
 
 
-    Press
-    many times (Smash) A or D to push the cart left or right.
+    Smash
+    the sides of the screen to push the cart left or right.
 
 
-    Press Enter to
+    Tap anywhere to
     start the game.'
 --- !u!114 &8337838697365120838
 MonoBehaviour:
@@ -3021,7 +3021,7 @@ PrefabInstance:
     - target: {fileID: 772135383600782408, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
       propertyPath: m_Text
-      value: Smash D
+      value: Tap Right
       objectReference: {fileID: 0}
     - target: {fileID: 772135383600782408, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
@@ -3200,7 +3200,7 @@ PrefabInstance:
     - target: {fileID: 772135383600782408, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
       propertyPath: m_Text
-      value: Esc
+      value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 772135383600782408, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
@@ -3349,6 +3349,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: a70b965228873ff469eb6ea0f9e92136,
         type: 3}
+    - target: {fileID: 5735591208566032119, guid: 47ea2169642d3534ea4167ec223f50c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -26
+      objectReference: {fileID: 0}
     - target: {fileID: 6452423042070580607, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
       propertyPath: m_Name
@@ -3378,7 +3383,7 @@ PrefabInstance:
     - target: {fileID: 772135383600782408, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
       propertyPath: m_Text
-      value: Smash A
+      value: Tap Left
       objectReference: {fileID: 0}
     - target: {fileID: 1544356751159347788, guid: 47ea2169642d3534ea4167ec223f50c3,
         type: 3}
