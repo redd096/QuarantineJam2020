@@ -233,14 +233,14 @@ namespace Quaranteam
             overlay.SetActive(true);
             if (win)
             {
-                overlay.GetComponentInChildren<Text>().text = "You win!" + "\n" + "Score: " + CurrentScore;
+                overlay.GetComponentInChildren<Text>().text = "You won!" + "\n" + "Score: " + CurrentScore;
                 audioSource.clip = youWinAudioClip;
                 audioSource.Play();
             }
             else
             {
                 string loseText = causeTiltedCart ? "You tilted the cart" : "You didn't finish the spesa";
-                overlay.GetComponentInChildren<Text>().text = "You lose!" + "\n" + loseText;
+                overlay.GetComponentInChildren<Text>().text = "You lost!" + "\n" + loseText;
                 audioSource.clip = youLoseAudioClip;
                 audioSource.Play();
             }
@@ -251,9 +251,8 @@ namespace Quaranteam
             }
 
             // restart game loop
-#if !UNITY_ANDROID
-            StartCoroutine(WaitForEnterButtonAndRestartGame());
-#endif
+            //if(Application.platform != RuntimePlatform.Android)
+            //    StartCoroutine(WaitForEnterButtonAndRestartGame());
             
         }
 

@@ -140,50 +140,48 @@ namespace Quaranteam
         void AccelerationMovement()
         {
             Vector2 direction = Vector2.zero;
-#if !UNITY_ANDROID
-            //push player
-            if (Input.GetKeyDown(rightKeyCode))
+            if (Application.platform != RuntimePlatform.Android)
             {
-                direction = Vector2.right;
+                //push player
+                if (Input.GetKeyDown(rightKeyCode))
+                {
+                    direction = Vector2.right;
 
-                rb.AddForce(direction * actualAcceleration);
-                StartSound();                
-            }
-            else if (Input.GetKeyDown(leftKeyCode))
-            {
-                direction = Vector2.left;
-   
-                rb.AddForce(direction * actualAcceleration);
-                StartSound();
-            }
-#else
-            //touch
-            float touchPosition = 0;
-            if (Input.touchCount > 0) 
-            {
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Began)
-                {
-                    //Debug.Log("touch position: " + touchPosition);
-                }
-                 else if(touch.phase == TouchPhase.Ended)
-                {
-                    touchPosition = Camera.main.ScreenToViewportPoint(touch.position).x;
-                    if (touchPosition > 0.5f)
-                    {
-                        direction = Vector2.right;
-                    }
-                    else if (touchPosition < 0.5f)
-                    {
-                        direction = Vector2.left;
-                    }
                     rb.AddForce(direction * actualAcceleration);
+                    StartSound();
+                }
+                else if (Input.GetKeyDown(leftKeyCode))
+                {
+                    direction = Vector2.left;
 
+                    rb.AddForce(direction * actualAcceleration);
                     StartSound();
                 }
             }
+            else
+            {
+                //touch
+                float touchPosition = 0;
+                if (Input.touchCount > 0)
+                {
+                    Touch touch = Input.GetTouch(0);
+                    if (touch.phase == TouchPhase.Ended)
+                    {
+                        touchPosition = Camera.main.ScreenToViewportPoint(touch.position).x;
+                        if (touchPosition > 0.5f)
+                        {
+                            direction = Vector2.right;
+                        }
+                        else if (touchPosition < 0.5f)
+                        {
+                            direction = Vector2.left;
+                        }
+                        rb.AddForce(direction * actualAcceleration);
 
-#endif
+                        StartSound();
+                    }
+                }
+            }
 
         }
 
