@@ -1798,11 +1798,31 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6005048296855311769, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7028810674812634805, guid: 80c99f7571d024044964c3fbda64d17e,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 534453201}
+    - target: {fileID: 7727182021822263475, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_Text
+      value: Tap right
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727182022385789053, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_Text
+      value: Tap left
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727182022502499790, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8069205429201176289, guid: 80c99f7571d024044964c3fbda64d17e,
         type: 3}
       propertyPath: m_Name
@@ -1918,6 +1938,20 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 597419971}
+    - target: {fileID: 9168005009984518303, guid: 80c99f7571d024044964c3fbda64d17e,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Annie the granny doesn''t like her fridge to be empty. Help her grab
+        the most that stays in the cart, but don''t forget any item she has in her
+        list!
+
+
+        Smash the sides of the screen to push the cart left or right.
+
+
+        Tap
+        anywhere to start the game.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c99f7571d024044964c3fbda64d17e, type: 3}
 --- !u!1 &7028810675102226051 stripped
